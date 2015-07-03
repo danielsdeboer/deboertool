@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search Results :: PCS</title>
+	
+	<link rel="stylesheet" type="text/css" href="base-style.css"> <!-- meta sheet -->
+	<link rel="stylesheet" type="text/css" href="search-results.css"> <!-- page specific sheet -->
+	<link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<meta charset="UTF-8">
+
+<body>
+
+
+		<header>
+			<h1>Catalogue Production</h1>
+			<h2>Search Results</h2>
+			<img src="menu.png" alt="Menu">
+		</header>
+	
+		<section>
+			<header>
+				<p>Your search for <strong>110-0500-401</strong> returned <strong>2 results</strong>:
+			</header>
+
+			<article>
+				<table class="searchResultsCatalogue">
+					<thead>
+						<tr>
+							<th>
+							<th>#
+							<th>Part #
+							<th>Description
+							<th>Info
+							<th>Refresh
+							<th>Stk
+							<th>B/O
+							<th>UPM				
+							<th>ROP				
+							<th>EOQ			
+							<th>Make
+							<th>Production Information
+					<tbody>
+						<tr>  <!--ROW 1--> 
+							<td><input type="checkbox" class="check">
+							<td>1
+							<td><a href="#">110-0500-401</a>
+							<td>1/2" 4F FB Reg EM
+							<td><div><a href="#"><div>i</div></a></div>
+							<td><div><a href="#"><div>r</div></a></div>
+							<td>58
+							<td>
+							<td>106				
+							<td class="red">238
+							<td>243					
+							<td class="green">243
+							<td>
+								<table class="productionInfo">
+									<tr>
+										<td><a href="#">125</a> at CNC
+										<td>15 days
+									<tr>
+										<td><a href="#">12</a> at CNC
+										<td class="yellow">0 days
+									<tr>
+										<td><a href="#">12999</a> at Prep
+										<td class="red">-12 days
+								</table>
+					<tr class="reveal">
+						<td colspan="4">
+							<form>
+								<label>Date:</label>
+								<input type="date">
+								<label>Qty:</label>
+								<input type="text" placeholder="Qty">
+								<input type="submit" value="Start WO" class="createWorkorder">
+							</form>
+						<td colspan="9"><div class="green">Workorder <a href="#">CDEF</a> started!</div>
+
+						<tr> <!--ROW 2--> 
+							<td><input type="checkbox" class="check">
+							<td>2
+							<td><a href="#">110-0500-401A</a>
+							<td>1/2" 4F FB Reg EM AlTiN
+							<td><div><a href="#"><div>i</div></a></div>
+							<td><div><a href="#"><div>r</div></a></div>
+							<td>0
+							<td>10
+							<td>100
+							<td class="red">200
+							<td>200					
+							<td class="green">210
+							<td>
+								<table class="productionInfo">
+									<tr>
+										<td><a href="#">210</a> at Coating
+										<td class="red">-15 days
+								</table>
+					<tr class="reveal">
+						<td colspan="4">
+							<form>
+								<label>Date:</label>
+								<input type="date">
+								<label>Qty:</label>
+								<input type="text" placeholder="Qty">
+								<input type="submit" value="Start WO" class="createWorkorder">
+							</form>
+						<td colspan="9"><div class="green">Workorder <a href="#">CDEF</a> started!</div>
+							
+
+				</table>
+			</article>
+
+			<footer>
+				<a href="#">1</a>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+			</footer>
+	</section>
+
+<script>
+$(document).ready(function() {
+	$('.check').click(function() {
+			$(this).closest('tr').next('tr').toggle();
+	});
+});
+
+$(document).ready(function() {
+	$('.createWorkorder').click(function() {
+			$(this).closest('td').next('td').children('div').fadeIn(200);
+	});
+});
+
+
+</script>

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACC,QAAE;EACD,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,IAAI",
+"sources": ["index-new.sass"],
+"names": [],
+"file": "index-new.css"
+}
