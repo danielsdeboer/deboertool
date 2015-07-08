@@ -1,0 +1,122 @@
+article {
+  color: $light;
+  font-family: $base-font;
+  margin: 0 auto;
+  margin-bottom: $nav-height;
+  margin-top: $nav-height;
+  width: 70%;
+
+  .material {
+    align-items: stretch;
+    box-shadow: $level1;
+    display: flex;
+    margin-top: $separator;
+    position: relative;
+    text-align: center;
+    transition: width .2s ease-in-out;
+    width: 100%;
+
+    figure {
+      background-image: $image-sec1;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: auto 90%;
+      width: 20%;
+    }
+
+    section {
+      background: $bg-div1;
+      padding: 6vh 0 7vh;
+      width: 80%;
+    }
+
+    &:nth-of-type(odd) {
+      flex-direction: row;
+    }
+
+    &:nth-of-type(even) {
+      flex-direction: row-reverse;
+    }
+
+    &:nth-of-type(1) > section {
+      background-color: $bg-div1;
+    }
+
+    &:nth-of-type(2) > section {
+      background-color: $bg-div2;
+    }
+
+    &:nth-of-type(3) > section {
+      background-color: $bg-div3;
+    }
+
+  } // section
+
+  h1 {
+    font-size: 5vh;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0 .75rem;
+  }
+
+  h2 {
+    font-size: 2.2vh;
+    font-weight: 700;
+    line-height: 2;
+    padding: 0 .75rem;
+  }
+
+  > p {
+    font-size: 1.5vh;
+    font-weight: 400;
+    margin: 0 auto;
+    margin-top: 1em;
+    width: 60%;
+  }
+
+  a:link,
+  a:active,
+  a:visited {
+    color: $light;
+  }
+
+  span a {
+    background: rgba(0, 0, 0, .1);
+    color: $light;
+    display: block;
+    font-weight: 700;
+    line-height: 3;
+    margin: 0 auto;
+    margin-top: 2em;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+    width: 70%;
+  }
+
+  span a:hover {
+    background: rgba(0, 0, 0, .5);
+  }
+
+  table {
+    margin: 0 auto;
+    margin-top: 1em;
+    width: 70%;
+  }
+
+  th {
+    font-size: 70%;
+    font-weight: 800;
+  }
+
+  td {
+    border: 1px solid $light;
+    padding: .15em .25em;
+  }
+
+  a:link,
+  a:active,
+  a:visited {
+    color: $light;
+    text-decoration: underline;
+  }
+} //article

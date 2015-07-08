@@ -1,0 +1,88 @@
+// padding
+$pad-pop:           .3em 1em;
+$pad-pop-a:         .8em 1em;
+
+.popup {
+  background: rgba(0, 0, 0, .4);
+  color: $light;
+  display: none;
+  font-family: $base-font;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 3;
+
+  div {
+    @include center-middle-view;
+    background-color: $bg-popup;
+    border: 1px solid $light;
+    box-shadow: $level1;
+    overflow: hidden;
+    padding: 1em 1.5em 1.5em;
+    position: absolute;
+    text-align: center;
+    white-space: nowrap;
+    width: 30vh;
+
+    h1 {
+      // background: rgba(255, 255, 255, .3);
+      font-size: 200%;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: .25em;
+      width: 100%;
+    }
+
+    table {
+      font-size: 100%;
+      line-height: 2.5;
+      width: 100%;
+    }
+
+    tr {
+      border-top: 1px solid $light;
+    }
+
+    td:nth-of-type(1) {
+      padding-right: .25em;
+      text-align: right;
+      width: 50%;
+    }
+
+    td:nth-of-type(2) {
+      padding-left: .25em;
+      text-align: left;
+      width: 50%;
+    }
+
+    input {
+      box-sizing: border-box;
+      display: block;
+      font-family: $base-font;
+      font-size: 100%;
+      padding: .25em .5em;
+      text-align: center;
+      width: 100%;
+    }
+
+    button {
+      background-color: $orange;
+      border: 0;
+      color: $light;
+      display: block;
+      font-family: $base-font;
+      font-size: 100%;
+      height: 2.2em;
+      margin-top: .5em;
+      padding: .25em .5em;
+      transition: background .25s ease-in-out;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: darken($orange, 15%);
+    }
+  }
+}

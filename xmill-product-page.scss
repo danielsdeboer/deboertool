@@ -1,0 +1,453 @@
+// font stack
+$base-font:         'Roboto', sans-serif;
+
+// base vars
+$nav-height:        5rem;
+$separator:         2vh;
+$icon-height:       4vh;
+$info-width:        50%;
+
+// gradient
+$gradient:          3%;
+
+// color scheme [BRIGHT AND BOLD]
+$bg:                #fff;
+$bg-under:          #ccc;
+$bg-header:         #43a047;
+$bg-div1:           darken($bg-header, $gradient); //#43a047; //#c51162;
+$bg-div2:           darken($bg-div1, $gradient); //#2e7d32; //#a0f;
+$bg-div3:           darken($bg-div2, $gradient); //#43a047;
+$bg-div4:           darken($bg-div3, $gradient); //#2e7d32;
+$bg-popup:          #757575;
+
+// font
+$light:             #fff;
+
+// images
+$image-sec1:        url('assets/xmill-stub.png');
+
+// box-shadow
+$level1:            2px 2px 5px 2px rgba(66, 66, 66, .5);
+$level2:            1px 1px 5px 1px rgba(66, 66, 66, .6);
+
+body {
+  background: $bg;
+}
+
+article {
+  color: $light;
+  font-family: $base-font;
+  margin: 0 auto;
+  margin-bottom: $nav-height;
+  margin-top: $nav-height;
+  width: 70%;
+
+  header {
+    background: $bg-header;
+    box-shadow: $level1;
+    padding-bottom: 2vh;
+    text-align: center;
+
+    h1 {
+      font-size: 4vh;
+      line-height: 1;
+      padding-bottom: 3vh;
+      padding-top: 3vh;
+    }
+
+    table {
+      margin: 0 auto;
+      margin-bottom: 2.5vh;
+      width: $info-width * .65;
+    }
+
+    tr {
+      border-bottom: 1px solid $light;
+    }
+
+    td {
+      padding: .25em 0;
+    }
+
+    tr:last-of-type {
+      border-bottom: 0;
+    }
+
+    td:nth-of-type(1) {
+      text-align: right;
+      padding-right: .5em;
+      width: 30%;
+    }
+
+    td:nth-of-type(2) {
+      text-align: left;
+      padding-left: .5em;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-top: 0;
+      padding-bottom: 2vh;
+      width: $info-width;
+    }
+
+    ul {
+      height: $icon-height;
+      margin: 0 auto;
+      width: 90%;
+    }
+
+    li {
+      background-color: $light;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 70% auto;
+      border-radius: $icon-height / 2;
+      box-shadow: $level2;
+      display: inline-block;
+      height: $icon-height;
+      margin: 0 .5vw;
+      position: relative;
+      transition: background .2s ease-in-out;
+      width: $icon-height;
+    }
+
+    li:hover {
+      background-color: rgba(255, 255, 255, .7);
+    }
+
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    li:nth-of-type(1) {
+      background-image: url('assets/tooling-guide.svg');
+    }
+
+    li:nth-of-type(2) {
+      background-image: url('assets/speeds-and-feeds.svg');
+    }
+
+    li:nth-of-type(3) {
+      background-image: url('assets/watch-the-video.svg');
+    }
+
+    li:nth-of-type(4) {
+      background-image: url('assets/download-catalogue-section.svg');
+    }
+
+    aside {
+      background-color: $bg-popup;
+      bottom: -2.8em;
+      box-shadow: $level2;
+      left: 50%;
+      opacity: 0; // need this as visibility doesn't transition
+      padding: .25em 1em;
+      position: absolute;
+      transform: translateX(-50%);
+      transition: all .2s ease-in-out;
+      visibility: hidden; // use this instead of display:none for transition
+      white-space: nowrap;
+      z-index: 3;
+    }
+
+    aside:after {
+      border: solid transparent;
+      border-bottom-color: $bg-popup;
+      border-width: 10px;
+      bottom: 100%;
+      content: ' ';
+      height: 0;
+      left: 50%;
+      margin-left: -10px;
+      pointer-events: none;
+      position: absolute;
+      width: 0;
+    }
+
+    li:hover > aside {
+      opacity: 1;
+      visibility: visible;
+    }
+
+  }
+
+  section {
+    box-shadow: 2px 2px 5px 2px rgba(66, 66, 66, .5);
+    height: 50vh;
+    margin-top: $separator;
+    text-align: center;
+    transition: width .2s ease-in-out;
+    width: 100%;
+
+    &:nth-of-type(odd) > div:nth-of-type(1) {
+      background-image: $image-sec1;
+      float: left;
+      width: 40%;
+    }
+
+    &:nth-of-type(odd) > div:nth-of-type(2) {
+      background: $bg-div1;
+      color: $light;
+      float: right;
+      height: 100%;
+      position: relative;
+      width: 60%;
+    }
+
+    &:nth-of-type(even) > div:nth-of-type(1) {
+      background-image: $image-sec1;
+      float: right;
+      height: 100%;
+      width: 40%;
+    }
+
+    &:nth-of-type(even) > div:nth-of-type(2) {
+      background: $bg-div2;
+      color: $light;
+      float: left;
+      height: 100%;
+      position: relative;
+      width: 60%;
+    }
+
+    &:nth-of-type(3) > div:nth-of-type(1) { // block 3a specific override
+      background-image: $image-sec1;
+    }
+
+    &:nth-of-type(3) > div:nth-of-type(2) { // block 3b specific override
+      background-color: $bg-div3;
+    }
+
+    &:nth-of-type(4) > div:nth-of-type(1) { // block 4a specific override
+      background-image: $image-sec1;
+    }
+
+    &:nth-of-type(4) > div:nth-of-type(2) { // block 4b specific override
+      background-color: $bg-div4;
+    }
+  } //section
+
+  div {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto 90%;
+    height: 100%;
+    position: relative;
+
+    div {
+      height: auto;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+    } //div div
+  } //div
+
+  h1 {
+    font-size: 5vh;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0 .75rem;
+  }
+
+  h2 {
+    font-size: 2.2vh;
+    font-weight: 700;
+    line-height: 2;
+    padding: 0 .75rem;
+  }
+
+  p {
+    font-size: 1.5vh;
+    font-weight: 400;
+    margin: 0 auto;
+    margin-top: 1em;
+    width: 60%;
+  }
+
+  a:link,
+  a:active,
+  a:visited {
+    color: $light;
+  }
+
+  span a {
+    background: rgba(0, 0, 0, .1);
+    color: $light;
+    display: block;
+    font-weight: 700;
+    line-height: 3;
+    margin: 0 auto;
+    margin-top: 2em;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+    width: 70%;
+  }
+
+  span a:hover {
+    background: rgba(0, 0, 0, .5);
+  }
+
+} //article
+
+// ########## SECTION ARTICLE ETC ##########
+
+// @media stuff
+
+@media screen and (max-width: 1400px) {
+  article {
+    width: 80%;
+  }
+
+  article h1 {
+    font-size: 400%;
+  }
+
+  article h2 {
+    font-size: 120%;
+  }
+
+  article p {
+    font-size: 95%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  article {
+    width: 90%;
+  }
+
+  article h1 {
+    font-size: 300%;
+  }
+
+  article h2 {
+    font-size: 100%;
+  }
+
+  article p {
+    font-size: 90%;
+  }
+
+  article a:link {
+    font-size: 90%;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  article {
+    margin-top: 4rem;
+    width: 96%;
+  }
+
+  article h1 {
+    font-size: 250%;
+  }
+
+  article h2 {
+    font-size: 100%;
+  }
+
+  article p {
+    font-size: 90%;
+  }
+
+  article a:link {
+    font-size: 90%;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  article {
+    width: 96%;
+  }
+
+  article section {
+    height: 130vw;
+  }
+
+  article section:nth-of-type(n+1) > div:nth-of-type(1) {
+    display: block;
+    float: none;
+    width: 100%;
+    height: 70vw;
+  }
+
+  article section:nth-of-type(n+1) > div:nth-of-type(2) {
+    display: block;
+    float: none;
+    width: 100%;
+    height: 60vw;
+  }
+
+  article h1 {
+    font-size: 250%;
+  }
+
+  article h2 {
+    font-size: 100%;
+  }
+
+  article p {
+    font-size: 90%;
+  }
+
+  article a:link {
+    font-size: 90%;
+    font-weight: 400;
+  }
+
+  article span a {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  article {
+    width: 96%;
+  }
+
+  article section {
+    height: 190vw;
+  }
+
+  article section:nth-of-type(n+1) > div:nth-of-type(1) {
+    display: block;
+    float: none;
+    width: 100%;
+    height: 100vw;
+  }
+
+  article section:nth-of-type(n+1) > div:nth-of-type(2) {
+    display: block;
+    float: none;
+    width: 100%;
+    height: 90vw;
+  }
+
+  article h1 {
+    font-size: 250%;
+  }
+
+  article h2 {
+    font-size: 100%;
+  }
+
+  article p {
+    font-size: 90%;
+  }
+
+  article a:link {
+    font-size: 90%;
+    font-weight: 400;
+  }
+
+  article span a {
+    width: 90%;
+  }
+}

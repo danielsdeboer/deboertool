@@ -1,0 +1,109 @@
+// font stack
+$base-font:         'Roboto', sans-serif;
+
+// base vars
+$nav-height:        4rem;
+$separator:         2vh;
+$icon-height:       4vh;
+$info-width:        50%;
+$div-l-width:       20%;
+$div-r-width:       80%;
+
+// gradient
+$gradient:          3%;
+
+// color scheme [BRIGHT AND BOLD]
+$bg:                #fff;
+$bg-under:          #ccc;
+$bg-header:         #43a047;
+$bg-div1:           darken($bg-header, $gradient); //#43a047; //#c51162;
+$bg-div2:           darken($bg-div1, $gradient); //#2e7d32; //#a0f;
+$bg-div3:           darken($bg-div2, $gradient); //#43a047;
+$bg-div4:           darken($bg-div3, $gradient); //#2e7d32;
+$bg-popup:          #757575;
+$orange:            #ff9800;
+
+// font
+$light:             #fff;
+
+// images
+$image-sec1:        url('assets/xmill-stub.png');
+
+// box-shadow
+$level1:            2px 2px 5px 2px rgba(66, 66, 66, .5);
+$level2:            1px 1px 5px 1px rgba(66, 66, 66, .6);
+
+// mixins
+@import 'mixins';
+@import 'flex-content';
+@import 'add-to-cart-popover';
+
+html,
+body {
+  background: $bg;
+  height: 100%;
+}
+
+
+
+// @media stuff
+
+@media screen and (max-width: 1000px) {
+  article {
+    width: 90%;
+
+    .material {
+
+      table {
+        font-size: 90%;
+        width: 80%;
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  article {
+    width: 85%;
+
+    .material {
+
+      table {
+        font-size: 85%;
+        width: 90%;
+      }
+
+    }
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  article {
+    width: 98%;
+
+    .material {
+
+      &:nth-of-type(odd),
+      &:nth-of-type(even) {
+        flex-direction: column;
+      }
+
+      figure {
+        height: 40vh;
+        width: 100%;
+      }
+
+      section {
+        width: 100%;
+      }
+
+      table {
+        font-size: 85%;
+        width: 90%;
+      }
+
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@mixin center-middle {
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+@mixin center-middle-view {
+  left: 50vw;
+  top: 50vh;
+  transform: translateX(-50%) translateY(-50%);
+}

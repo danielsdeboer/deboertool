@@ -1,0 +1,300 @@
+body {
+  background: #fff; }
+
+article {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+  width: 70%; }
+  article header {
+    background: #43a047;
+    box-shadow: 2px 2px 5px 2px rgba(66, 66, 66, 0.5);
+    padding-bottom: 2vh;
+    text-align: center; }
+    article header h1 {
+      font-size: 4vh;
+      line-height: 1;
+      padding-bottom: 3vh;
+      padding-top: 3vh; }
+    article header table {
+      margin: 0 auto;
+      margin-bottom: 2.5vh;
+      width: 32.5%; }
+    article header tr {
+      border-bottom: 1px solid #fff; }
+    article header td {
+      padding: .25em 0; }
+    article header tr:last-of-type {
+      border-bottom: 0; }
+    article header td:nth-of-type(1) {
+      text-align: right;
+      padding-right: .5em;
+      width: 30%; }
+    article header td:nth-of-type(2) {
+      text-align: left;
+      padding-left: .5em; }
+    article header p {
+      font-size: 1rem;
+      margin-top: 0;
+      padding-bottom: 2vh;
+      width: 50%; }
+    article header ul {
+      height: 4vh;
+      margin: 0 auto;
+      width: 90%; }
+    article header li {
+      background-color: #fff;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 70% auto;
+      border-radius: 2vh;
+      box-shadow: 1px 1px 5px 1px rgba(66, 66, 66, 0.6);
+      display: inline-block;
+      height: 4vh;
+      margin: 0 .5vw;
+      position: relative;
+      transition: background .2s ease-in-out;
+      width: 4vh; }
+    article header li:hover {
+      background-color: rgba(255, 255, 255, 0.7); }
+    article header a {
+      display: block;
+      height: 100%;
+      width: 100%; }
+    article header li:nth-of-type(1) {
+      background-image: url("assets/tooling-guide.svg"); }
+    article header li:nth-of-type(2) {
+      background-image: url("assets/speeds-and-feeds.svg"); }
+    article header li:nth-of-type(3) {
+      background-image: url("assets/watch-the-video.svg"); }
+    article header li:nth-of-type(4) {
+      background-image: url("assets/download-catalogue-section.svg"); }
+    article header aside {
+      background-color: #757575;
+      bottom: -2.8em;
+      box-shadow: 1px 1px 5px 1px rgba(66, 66, 66, 0.6);
+      left: 50%;
+      opacity: 0;
+      padding: .25em 1em;
+      position: absolute;
+      transform: translateX(-50%);
+      transition: all .2s ease-in-out;
+      visibility: hidden;
+      white-space: nowrap;
+      z-index: 3; }
+    article header aside:after {
+      border: solid transparent;
+      border-bottom-color: #757575;
+      border-width: 10px;
+      bottom: 100%;
+      content: ' ';
+      height: 0;
+      left: 50%;
+      margin-left: -10px;
+      pointer-events: none;
+      position: absolute;
+      width: 0; }
+    article header li:hover > aside {
+      opacity: 1;
+      visibility: visible; }
+  article section {
+    box-shadow: 2px 2px 5px 2px rgba(66, 66, 66, 0.5);
+    height: 50vh;
+    margin-top: 2vh;
+    text-align: center;
+    transition: width .2s ease-in-out;
+    width: 100%; }
+    article section:nth-of-type(odd) > div:nth-of-type(1) {
+      background-image: url("assets/xmill-stub.png");
+      float: left;
+      width: 40%; }
+    article section:nth-of-type(odd) > div:nth-of-type(2) {
+      background: #3e9542;
+      color: #fff;
+      float: right;
+      height: 100%;
+      position: relative;
+      width: 60%; }
+    article section:nth-of-type(even) > div:nth-of-type(1) {
+      background-image: url("assets/xmill-stub.png");
+      float: right;
+      height: 100%;
+      width: 40%; }
+    article section:nth-of-type(even) > div:nth-of-type(2) {
+      background: #3a8a3d;
+      color: #fff;
+      float: left;
+      height: 100%;
+      position: relative;
+      width: 60%; }
+    article section:nth-of-type(3) > div:nth-of-type(1) {
+      background-image: url("assets/xmill-stub.png"); }
+    article section:nth-of-type(3) > div:nth-of-type(2) {
+      background-color: #358039; }
+    article section:nth-of-type(4) > div:nth-of-type(1) {
+      background-image: url("assets/xmill-stub.png"); }
+    article section:nth-of-type(4) > div:nth-of-type(2) {
+      background-color: #317534; }
+  article div {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto 90%;
+    height: 100%;
+    position: relative; }
+    article div div {
+      height: auto;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%; }
+  article h1 {
+    font-size: 5vh;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0 .75rem; }
+  article h2 {
+    font-size: 2.2vh;
+    font-weight: 700;
+    line-height: 2;
+    padding: 0 .75rem; }
+  article p {
+    font-size: 1.5vh;
+    font-weight: 400;
+    margin: 0 auto;
+    margin-top: 1em;
+    width: 60%; }
+  article a:link,
+  article a:active,
+  article a:visited {
+    color: #fff; }
+  article span a {
+    background: rgba(0, 0, 0, 0.1);
+    color: #fff;
+    display: block;
+    font-weight: 700;
+    line-height: 3;
+    margin: 0 auto;
+    margin-top: 2em;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+    width: 70%; }
+  article span a:hover {
+    background: rgba(0, 0, 0, 0.5); }
+
+@media screen and (max-width: 1400px) {
+  article {
+    width: 80%; }
+
+  article h1 {
+    font-size: 400%; }
+
+  article h2 {
+    font-size: 120%; }
+
+  article p {
+    font-size: 95%; } }
+@media screen and (max-width: 1000px) {
+  article {
+    width: 90%; }
+
+  article h1 {
+    font-size: 300%; }
+
+  article h2 {
+    font-size: 100%; }
+
+  article p {
+    font-size: 90%; }
+
+  article a:link {
+    font-size: 90%;
+    font-weight: 400; } }
+@media screen and (max-width: 800px) {
+  article {
+    margin-top: 4rem;
+    width: 96%; }
+
+  article h1 {
+    font-size: 250%; }
+
+  article h2 {
+    font-size: 100%; }
+
+  article p {
+    font-size: 90%; }
+
+  article a:link {
+    font-size: 90%;
+    font-weight: 400; } }
+@media screen and (max-width: 600px) {
+  article {
+    width: 96%; }
+
+  article section {
+    height: 130vw; }
+
+  article section:nth-of-type(n+1) > div:nth-of-type(1) {
+    display: block;
+    float: none;
+    width: 100%;
+    height: 70vw; }
+
+  article section:nth-of-type(n+1) > div:nth-of-type(2) {
+    display: block;
+    float: none;
+    width: 100%;
+    height: 60vw; }
+
+  article h1 {
+    font-size: 250%; }
+
+  article h2 {
+    font-size: 100%; }
+
+  article p {
+    font-size: 90%; }
+
+  article a:link {
+    font-size: 90%;
+    font-weight: 400; }
+
+  article span a {
+    width: 90%; } }
+@media screen and (max-width: 400px) {
+  article {
+    width: 96%; }
+
+  article section {
+    height: 190vw; }
+
+  article section:nth-of-type(n+1) > div:nth-of-type(1) {
+    display: block;
+    float: none;
+    width: 100%;
+    height: 100vw; }
+
+  article section:nth-of-type(n+1) > div:nth-of-type(2) {
+    display: block;
+    float: none;
+    width: 100%;
+    height: 90vw; }
+
+  article h1 {
+    font-size: 250%; }
+
+  article h2 {
+    font-size: 100%; }
+
+  article p {
+    font-size: 90%; }
+
+  article a:link {
+    font-size: 90%;
+    font-weight: 400; }
+
+  article span a {
+    width: 90%; } }
+
+/*# sourceMappingURL=xmill-product-page.css.map */
