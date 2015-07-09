@@ -10,12 +10,12 @@ $div-l-width:       20%;
 $div-r-width:       80%;
 
 // gradient
-$gradient:          3%;
+$gradient:          100%;
 
 // color scheme [BRIGHT AND BOLD]
 $bg:                #fff;
 $bg-under:          #ccc;
-$bg-header:         #43a047;
+$bg-header:         #424242; //#d500f9;
 $bg-div1:           darken($bg-header, $gradient); //#43a047; //#c51162;
 $bg-div2:           darken($bg-div1, $gradient); //#2e7d32; //#a0f;
 $bg-div3:           darken($bg-div2, $gradient); //#43a047;
@@ -25,6 +25,8 @@ $orange:            #ff9800;
 
 // font
 $light:             #fff;
+$grey-mid:          #bdbdbd;
+$dark:              #424242;
 
 // images
 $image-sec1:        url('assets/xmill-stub.png');
@@ -33,12 +35,19 @@ $image-sec1:        url('assets/xmill-stub.png');
 $level1:            2px 2px 5px 2px rgba(66, 66, 66, .5);
 $level2:            1px 1px 5px 1px rgba(66, 66, 66, .6);
 
+// This page only
+$cart-pad-y: 2vh;
+$cart-pad-x: 2vw;
+$cart-padding: $cart-pad-y $cart-pad-x;
+
 // mixins
 @import 'reset';
 @import 'mixins';
 @import 'flex-content';
 @import 'add-to-cart-popover';
 @import 'footer';
+@import 'side-wide';
+@import 'component_hover-buttons';
 
 html,
 body {
@@ -48,10 +57,10 @@ body {
 
 article {
   header {
-    background: $bg-header;
+    background-color: $bg-header;
     box-shadow: $level1;
+    color: $light;
     margin-top: 1rem;
-    padding-bottom: 2vh;
     text-align: center;
 
     h1 {
@@ -98,90 +107,120 @@ article {
       padding-bottom: 2vh;
       width: 60%;
     }
+  }
 
-    ul {
-      height: $icon-height;
-      margin: 0 auto;
-      min-height: 3em;
-      width: 90%;
+  footer {
+    background-color: $bg-header;
+    box-shadow: $level1;
+    color: $light;
+    margin-top: 1rem;
+    padding: $cart-padding;
+    position: relative;
+    text-align: right;
+
+    > h1 {
+      font-size: 200%;
+      line-height: 1;
+      padding-bottom: 3vh;
+      padding-top: 3vh;
     }
 
-    li {
-      background-color: $light;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: 70% auto;
-      border-radius: 100%;
-      box-shadow: $level2;
-      display: inline-block;
-      height: $icon-height;
-      margin: 0 .5vw;
-      min-height: 2.5em;
-      min-width: 2.5em;
-      position: relative;
-      transition: background .2s ease-in-out;
-      width: $icon-height;
+    > p {
+      display: inline;
     }
 
-    li:hover {
-      background-color: rgba(255, 255, 255, .7);
+    > p:nth-of-type(odd) {
+      color: $grey-mid;
+      font-size: 70%;
     }
 
-    a {
-      display: block;
-      height: 100%;
-      width: 100%;
+    > p:nth-of-type(even) {
+      color: $light;
+      font-size: 90%;
     }
 
-    li:nth-of-type(1) {
-      background-image: url('assets/tooling-guide.svg');
+    > p:last-of-type {
+      font-weight: 700;
+      font-size: 120%;
     }
 
-    li:nth-of-type(2) {
-      background-image: url('assets/speeds-and-feeds.svg');
-    }
-
-    li:nth-of-type(3) {
-      background-image: url('assets/watch-the-video.svg');
-    }
-
-    li:nth-of-type(4) {
-      background-image: url('assets/download-catalogue-section.svg');
-    }
-
-    aside {
-      background-color: $bg-popup;
-      bottom: -2.8em;
-      box-shadow: $level2;
-      left: 50%;
-      opacity: 0; // need this as visibility doesn't transition
-      padding: .25em 1em;
+    > button {
+      @include middle;
+      background-color: $dark;
+      border: 1px solid $light;
+      color: $light;
+      float: left;
+      font-family: $base-font;
+      height: 2em;
+      left: $cart-pad-x;
       position: absolute;
-      transform: translateX(-50%);
-      transition: all .2s ease-in-out;
-      visibility: hidden; // use this instead of display:none for transition
-      white-space: nowrap;
-      z-index: 3;
+      transition: all .1s ease-in-out;
+      width: 10em;
     }
 
-    aside:after {
-      border: solid transparent;
-      border-bottom-color: $bg-popup;
-      border-width: 10px;
-      bottom: 100%;
-      content: ' ';
-      height: 0;
-      left: 50%;
-      margin-left: -10px;
-      pointer-events: none;
-      position: absolute;
-      width: 0;
+    > button:hover {
+      background: #000;
+      box-shadow: inset 2px 2px 5px 0 #9e9e9e;
     }
 
-    li:hover > aside {
-      opacity: 1;
-      visibility: visible;
-    }
+    // p:nth-of-type(1),
+    // p:nth-of-type(2) {
+    //   color: $grey-mid;
+    //   font-size: 85%;
+    // }
+
+    // p:nth-of-type(3) {
+    //   font-weight: 700;
+    // }
+  }
+}
+
+.cart-actions {
+  padding: 2vh 0 1.6vh;
+  width: 90%;
+
+  li:nth-of-type(1) {
+    background-image: url('assets/delete.svg');
+    order: 2;
+  }
+
+  li:nth-of-type(2) {
+    background-image: url('assets/download-pdf.svg');
+    order: 1;
+  }
+
+  li:nth-of-type(3) {
+    background-image: url('assets/save-changes.svg');
+    order: 3;
+  }
+
+  li:nth-of-type(4) {
+    background-image: url('assets/arrow-forward.svg');
+    order: 4;
+  }
+}
+
+.in-stock {
+  li:nth-of-type(1) {
+    background-image: url('assets/in-stock.svg');
+    border: 0;
+    box-shadow: none;
+  }
+}
+
+.out-of-stock {
+  li:nth-of-type(1) {
+    background-image: url('assets/out-of-stock.svg');
+    border: 0;
+    box-shadow: none;
+  }
+}
+
+.partial-stock {
+  li:nth-of-type(1) {
+    background-image: url('assets/partial-stock.svg');
+    border: 0;
+    box-shadow: none;
   }
 }
 

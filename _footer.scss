@@ -1,0 +1,73 @@
+$bg-footer: #424242;
+$color-footer: #bdbdbd;
+$color-link: #ffcc80;
+$order-image: 1; 
+$order-links: 2;
+$order-descr: 3;
+
+.page-footer {
+  align-items: center;
+  background-color: $bg-footer;
+  box-sizing: border-box;
+  color: $color-footer;
+  display: flex;
+  flex-direction: row;
+  font-family: $base-font;
+  font-size: 95%;
+  vertical-align: middle;
+  width: 100%;
+
+  figure {
+    align-self: stretch;
+    background-image: url('assets/logo-deboertool-lion.svg');
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    border: 1px solid blue;
+    order: $order-links;
+    text-align: center;
+    width: 20%;
+  }
+
+  nav {
+    order: $order-links;
+    padding-right: .5em;
+    text-align: right;
+    width: 40%;
+  }
+
+  section {
+    order: $order-descr;
+    padding: 2em 0;
+    padding-left: .5em;
+    width: 60%;
+
+    p {
+      max-width: 40em;
+    }
+
+    p:first-of-type {
+      padding-bottom: .5em;
+    }
+
+    p:last-of-type {
+      padding-top: .5em;
+    }
+  }
+
+  
+
+  a:link,
+  a:active,
+  a:visited {
+    color: $color-link;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $light;
+    text-decoration: underline;
+  }
+
+
+}

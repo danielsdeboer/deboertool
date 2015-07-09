@@ -2,8 +2,8 @@ article {
   color: #fff;
   font-family: "Roboto", sans-serif;
   margin: 0 auto;
-  margin-bottom: 4rem;
-  margin-top: 4rem;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
   width: 70%; }
   article .material {
     align-items: stretch;
@@ -22,7 +22,8 @@ article {
       width: 20%; }
     article .material section {
       background: #3e9542;
-      padding: 6vh 0 7vh;
+      box-sizing: border-box;
+      padding: 6vh 4vw;
       width: 80%; }
     article .material:nth-of-type(odd) {
       flex-direction: row; }
@@ -34,6 +35,8 @@ article {
       background-color: #3a8a3d; }
     article .material:nth-of-type(3) > section {
       background-color: #358039; }
+    article .material:nth-of-type(4) > section {
+      background-color: #317534; }
   article h1 {
     font-size: 5vh;
     font-weight: 700;
@@ -50,10 +53,6 @@ article {
     margin: 0 auto;
     margin-top: 1em;
     width: 60%; }
-  article a:link,
-  article a:active,
-  article a:visited {
-    color: #fff; }
   article span a {
     background: rgba(0, 0, 0, 0.1);
     color: #fff;
@@ -71,17 +70,17 @@ article {
     margin: 0 auto;
     margin-top: 1em;
     width: 70%; }
-  article th {
-    font-size: 70%;
-    font-weight: 800; }
-  article td {
-    border: 1px solid #fff;
-    padding: .15em .25em; }
-  article a:link,
-  article a:active,
-  article a:visited {
-    color: #fff;
-    text-decoration: underline; }
+    article table th {
+      font-size: 70%;
+      font-weight: 800; }
+    article table td {
+      border: 1px solid #fff;
+      padding: .15em .25em; }
+    article table a:link,
+    article table a:active,
+    article table a:visited {
+      color: #fff;
+      text-decoration: underline; }
 
 .popup {
   background: rgba(0, 0, 0, 0.4);

@@ -2,7 +2,7 @@
 $base-font:         'Roboto', sans-serif;
 
 // base vars
-$nav-height:        4rem;
+$nav-height:        5rem;
 $separator:         2vh;
 $icon-height:       4vh;
 $info-width:        50%;
@@ -37,14 +37,13 @@ $level2:            1px 1px 5px 1px rgba(66, 66, 66, .6);
 @import 'mixins';
 @import 'flex-content';
 @import 'add-to-cart-popover';
+@import 'footer';
 
 html,
 body {
   background: $bg;
   height: 100%;
 }
-
-
 
 // @media stuff
 

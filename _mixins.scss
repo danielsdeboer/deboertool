@@ -4,6 +4,11 @@
   transform: translateX(-50%) translateY(-50%);
 }
 
+@mixin middle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 @mixin center-middle-view {
   left: 50vw;
   top: 50vh;

@@ -1,0 +1,92 @@
+//  Uncomment and include something like this in your main (non-abstracted) CSS page:
+//
+// .hover-buttons {
+//   li:nth-of-type(1) {
+//     background-image: url('assets/tooling-guide.svg');
+//   }
+
+//   li:nth-of-type(2) {
+//     background-image: url('assets/speeds-and-feeds.svg');
+//   }
+
+//   li:nth-of-type(3) {
+//     background-image: url('assets/watch-the-video.svg');
+//   }
+
+//   li:nth-of-type(4) {
+//     background-image: url('assets/download-catalogue-section.svg');
+//   }
+// }
+//
+// This sets the background of each image.
+
+.hover-buttons {
+  align-content: center;
+  display: flex;
+  flex-direction: row;
+  height: $icon-height;
+  justify-content: space-between;
+  margin: 0 auto;
+  min-height: 3em;
+
+  li {
+    background-color: $light;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 70% auto;
+    border-radius: 100%;
+    box-shadow: $level2;
+    height: $icon-height;
+    margin: 0 .5vw;
+    min-height: 2.5em;
+    min-width: 2.5em;
+    position: relative;
+    transition: background .2s ease-in-out;
+    width: $icon-height;
+  }
+
+  li:hover {
+    background-color: rgba(255, 255, 255, .7);
+
+    > aside {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  a {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+  aside {
+    background-color: $bg-popup;
+    bottom: -2.8em;
+    box-shadow: $level2;
+    color: $light;
+    left: 50%;
+    opacity: 0; // need this as visibility doesn't transition
+    padding: .25em 1em;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: all .2s ease-in-out;
+    visibility: hidden; // use this instead of display:none for transition
+    white-space: nowrap;
+    z-index: 3;
+  }
+
+  aside:after {
+    border: solid transparent;
+    border-bottom-color: $bg-popup;
+    border-width: 10px;
+    bottom: 100%;
+    content: ' ';
+    height: 0;
+    left: 50%;
+    margin-left: -10px;
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+  }
+}
