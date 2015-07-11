@@ -26,7 +26,7 @@ $std-trans: .2s;
 $std-trans-type: ease-in-out;
 
 // sizing
-$h-header: 15vh;
+$h-header: 15vh; // var = $h-header; if this changes, change the jquery (window.height * var) in index.html to match
 $h-article: 75vh;
 $h-footer: 10vh;
 
@@ -36,13 +36,14 @@ $bg-popup: $light;
 
 // material levels
 $level1: 2px 2px 5px 2px rgba(66, 66, 66, .5);
-$level1-inset: inset 0 2px 5px 0 rgba(66, 66, 66, .5);
+$level1-inset: inset 0 7px 5px -5px rgba(66, 66, 66, .5);
 $level2: 0 2px 7px 1px rgba(66, 66, 66, .5);
 $level3: 0 4px 10px 2px rgba(66, 66, 66, .5);
 
 @import 'reset';
 @import 'mixins';
 @import 'component_hover-buttons';
+@import 'component_header';
 
 // * {
 //   box-sizing: border-box;
@@ -52,108 +53,8 @@ body {
   font-family: $base-font;
 }
 
-.page-1-header {
-  align-items: center;
-  background: $grey-dark;
-  box-shadow: $level1;
-  display: flex;
-  flex-direction: row;
-  font-size: 95%;
-  height: $h-header;
-  justify-content: space-between;
-  min-height: $h-header;
-  position: relative;
-  z-index: 1;
-
-  nav {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: flex-end;
-    width: 35%;
-
-    &:nth-of-type(1) {
-      margin-left: $std-x;
-    }
-
-    &:nth-of-type(2) {
-      margin-right: $std-x;
-    }
-  }
-
-  ul {
-    display: flex;
-    flex-direction: row;
-  }
-
-  li {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, $orange 50%);
-    background-size: 100% 200%;
-    color: $light;
-    display: flex;
-    font-weight: 300;
-    padding: 0 ($std-x * .5);
-    position: relative;
-    text-transform: uppercase;
-    transition: background $std-trans $std-trans-type;
-    transition-delay: ($std-trans);
-
-    > a:link,
-    > a:visited,
-    > a:active {
-      color: $light;
-      height: 100%;
-      padding: ($std-y * .75) 0;
-      text-decoration: none;
-      white-space: nowrap;
-      width: 100%;
-    }
-  }
-
-  li:hover {
-    background-position: 0 100%;
-
-    > .hover-menu {
-      opacity: 1;
-      transform: translateY(0);
-      visibility: visible;
-      z-index: 1;
-    }
-  }
-
-  figure {
-    text-align: center;
-  }
-
-  aside {
-    align-items: center;
-    box-sizing: border-box;
-    color: $light;
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 2.5vh;
-    padding-left: $std-x * .5;
-
-    img {
-      width: 1.5em;
-    }
-
-    a:link:nth-of-type(2),
-    a:visited:nth-of-type(2),
-    a:active:nth-of-type(2) {
-      color: $light;
-      margin-left: 1em;
-      text-decoration: none;
-    }
-
-    a:hover:nth-of-type(2) {
-      text-decoration: underline;
-    }
-  }
-}
-
 .page-1-article {
-  align-items:center;
+  align-items: center;
   background-image: url('assets/hero-new2.jpg');
   background-position: center center;
   background-size: cover;
@@ -161,13 +62,18 @@ body {
   flex-direction: column;
   height: $h-article;
   justify-content: center;
+  margin-top: $h-header;
   text-align: center;
   vertical-align: middle;
 
   div {
     $size: 6em;
     align-items: center;
-    background: rgba(255, 255, 255, .7);
+    background-color: rgba(255, 255, 255, .7);
+    background-image: url('assets/logo-white.svg');
+    background-position: 70% 60%;
+    background-repeat: no-repeat;
+    background-size: 80% auto;
     border: 5px solid $light;
     border-radius: $size;
     box-shadow: $level2;
@@ -180,7 +86,7 @@ body {
     width: $size;
 
     &:hover {
-      background: rgba(255, 255, 255, .8);
+      background-color: rgba(255, 255, 255, .8);
     }
 
     h1 {
@@ -198,8 +104,8 @@ body {
 
     h3 {
       background: 0;
-      font-size: 20%;
-      font-weight: 600;
+      font-size: 25%;
+      font-weight: 200;
       letter-spacing: 2px;
       margin-top: 2em;
     }
@@ -207,10 +113,107 @@ body {
     a:link,
     a:active,
     a:visited {
-      color: $light;
       background: lighten($grey-dark, 20%);
       border: 2px solid $grey-dark;
       box-shadow: $level1-inset;
+      color: $light;
+      padding: .5em 2em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background-color $std-trans $std-trans-type;
+    }
+
+    a:hover {
+      background: $orange;
+    }
+  }
+}
+
+.page-2-article {
+  align-items: center;
+  // background-color: red;
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  justify-content: center;
+  margin-top: $h-header;
+  vertical-align: middle;
+
+  > div {
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    font-size: 4.8vw;
+    height: 60vh;
+    justify-content: center;
+    width: 40vw;
+
+    > div:nth-of-type(1) {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 80%;
+
+      > img {
+        box-sizing: border-box;
+        height: auto;
+        padding: .5em 0 0;
+        width: 90%;
+      }
+    }
+
+    > div:nth-of-type(2) {
+      align-items: flex-start;
+      background-image: url('assets/xmill-stub.png');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: auto 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 20%;
+
+      > img {
+        height: 100%;
+      }
+    }
+
+    h1 {
+      color: $grey-dark;
+      font-weight: 900;
+      line-height: 1;
+      margin-left: 2vw;
+      margin-top: .5em;
+    }
+
+    h2 {
+      color: $grey-dark;
+      font-size: 35%;
+      font-weight: 300;
+      line-height: 1.2;
+      margin-left: 2vw;
+      padding: .75em 0 1em;
+      width: 80%;
+      
+    }
+
+    h3 {
+      background: 0;
+      font-size: 20%;
+      font-weight: 200;
+      letter-spacing: 2px;
+      margin-left: 2vw;
+      padding: .5em 0;
+    }
+
+    a:link,
+    a:active,
+    a:visited {
+      background: lighten($grey-dark, 20%);
+      border: 2px solid $grey-dark;
+      box-shadow: $level1-inset;
+      color: $light;
       padding: .5em 2em;
       text-decoration: none;
       text-transform: uppercase;
@@ -328,17 +331,17 @@ body {
   .menu-tile {
     &:nth-of-type(1) {
       background-color: $light;
-      background-image: url('assets/footer-aside-1.png');
+      background-image: url('');
     }
 
     &:nth-of-type(2) {
       background-color: $light;
-      background-image: url('assets/footer-aside-2.png');
+      background-image: url('');
     }
 
     &:nth-of-type(3) {
       background-color: $light;
-      background-image: url('assets/footer-aside-3.png');
+      background-image: url('');
     }
   }
 }
