@@ -1,0 +1,30 @@
+// This styling is for an interactive table of contents (with javascript)
+
+$toc-color: $grey-dark;
+$hover-color: $orange;
+
+.table-of-contents {
+  background: $toc-color;
+  box-shadow: $level2;
+  left: 3%;
+  padding: 1em 0;
+  position: absolute;
+  top: $h-header + 5vh;
+
+  a:link,
+  a:active,
+  a:visited {
+    background: $toc-color;
+    border-bottom: 1px solid transparent;
+    color: $light;
+    display: block;
+    line-height: 2;
+    padding: 0 1em;
+    text-decoration: none;
+    transition: background .2s ease-in;
+  }
+
+  a:hover {
+    background-color: $hover-color;
+  }
+}

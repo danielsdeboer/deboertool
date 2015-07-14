@@ -2,6 +2,10 @@
 
 @import 'css/var'; // Import this one first
 
+// COMPONENTS
+
+@import 'css/component_button-rect';
+
 @import 'reset';
 @import 'mixins';
 @import 'component_hover-buttons';
@@ -71,23 +75,6 @@ body {
       font-weight: 200;
       letter-spacing: 2px;
       margin-top: 2em;
-    }
-
-    a:link,
-    a:active,
-    a:visited {
-      background: lighten($grey-dark, 20%);
-      border: 2px solid $grey-dark;
-      box-shadow: $level1-inset;
-      color: $light;
-      padding: .5em 2em;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: background-color $std-trans $std-trans-type;
-    }
-
-    a:hover {
-      background: $orange;
     }
   }
 }

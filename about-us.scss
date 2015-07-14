@@ -2,10 +2,18 @@
 
 @import 'css/var'; // Import this one first, it has our variable
 
-@import 'reset';
-@import 'mixins';
+// COMPONENTS
+
+@import 'css/component_toc';
+@import 'css/component_button-rect';
 @import 'component_hover-buttons';
 @import 'component_header';
+
+// OTHER
+
+@import 'reset';
+@import 'mixins';
+
 @import 'site-wide';
 
 body {
@@ -14,27 +22,25 @@ body {
 
 .page-wrapper {
   align-items: center;
-  background: lightblue;
   display: flex;
   flex-direction: column;
   height: 100%;
+  padding-bottom: 2em;
   width: 100%;
 }
 
 article {
-  border: 1px solid green;
   margin-top: $h-header;
-  width: 50%;
+  width: 70%;
 
   section {
-    border: 1px solid red;
+    box-shadow: $level1;
     display: flex;
-    height: 50vh;
     margin-top: 2vh;
 
     > div:nth-of-type(1) {
       order: 1;
-      width: 30%;
+      width: 40%;
     }
 
     > div:nth-of-type(2) {
@@ -43,7 +49,8 @@ article {
       flex-direction: column;
       justify-content: center;
       order: 2;
-      width: 70%;
+      padding: 6vh 0;
+      width: 60%;
 
       h1 {
         font-size: 6vh;
@@ -58,8 +65,14 @@ article {
       }
 
       p {
-        padding: .5em 4em;
+        padding: .5em;
+        width: 70%;
       }
+
+      p:last-of-type {
+        margin-bottom: 1.5em;
+      }
+
     }
 
     &:nth-of-type(odd) {
@@ -68,6 +81,38 @@ article {
 
     &:nth-of-type(even) {
       flex-direction: row-reverse;
+    }
+
+    // set div backgrounds
+
+    div {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &:nth-of-type(1) {
+      > div {
+        &:nth-of-type(1) {
+          background-image: url('assets/technology.jpg');
+        }
+      }
+    }
+
+    &:nth-of-type(2) {
+      > div {
+        &:nth-of-type(1) {
+          background-image: url('assets/our-people.jpg');
+        }
+      }
+    }
+
+   &:nth-of-type(3) {
+      > div {
+        &:nth-of-type(1) {
+          background-image: url('assets/history.jpg');
+        }
+      }
     }
   }
 }

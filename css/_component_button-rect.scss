@@ -1,0 +1,22 @@
+// This styling must be applied the parent of an anchor, eg:
+// <h3 class="button-rect"><a href="">example</a></h3>
+
+.button-rect {
+  a:link,
+  a:active,
+  a:visited {
+    background: lighten($grey-dark, 20%);
+    border: 2px solid $grey-dark;
+    box-shadow: $level1-inset;
+    color: $light;
+    display: block;
+    padding: .5em 2em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color $std-trans $std-trans-type;
+  }
+
+  a:hover {
+    background: $orange;
+  }
+}

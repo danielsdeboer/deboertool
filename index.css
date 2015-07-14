@@ -1,3 +1,18 @@
+.button-rect a:link,
+.button-rect a:active,
+.button-rect a:visited {
+  background: #757575;
+  border: 2px solid #424242;
+  box-shadow: inset 0 7px 5px -5px rgba(66, 66, 66, 0.5);
+  color: #fff;
+  margin: .5em 2em;
+  padding: .5em 2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease-in-out; }
+.button-rect a:hover {
+  background: #ff7f2a; }
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -258,19 +273,6 @@ body {
       font-weight: 200;
       letter-spacing: 2px;
       margin-top: 2em; }
-    .page-1-article div a:link,
-    .page-1-article div a:active,
-    .page-1-article div a:visited {
-      background: #757575;
-      border: 2px solid #424242;
-      box-shadow: inset 0 7px 5px -5px rgba(66, 66, 66, 0.5);
-      color: #fff;
-      padding: .5em 2em;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: background-color 0.2s ease-in-out; }
-    .page-1-article div a:hover {
-      background: #ff7f2a; }
 
 .page-2-article {
   align-items: center;
