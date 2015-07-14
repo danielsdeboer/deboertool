@@ -1,0 +1,74 @@
+// scss-lint:disable NestingDepth
+
+@import 'css/var'; // Import this one first, it has our variable
+
+@import 'reset';
+@import 'mixins';
+@import 'component_hover-buttons';
+@import 'component_header';
+@import 'site-wide';
+
+body {
+  font-family: $base-font;
+}
+
+.page-wrapper {
+  align-items: center;
+  background: lightblue;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+article {
+  border: 1px solid green;
+  margin-top: $h-header;
+  width: 50%;
+
+  section {
+    border: 1px solid red;
+    display: flex;
+    height: 50vh;
+    margin-top: 2vh;
+
+    > div:nth-of-type(1) {
+      order: 1;
+      width: 30%;
+    }
+
+    > div:nth-of-type(2) {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      order: 2;
+      width: 70%;
+
+      h1 {
+        font-size: 6vh;
+        font-weight: 900;
+        line-height: .9;
+      }
+
+      h2 {
+        font-size: 3vh;
+        font-weight: 400;
+        line-height: 2;
+      }
+
+      p {
+        padding: .5em 4em;
+      }
+    }
+
+    &:nth-of-type(odd) {
+      flex-direction: row;
+    }
+
+    &:nth-of-type(even) {
+      flex-direction: row-reverse;
+    }
+  }
+}
+

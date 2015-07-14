@@ -1,49 +1,12 @@
 // scss-lint:disable NestingDepth
 
-// font stack
-$base-font: 'Raleway', sans-serif; //'Roboto', sans-serif;
-
-// color stack
-$light: #fff;
-$grey-mid: #9e9e9e;
-$grey-dark: #424242;
-$orange: rgba(255,127,42,1);
-$deeporange: #757575;
-
-// dbt color stack
-$blue: desaturate(#64b5f6, 25%);
-$green: desaturate(#69f0ae, 25%);
-$purple: #ea80fc;
-$lightorange: rgba(255,127,42,1);
-$red: lighten(#ff5252, 5%);
-
-// margins & padding
-$std-x: 3vw;
-$std-y: 2vh;
-
-// transitions
-$std-trans: .2s;
-$std-trans-type: ease-in-out;
-
-// sizing
-$h-header: 15vh; // var = $h-header; if this changes, change the jquery (window.height * var) in index.html to match
-$h-article: 75vh;
-$h-footer: 10vh;
-
-//icons
-$icon-height: 2.5em;
-$bg-popup: $light;
-
-// material levels
-$level1: 2px 2px 5px 2px rgba(66, 66, 66, .5);
-$level1-inset: inset 0 7px 5px -5px rgba(66, 66, 66, .5);
-$level2: 0 2px 7px 1px rgba(66, 66, 66, .5);
-$level3: 0 4px 10px 2px rgba(66, 66, 66, .5);
+@import 'css/var'; // Import this one first
 
 @import 'reset';
 @import 'mixins';
 @import 'component_hover-buttons';
 @import 'component_header';
+@import 'site-wide';
 
 // * {
 //   box-sizing: border-box;
@@ -70,7 +33,7 @@ body {
     $size: 6em;
     align-items: center;
     background-color: rgba(255, 255, 255, .7);
-    background-image: url('assets/logo-white.svg');
+    // background-image: url('assets/logo-white.svg');
     background-position: 70% 60%;
     background-repeat: no-repeat;
     background-size: 80% auto;
@@ -134,7 +97,7 @@ body {
   // background-color: red;
   display: flex;
   flex-direction: column;
-  height: 85vh;
+  height: $h-article;
   justify-content: center;
   margin-top: $h-header;
   vertical-align: middle;
@@ -240,6 +203,251 @@ body {
   }
 }
 
+.page-2-footer {
+  align-items: center;
+  background-color: #E3F2FD;
+  box-shadow: $level1-inset;
+  display: flex;
+  justify-content: center;
+  min-height: $h-footer;
+
+  li:nth-of-type(1) {
+    background-image: url('assets/chevron-down.svg');
+  }
+}
+
+.page-3-header {
+  height: $h-header;
+  background-color: #E3F2FD;
+}
+
+
+.page-3-article {
+  align-items: center;
+  background-color: #E3F2FD;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: $h-article;
+  justify-content: center;
+  vertical-align: middle;
+
+  > div {
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    font-size: 4.8vw;
+    height: 60vh;
+    justify-content: center;
+    width: 40vw;
+
+    > div:nth-of-type(1) {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 80%;
+
+      > img {
+        box-sizing: border-box;
+        height: auto;
+        padding: .5em 0 0;
+        width: 90%;
+      }
+    }
+
+    > div:nth-of-type(2) {
+      align-items: flex-start;
+      background-image: url('assets/vertical-p20-pro-illustrated.png');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: auto 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 20%;
+
+      > img {
+        height: 100%;
+      }
+    }
+
+    h1 {
+      color: $grey-dark;
+      font-weight: 900;
+      line-height: 1;
+      margin-left: 2vw;
+      margin-top: .5em;
+    }
+
+    h2 {
+      color: $grey-dark;
+      font-size: 35%;
+      font-weight: 300;
+      line-height: 1.2;
+      margin-left: 2vw;
+      padding: .75em 0 1em;
+      width: 80%;
+      
+    }
+
+    h3 {
+      background: 0;
+      font-size: 20%;
+      font-weight: 200;
+      letter-spacing: 2px;
+      margin-left: 2vw;
+      padding: .5em 0;
+    }
+
+    a:link,
+    a:active,
+    a:visited {
+      background: lighten($grey-dark, 20%);
+      border: 2px solid $grey-dark;
+      box-shadow: $level1-inset;
+      color: $light;
+      padding: .5em 2em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background-color $std-trans $std-trans-type;
+    }
+
+    a:hover {
+      background: $orange;
+    }
+  }
+}
+
+.page-3-footer {
+  align-items: center;
+  background-color: $light;
+  box-shadow: $level1-inset;
+  display: flex;
+  justify-content: center;
+  min-height: $h-footer;
+
+  li:nth-of-type(1) {
+    background-image: url('assets/chevron-down.svg');
+  }
+}
+
+.page-4-header {
+  height: $h-header;
+  background-color: $light;
+}
+
+
+.page-4-article {
+  align-items: center;
+  background-color: $light;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: $h-article;
+  justify-content: center;
+  vertical-align: middle;
+
+  > div {
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    font-size: 4.8vw;
+    height: 60vh;
+    justify-content: center;
+    width: 40vw;
+
+    > div:nth-of-type(1) {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 80%;
+
+      > img {
+        box-sizing: border-box;
+        height: auto;
+        padding: .5em 0 0;
+        width: 90%;
+      }
+    }
+
+    > div:nth-of-type(2) {
+      align-items: flex-start;
+      background-image: url('assets/regrinds.jpg');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: auto 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 20%;
+
+      > img {
+        height: 100%;
+      }
+    }
+
+    h1 {
+      color: $grey-dark;
+      font-weight: 900;
+      line-height: 1;
+      margin-left: 2vw;
+      margin-top: .5em;
+    }
+
+    h2 {
+      color: $grey-dark;
+      font-size: 35%;
+      font-weight: 300;
+      line-height: 1.2;
+      margin-left: 2vw;
+      padding: .75em 0 1em;
+      width: 80%;
+      
+    }
+
+    h3 {
+      background: 0;
+      font-size: 20%;
+      font-weight: 300;
+      letter-spacing: 2px;
+      margin-left: 2vw;
+      padding: .5em 0;
+    }
+
+    a:link,
+    a:active,
+    a:visited {
+      background: lighten($grey-dark, 20%);
+      border: 2px solid $grey-dark;
+      box-shadow: $level1-inset;
+      color: $light;
+      padding: .5em 2em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background-color $std-trans $std-trans-type;
+    }
+
+    a:hover {
+      background: $orange;
+    }
+  }
+}
+
+.page-4-footer {
+  align-items: center;
+  background-color: #F3E5F5;
+  box-shadow: $level1-inset;
+  display: flex;
+  justify-content: center;
+  min-height: $h-footer;
+
+  li:nth-of-type(1) {
+    background-image: url('assets/chevron-down.svg');
+  }
+}
+
 .flex-left {
   justify-content: flex-start;
 }
@@ -248,58 +456,9 @@ body {
   justify-content: flex-end;
 }
 
-.hover-menu {
-  background-color: $orange;
-  box-shadow: $level1-inset, $level1;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  left: 0;
-  opacity: 0;
-  position: fixed;
-  top: $h-header;
-  transition: all $std-trans $std-trans-type;
-  transition-delay: $std-trans;
-  visibility: hidden;
-  width: 100%;
-  z-index: 0;
-}
 
-.menu-tile {
-  align-items: center;
-  background-position: 105% center;
-  background-repeat: no-repeat;
-  background-size: auto 40%;
-  border: 1px solid $light;
-  display: flex;
-  height: 13vw;
-  justify-content: center;
-  margin: 1vw;
-  width: 13vw;
 
-  a {
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    opacity: 0;
-    text-align: center;
-    text-decoration: none;
-    transition: all $std-trans $std-trans-type;
-    width: 100%;
 
-    h1 {
-      color: $light;
-      font-size: 2vw;
-      font-weight: 300;
-    }
-  }
-
-  &:hover > a:link {
-    background: rgba(0, 0, 0, .5);
-    opacity: 1;
-  }
-}
 
 .products {
   .menu-tile {

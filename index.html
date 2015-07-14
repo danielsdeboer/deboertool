@@ -41,7 +41,7 @@
 			<div>
 				<div>
 					<h1>Yes, we can make it.</h1>
-					<h2>We've got 15 years of experience designing and building just about everything. If you can imagine it we can (probably) make it.</h2>
+					<h2>We've got 15 years of experience designing and building just about every kind of cutting tool. If you can imagine it we can (probably) make it.</h2>
 					<h3><a href="our-services.html#specials">Get a quote</a></h3>
 					<!-- <img src="assets/product-threadmill.png"> -->
 				</div>
@@ -54,6 +54,57 @@
 		</article>
 
 		<footer class="page-2-footer">
+			<ul class="hover-buttons">
+				<a href="" id="nav2"><li></li></a>
+			</ul>
+		</footer>
+
+		<div class="page-3-header">
+		</div>
+
+		<article class="page-3-article" id="page3">
+			<div>
+				<div>
+					<h1>In a hurry?</h1>
+					<h2>Need that special length of reach or tapered neck added <strong>right now</strong>? We'll have them done before the other guy even calls you back. Next day service on all simple modifications, or it's on us.</h2>
+					<h3><a href="our-services.html#specials">Get more details</a></h3>
+				</div>
+				
+				<div>
+					
+				</div>
+			
+			</div>
+		</article>
+
+		<footer class="page-3-footer">
+			<ul class="hover-buttons">
+				<a href="" id="nav3"><li></li></a>
+			</ul>
+		</footer>
+
+		<div class="page-4-header">
+		</div>
+
+		<article class="page-4-article" id="page3">
+			<div>
+				<div>
+					<h1>CNC TLC</h1>
+					<h2>Give us your used, your chipped, your box of regrinds yearning to be ground... And we'll regrind them. Good as new. It takes all types, so we take all types. From endmills to drills, we regrind to original specifications.</h2>
+					<h3><a href="our-services.html#regrinds">View regrind prices</a></h3>
+				</div>
+				
+				<div>
+					
+				</div>
+			
+			</div>
+		</article>
+
+		<footer class="page-4-footer">
+			<ul class="hover-buttons">
+				<a href="" id="nav2"><li></li></a>
+			</ul>
 		</footer>
 
 <script type="text/javascript">
@@ -74,7 +125,25 @@ $(document).ready(function() {
 		event.preventDefault();
 		$('html, body').animate({ scrollTop: targetOffset	}, 1000);
 	});
-})
+});
+
+$(document).ready(function() {
+	$('#nav2').click(function(event) {
+		var targetOffset2 = $('.page-3-article').offset().top - ($(window).height() * .15);
+
+		event.preventDefault(); // stop the a href click from doing anything
+		$('html, body').animate({scrollTop: targetOffset2}, 1000);
+	});
+});
+
+$(document).ready(function() {
+	$('#nav3').click(function(event) {
+		var targetOffset2 = $('.page-4-article').offset().top - ($(window).height() * .15);
+
+		event.preventDefault(); // stop the a href click from doing anything
+		$('html, body').animate({scrollTop: targetOffset2}, 1000);
+	});
+});
 
 </script>
 
