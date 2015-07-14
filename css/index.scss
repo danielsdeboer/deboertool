@@ -1,21 +1,19 @@
 // scss-lint:disable NestingDepth
 
-@import 'css/var'; // Import this one first
+@import 'var'; // Import this one first
 
 // COMPONENTS
 
-@import 'css/component-stack';
-// @import 'css/component_button-rect';
-// @import 'component_hover-buttons';
-// @import 'component_header';
+@import 'component-stack';
+
+// other stuff
 
 @import 'reset';
 @import 'mixins';
 @import 'site-wide';
 
-// * {
-//   box-sizing: border-box;
-// }
+$root: '../';
+$assets: 'assets/';
 
 body {
   font-family: $base-font;
@@ -23,7 +21,7 @@ body {
 
 .page-1-article {
   align-items: center;
-  background-image: url('assets/hero-new2.jpg');
+  background-image: url($root + $assets + 'hero-new2.jpg');
   background-position: center center;
   background-size: cover;
   display: flex;
@@ -38,7 +36,7 @@ body {
     $size: 6em;
     align-items: center;
     background-color: rgba(255, 255, 255, .7);
-    // background-image: url('assets/logo-white.svg');
+    // background-image: url($root + $assets + 'logo-white.svg');
     background-position: 70% 60%;
     background-repeat: no-repeat;
     background-size: 80% auto;
@@ -116,7 +114,7 @@ body {
 
     > div:nth-of-type(2) {
       align-items: flex-start;
-      background-image: url('assets/xmill-stub.png');
+      background-image: url($root + $assets + 'xmill-stub.png');
       background-position: center center;
       background-repeat: no-repeat;
       background-size: auto 90%;
@@ -187,7 +185,7 @@ body {
   min-height: $h-footer;
 
   li:nth-of-type(1) {
-    background-image: url('assets/chevron-down.svg');
+    background-image: url($root + $assets + 'chevron-down.svg');
   }
 }
 
@@ -200,7 +198,7 @@ body {
   min-height: $h-footer;
 
   li:nth-of-type(1) {
-    background-image: url('assets/chevron-down.svg');
+    background-image: url($root + $assets + 'chevron-down.svg');
   }
 }
 
@@ -246,7 +244,7 @@ body {
 
     > div:nth-of-type(2) {
       align-items: flex-start;
-      background-image: url('assets/vertical-p20-pro-illustrated.png');
+      background-image: url($root + $assets + 'vertical-p20-pro-illustrated.png');
       background-position: center center;
       background-repeat: no-repeat;
       background-size: auto 90%;
@@ -316,7 +314,7 @@ body {
   min-height: $h-footer;
 
   li:nth-of-type(1) {
-    background-image: url('assets/chevron-down.svg');
+    background-image: url($root + $assets + 'chevron-down.svg');
   }
 }
 
@@ -362,7 +360,7 @@ body {
 
     > div:nth-of-type(2) {
       align-items: flex-start;
-      background-image: url('assets/regrinds.jpg');
+      background-image: url($root + $assets + 'regrinds.jpg');
       background-position: center center;
       background-repeat: no-repeat;
       background-size: auto 90%;
@@ -432,7 +430,7 @@ body {
   min-height: $h-footer;
 
   li:nth-of-type(1) {
-    background-image: url('assets/chevron-down.svg');
+    background-image: url($root + $assets + 'chevron-down.svg');
   }
 }
 
@@ -453,23 +451,23 @@ body {
     background-color: $light;
 
     &:nth-of-type(1) {
-      background-image: url('assets/product-general-purpose.png');
+      background-image: url($root + $assets + 'product-general-purpose.png');
     }
 
     &:nth-of-type(2) {
-      background-image: url('assets/product-xmill.png');
+      background-image: url($root + $assets + 'product-xmill.png');
     }
 
     &:nth-of-type(3) {
-      background-image: url('assets/product-threadmill.png');
+      background-image: url($root + $assets + 'product-threadmill.png');
     }
 
     &:nth-of-type(4) {
-      background-image: url('assets/product-p20-pro.png');
+      background-image: url($root + $assets + 'product-p20-pro.png');
     }
 
     &:nth-of-type(5) {
-      background-image: url('assets/product-high-velocity.png');
+      background-image: url($root + $assets + 'product-high-velocity.png');
     }
   }
 }

@@ -4,7 +4,7 @@
   font-size: 85%;
   left: 3%;
   padding: 1em 0;
-  position: absolute;
+  position: fixed;
   top: 20vh; }
   .table-of-contents a:link,
   .table-of-contents a:active,
@@ -62,6 +62,7 @@
         font-weight: 400;
         line-height: 2; }
       .material-cards section > div:nth-of-type(2) p {
+        line-height: 1.4;
         padding: .5em;
         width: 70%; }
       .material-cards section > div:nth-of-type(2) p:last-of-type {

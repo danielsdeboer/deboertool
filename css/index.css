@@ -4,7 +4,7 @@
   font-size: 85%;
   left: 3%;
   padding: 1em 0;
-  position: absolute;
+  position: fixed;
   top: 20vh; }
   .table-of-contents a:link,
   .table-of-contents a:active,
@@ -62,6 +62,7 @@
         font-weight: 400;
         line-height: 2; }
       .material-cards section > div:nth-of-type(2) p {
+        line-height: 1.4;
         padding: .5em;
         width: 70%; }
       .material-cards section > div:nth-of-type(2) p:last-of-type {
@@ -75,11 +76,11 @@
       background-repeat: no-repeat;
       background-size: cover; }
     .material-cards section:nth-of-type(1) > div:nth-of-type(1) {
-      background-image: url("assets/technology.jpg"); }
+      background-image: url("../assets/technology.jpg"); }
     .material-cards section:nth-of-type(2) > div:nth-of-type(1) {
-      background-image: url("assets/our-people.jpg"); }
+      background-image: url("../assets/our-people.jpg"); }
     .material-cards section:nth-of-type(3) > div:nth-of-type(1) {
-      background-image: url("assets/history.jpg"); }
+      background-image: url("../assets/history.jpg"); }
 
 .hover-buttons {
   align-content: center;
@@ -298,7 +299,7 @@ body {
 
 .page-1-article {
   align-items: center;
-  background-image: url("assets/hero-new2.jpg");
+  background-image: url("../assets/hero-new2.jpg");
   background-position: center center;
   background-size: cover;
   display: flex;
@@ -371,7 +372,7 @@ body {
         width: 90%; }
     .page-2-article > div > div:nth-of-type(2) {
       align-items: flex-start;
-      background-image: url("assets/xmill-stub.png");
+      background-image: url("../assets/xmill-stub.png");
       background-position: center center;
       background-repeat: no-repeat;
       background-size: auto 90%;
@@ -424,7 +425,7 @@ body {
   justify-content: center;
   min-height: 10vh; }
   .page-1-footer li:nth-of-type(1) {
-    background-image: url("assets/chevron-down.svg"); }
+    background-image: url("../assets/chevron-down.svg"); }
 
 .page-2-footer {
   align-items: center;
@@ -434,7 +435,7 @@ body {
   justify-content: center;
   min-height: 10vh; }
   .page-2-footer li:nth-of-type(1) {
-    background-image: url("assets/chevron-down.svg"); }
+    background-image: url("../assets/chevron-down.svg"); }
 
 .page-3-header {
   height: 15vh;
@@ -470,7 +471,7 @@ body {
         width: 90%; }
     .page-3-article > div > div:nth-of-type(2) {
       align-items: flex-start;
-      background-image: url("assets/vertical-p20-pro-illustrated.png");
+      background-image: url("../assets/vertical-p20-pro-illustrated.png");
       background-position: center center;
       background-repeat: no-repeat;
       background-size: auto 90%;
@@ -523,7 +524,7 @@ body {
   justify-content: center;
   min-height: 10vh; }
   .page-3-footer li:nth-of-type(1) {
-    background-image: url("assets/chevron-down.svg"); }
+    background-image: url("../assets/chevron-down.svg"); }
 
 .page-4-header {
   height: 15vh;
@@ -559,7 +560,7 @@ body {
         width: 90%; }
     .page-4-article > div > div:nth-of-type(2) {
       align-items: flex-start;
-      background-image: url("assets/regrinds.jpg");
+      background-image: url("../assets/regrinds.jpg");
       background-position: center center;
       background-repeat: no-repeat;
       background-size: auto 90%;
@@ -612,7 +613,7 @@ body {
   justify-content: center;
   min-height: 10vh; }
   .page-4-footer li:nth-of-type(1) {
-    background-image: url("assets/chevron-down.svg"); }
+    background-image: url("../assets/chevron-down.svg"); }
 
 .flex-left {
   justify-content: flex-start; }
@@ -623,15 +624,15 @@ body {
 .products .menu-tile {
   background-color: #fff; }
   .products .menu-tile:nth-of-type(1) {
-    background-image: url("assets/product-general-purpose.png"); }
+    background-image: url("../assets/product-general-purpose.png"); }
   .products .menu-tile:nth-of-type(2) {
-    background-image: url("assets/product-xmill.png"); }
+    background-image: url("../assets/product-xmill.png"); }
   .products .menu-tile:nth-of-type(3) {
-    background-image: url("assets/product-threadmill.png"); }
+    background-image: url("../assets/product-threadmill.png"); }
   .products .menu-tile:nth-of-type(4) {
-    background-image: url("assets/product-p20-pro.png"); }
+    background-image: url("../assets/product-p20-pro.png"); }
   .products .menu-tile:nth-of-type(5) {
-    background-image: url("assets/product-high-velocity.png"); }
+    background-image: url("../assets/product-high-velocity.png"); }
 
 .services .menu-tile:nth-of-type(1) {
   background-color: #fff;
