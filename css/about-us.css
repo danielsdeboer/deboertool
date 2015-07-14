@@ -1,6 +1,7 @@
 .table-of-contents {
   background: #424242;
-  box-shadow: 0 2px 7px 1px rgba(66, 66, 66, 0.5);
+  box-shadow: 1px 2px 5px 1px rgba(66, 66, 66, 0.5);
+  font-size: 85%;
   left: 3%;
   padding: 1em 0;
   position: absolute;
@@ -34,6 +35,52 @@
 .button-rect a:hover {
   background: #ff7f2a; }
 
+.material-cards {
+  margin-top: 15vh;
+  width: 70%; }
+  .material-cards section {
+    box-shadow: 2px 2px 5px 2px rgba(66, 66, 66, 0.5);
+    display: flex;
+    margin-top: 2vh; }
+    .material-cards section > div:nth-of-type(1) {
+      order: 1;
+      width: 40%; }
+    .material-cards section > div:nth-of-type(2) {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      order: 2;
+      padding: 6vh 0;
+      width: 60%; }
+      .material-cards section > div:nth-of-type(2) h1 {
+        font-size: 6vh;
+        font-weight: 900;
+        line-height: .9; }
+      .material-cards section > div:nth-of-type(2) h2 {
+        font-size: 3vh;
+        font-weight: 400;
+        line-height: 2; }
+      .material-cards section > div:nth-of-type(2) p {
+        padding: .5em;
+        width: 70%; }
+      .material-cards section > div:nth-of-type(2) p:last-of-type {
+        margin-bottom: 1.5em; }
+    .material-cards section:nth-of-type(odd) {
+      flex-direction: row; }
+    .material-cards section:nth-of-type(even) {
+      flex-direction: row-reverse; }
+    .material-cards section div {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover; }
+    .material-cards section:nth-of-type(1) > div:nth-of-type(1) {
+      background-image: url("../assets/technology.jpg"); }
+    .material-cards section:nth-of-type(2) > div:nth-of-type(1) {
+      background-image: url("../assets/our-people.jpg"); }
+    .material-cards section:nth-of-type(3) > div:nth-of-type(1) {
+      background-image: url("../assets/history.jpg"); }
+
 .hover-buttons {
   align-content: center;
   display: flex;
@@ -48,7 +95,7 @@
     background-repeat: no-repeat;
     background-size: 70% auto;
     border-radius: 100%;
-    box-shadow: 0 2px 7px 1px rgba(66, 66, 66, 0.5);
+    box-shadow: 1px 2px 5px 1px rgba(66, 66, 66, 0.5);
     height: 2.5em;
     margin: 0 .5vw;
     min-height: 2.5em;
@@ -68,7 +115,7 @@
   .hover-buttons aside {
     background-color: #fff;
     bottom: -2.8em;
-    box-shadow: 0 2px 7px 1px rgba(66, 66, 66, 0.5);
+    box-shadow: 1px 2px 5px 1px rgba(66, 66, 66, 0.5);
     color: #fff;
     left: 50%;
     opacity: 0;
@@ -256,51 +303,5 @@ body {
   height: 100%;
   padding-bottom: 2em;
   width: 100%; }
-
-article {
-  margin-top: 15vh;
-  width: 70%; }
-  article section {
-    box-shadow: 2px 2px 5px 2px rgba(66, 66, 66, 0.5);
-    display: flex;
-    margin-top: 2vh; }
-    article section > div:nth-of-type(1) {
-      order: 1;
-      width: 40%; }
-    article section > div:nth-of-type(2) {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      order: 2;
-      padding: 6vh 0;
-      width: 60%; }
-      article section > div:nth-of-type(2) h1 {
-        font-size: 6vh;
-        font-weight: 900;
-        line-height: .9; }
-      article section > div:nth-of-type(2) h2 {
-        font-size: 3vh;
-        font-weight: 400;
-        line-height: 2; }
-      article section > div:nth-of-type(2) p {
-        padding: .5em;
-        width: 70%; }
-      article section > div:nth-of-type(2) p:last-of-type {
-        margin-bottom: 1.5em; }
-    article section:nth-of-type(odd) {
-      flex-direction: row; }
-    article section:nth-of-type(even) {
-      flex-direction: row-reverse; }
-    article section div {
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover; }
-    article section:nth-of-type(1) > div:nth-of-type(1) {
-      background-image: url("assets/technology.jpg"); }
-    article section:nth-of-type(2) > div:nth-of-type(1) {
-      background-image: url("assets/our-people.jpg"); }
-    article section:nth-of-type(3) > div:nth-of-type(1) {
-      background-image: url("assets/history.jpg"); }
 
 /*# sourceMappingURL=about-us.css.map */

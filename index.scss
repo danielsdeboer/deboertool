@@ -4,12 +4,13 @@
 
 // COMPONENTS
 
-@import 'css/component_button-rect';
+@import 'css/component-stack';
+// @import 'css/component_button-rect';
+// @import 'component_hover-buttons';
+// @import 'component_header';
 
 @import 'reset';
 @import 'mixins';
-@import 'component_hover-buttons';
-@import 'component_header';
 @import 'site-wide';
 
 // * {

@@ -1,35 +1,24 @@
-// scss-lint:disable NestingDepth
+// card structure should be something like:
+//
+// <article class="material-cards">
+//   <section>  
+//     <div>
+//       <!-- picture goes here (background) -->
+//     </div>
+//     <div>
+//       <!-- content goes here (<h1> and whatnot)
+//     </div>
+//   </section>
+// </article>
+//
+// To override the default backgrounds (and you should), just add something like the following to your local CSS;
+//
+// .material-cards section:nth-of-type(1) div:nth-of-type(1) { background-image: url('something.jpg') }
+// .material-cards section:nth-of-type(2) div:nth-of-type(1) { background-image: url('something-else.jpg') }
+//
+// et cetera
 
-@import 'css/var'; // Import this one first, it has our variable
-
-// COMPONENTS
-
-@import 'css/component_toc';
-@import 'css/component_button-rect';
-@import 'component_hover-buttons';
-@import 'component_header';
-
-// OTHER
-
-@import 'reset';
-@import 'mixins';
-
-@import 'site-wide';
-
-body {
-  font-family: $base-font;
-}
-
-.page-wrapper {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding-bottom: 2em;
-  width: 100%;
-}
-
-article {
+.material-cards {
   margin-top: $h-header;
   width: 70%;
 
@@ -72,7 +61,6 @@ article {
       p:last-of-type {
         margin-bottom: 1.5em;
       }
-
     }
 
     &:nth-of-type(odd) {
@@ -94,7 +82,7 @@ article {
     &:nth-of-type(1) {
       > div {
         &:nth-of-type(1) {
-          background-image: url('assets/technology.jpg');
+          background-image: url('../assets/technology.jpg');
         }
       }
     }
@@ -102,7 +90,7 @@ article {
     &:nth-of-type(2) {
       > div {
         &:nth-of-type(1) {
-          background-image: url('assets/our-people.jpg');
+          background-image: url('../assets/our-people.jpg');
         }
       }
     }
@@ -110,10 +98,9 @@ article {
    &:nth-of-type(3) {
       > div {
         &:nth-of-type(1) {
-          background-image: url('assets/history.jpg');
+          background-image: url('../assets/history.jpg');
         }
       }
     }
   }
 }
-
