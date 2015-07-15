@@ -1,7 +1,6 @@
 $(document).ready(function() {
-  var vh = $(window).height() * .01;
-
   $('.table-of-contents li').click(function(e) {
+    var vh = $(window).height() * .01;
     var index_number = $(this).index() + 1;
     e.preventDefault();
         

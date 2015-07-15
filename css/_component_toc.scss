@@ -1,16 +1,34 @@
 // This styling is for an interactive table of contents (with javascript)
 
+@import 'mixins';
+
 $toc-color: $grey-dark;
 $hover-color: $orange;
 
 .table-of-contents {
   background: $toc-color;
   box-shadow: $level2;
+  box-sizing: border-box;
   font-size: 85%;
-  left: 3%;
+  left: $w-toc-margin;
   padding: 1em 0;
   position: fixed;
   top: $h-header + 5vh;
+  width: $w-toc-body;
+
+  @include desktop-large {
+    left: $w-toc-margin-break1;
+    width: $w-toc-body-break1;
+  }
+
+  @include desktop-small {
+    left: $w-toc-margin-break2;
+    width: $w-toc-body-break2;
+  }
+
+  @include mobile-large {
+    display: none;
+  }
 
   a:link,
   a:active,
@@ -19,13 +37,24 @@ $hover-color: $orange;
     border-bottom: 1px solid transparent;
     color: $light;
     display: block;
-    line-height: 2;
-    padding: 0 1em;
+    line-height: 1;
+    padding: .6em 1em;
     text-decoration: none;
     transition: background .2s ease-in;
   }
 
   a:hover {
     background-color: $hover-color;
+  }
+
+  h1 {
+    border-bottom: 1px solid $light;
+    color: $light;
+    margin-bottom: .5em;
+    padding: .4em 1em;
+
+    span {
+      font-size: 85%;
+    }
   }
 }

@@ -1,0 +1,40 @@
+.table-of-contents {
+  background: #424242;
+  box-shadow: 1px 2px 5px 1px rgba(66, 66, 66, 0.5);
+  box-sizing: border-box;
+  font-size: 85%;
+  left: 2.5%;
+  padding: 1em 0;
+  position: fixed;
+  top: 20vh;
+  width: 10%; }
+  @media screen and (max-width: 1600px) {
+    .table-of-contents {
+      left: 1.5%;
+      width: 12.5%; } }
+  @media screen and (max-width: 1200px) {
+    .table-of-contents {
+      left: 0.5%;
+      width: 15%; } }
+  .table-of-contents a:link,
+  .table-of-contents a:active,
+  .table-of-contents a:visited {
+    background: #424242;
+    border-bottom: 1px solid transparent;
+    color: #fff;
+    display: block;
+    line-height: 1;
+    padding: .4em 1em;
+    text-decoration: none;
+    transition: background .2s ease-in; }
+  .table-of-contents a:hover {
+    background-color: #ff7f2a; }
+  .table-of-contents h1 {
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    margin-bottom: .5em;
+    padding: .4em 1em; }
+    .table-of-contents h1 span {
+      font-size: 85%; }
+
+/*# sourceMappingURL=_component_toc.css.map */

@@ -41,3 +41,23 @@ $level3: 0 4px 10px 2px rgba(66, 66, 66, .5);
 // directories
 $root: '../';
 $assets: 'assets/';
+
+// linked widths
+// toc (fixed element) & toc-container (flex element) interaction
+$w-toc-margin: 2.5%;
+$w-toc-body: 10%;
+$w-toc-container: $w-toc-body + ($w-toc-margin * 2);
+
+// media breaks
+
+$break1: 1600px;
+$w-toc-margin-break1: 1.5%;
+$w-toc-body-break1: 12.5%;
+$w-toc-container-break1:  $w-toc-body-break1 + $w-toc-margin-break1;
+
+$break2: 1200px;
+$w-toc-margin-break2: .5%;
+$w-toc-body-break2: 15%;
+$w-toc-container-break2:  $w-toc-body-break2 + $w-toc-margin-break2;
+
+$break3: 800px;

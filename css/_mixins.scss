@@ -1,3 +1,23 @@
+@import 'var';
+
+@mixin desktop-large {
+  @media screen and (max-width: $break1)  {
+    @content;
+  }
+}
+
+@mixin desktop-small {
+  @media screen and (max-width: $break2)  {
+    @content;
+  }
+}
+
+@mixin mobile-large {
+  @media screen and (max-width: $break3)  {
+    @content;
+  }
+}
+
 @mixin center-middle {
   left: 50%;
   top: 50%;

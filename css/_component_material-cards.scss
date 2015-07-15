@@ -18,14 +18,66 @@
 //
 // et cetera
 
+@import 'mixins';
+
 .material-cards {
+  display: flex;
+  flex-direction: row;
   margin-top: $h-header;
-  width: 70%;
+  justify-content: stretch;
+  width: 100%;
+
+  .toc-container { // this container interacts with the component_toc width (fixed element)
+    display: flex;
+    order: 1;
+    width: $w-toc-container;
+
+    @include desktop-large {
+      width: $w-toc-container-break1;
+    }
+
+    @include desktop-small {
+      width: $w-toc-container-break2;
+    }
+
+    @include mobile-large {
+      display: none;
+    }
+  }
+
+  $p: 1.1;
+
+  .card-container {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    order: 2;
+    padding: 0 3vw 0 ($w-toc-margin * .5);
+    width: 100% - $w-toc-container;
+
+    @include desktop-large {
+      padding-left: $w-toc-margin-break1 * $p;
+      padding-right: $w-toc-margin-break1 * $p;
+      width: 100% - $w-toc-container-break1;
+    }
+
+    @include desktop-small {
+      padding-left: $w-toc-margin-break2 * $p;
+      padding-right: $w-toc-margin-break2 * $p;
+      width: 100% - $w-toc-container-break2;
+    }
+
+    @include mobile-large {
+      width: 100%;
+    }
+  }
 
   section {
     box-shadow: $level1;
     display: flex;
     margin-top: 2vh;
+    width: 100%;
 
     > div:nth-of-type(1) {
       order: 1;
@@ -38,25 +90,37 @@
       flex-direction: column;
       justify-content: center;
       order: 2;
-      padding: 6vh 0;
+      padding: 2vh 0 4vh;
       width: 60%;
 
       h1 {
         font-size: 6vh;
         font-weight: 900;
         line-height: .9;
+        padding: .1em .25em;
+        text-align: center;
       }
 
       h2 {
         font-size: 3vh;
         font-weight: 400;
-        line-height: 2;
+        line-height: 1;
+        padding: .5em .5em .25em;
+        text-align: center;
       }
 
       p {
         line-height: 1.4;
         padding: .5em;
         width: 70%;
+
+        @include desktop-large {
+          width: 80%
+        }
+
+        @include desktop-small {
+          width: 85%;
+        }
       }
 
       p:last-of-type {
@@ -70,6 +134,10 @@
 
     &:nth-of-type(even) {
       flex-direction: row-reverse;
+    }
+
+    &:last-of-type {
+      margin-bottom: 3em;
     }
 
     // set div backgrounds
@@ -105,3 +173,4 @@
     }
   }
 }
+
