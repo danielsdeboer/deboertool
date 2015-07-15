@@ -266,6 +266,29 @@
     background: rgba(0, 0, 0, 0.5);
     opacity: 1; }
 
+.products .menu-tile {
+  background-color: #fff; }
+  .products .menu-tile:nth-of-type(1) {
+    background-image: url("../assets/product-general-purpose.png"); }
+  .products .menu-tile:nth-of-type(2) {
+    background-image: url("../assets/product-xmill.png"); }
+  .products .menu-tile:nth-of-type(3) {
+    background-image: url("../assets/product-threadmill.png"); }
+  .products .menu-tile:nth-of-type(4) {
+    background-image: url("../assets/product-p20-pro.png"); }
+  .products .menu-tile:nth-of-type(5) {
+    background-image: url("../assets/product-high-velocity.png"); }
+
+.services .menu-tile:nth-of-type(1) {
+  background-color: #fff;
+  background-image: url(""); }
+.services .menu-tile:nth-of-type(2) {
+  background-color: #fff;
+  background-image: url(""); }
+.services .menu-tile:nth-of-type(3) {
+  background-color: #fff;
+  background-image: url(""); }
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -299,7 +322,7 @@ body {
 
 .page-1-article {
   align-items: center;
-  background-image: url("../assets/hero-new2.jpg");
+  background-image: url("../assets/hero-xmill.jpg");
   background-position: center center;
   background-size: cover;
   display: flex;
@@ -620,28 +643,5 @@ body {
 
 .flex-right {
   justify-content: flex-end; }
-
-.products .menu-tile {
-  background-color: #fff; }
-  .products .menu-tile:nth-of-type(1) {
-    background-image: url("../assets/product-general-purpose.png"); }
-  .products .menu-tile:nth-of-type(2) {
-    background-image: url("../assets/product-xmill.png"); }
-  .products .menu-tile:nth-of-type(3) {
-    background-image: url("../assets/product-threadmill.png"); }
-  .products .menu-tile:nth-of-type(4) {
-    background-image: url("../assets/product-p20-pro.png"); }
-  .products .menu-tile:nth-of-type(5) {
-    background-image: url("../assets/product-high-velocity.png"); }
-
-.services .menu-tile:nth-of-type(1) {
-  background-color: #fff;
-  background-image: url(""); }
-.services .menu-tile:nth-of-type(2) {
-  background-color: #fff;
-  background-image: url(""); }
-.services .menu-tile:nth-of-type(3) {
-  background-color: #fff;
-  background-image: url(""); }
 
 /*# sourceMappingURL=index.css.map */

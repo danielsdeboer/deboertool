@@ -7,6 +7,6 @@ $(document).ready(function() {
         
     $('html, body').animate({
       scrollTop: $('.material-cards section:nth-of-type('+index_number+')').offset().top-(vh * 17)
-    }, 1000);
+    }, 700);
   });
 })

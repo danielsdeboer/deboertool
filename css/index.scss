@@ -12,16 +12,13 @@
 @import 'mixins';
 @import 'site-wide';
 
-$root: '../';
-$assets: 'assets/';
-
 body {
   font-family: $base-font;
 }
 
 .page-1-article {
   align-items: center;
-  background-image: url($root + $assets + 'hero-new2.jpg');
+  background-image: url($root + $assets + 'hero-xmill.jpg');
   background-position: center center;
   background-size: cover;
   display: flex;
@@ -442,51 +439,3 @@ body {
   justify-content: flex-end;
 }
 
-
-
-
-
-.products {
-  .menu-tile {
-    background-color: $light;
-
-    &:nth-of-type(1) {
-      background-image: url($root + $assets + 'product-general-purpose.png');
-    }
-
-    &:nth-of-type(2) {
-      background-image: url($root + $assets + 'product-xmill.png');
-    }
-
-    &:nth-of-type(3) {
-      background-image: url($root + $assets + 'product-threadmill.png');
-    }
-
-    &:nth-of-type(4) {
-      background-image: url($root + $assets + 'product-p20-pro.png');
-    }
-
-    &:nth-of-type(5) {
-      background-image: url($root + $assets + 'product-high-velocity.png');
-    }
-  }
-}
-
-.services {
-  .menu-tile {
-    &:nth-of-type(1) {
-      background-color: $light;
-      background-image: url('');
-    }
-
-    &:nth-of-type(2) {
-      background-color: $light;
-      background-image: url('');
-    }
-
-    &:nth-of-type(3) {
-      background-color: $light;
-      background-image: url('');
-    }
-  }
-}
