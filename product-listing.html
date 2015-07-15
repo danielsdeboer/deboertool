@@ -24,8 +24,21 @@
 	<aside class="table-of-contents">
 		<script>
 		// This jquery is design-phase only, imp-phase in PHP
-		$('body .table-of-contents').load('_component_toc.html');
-		</script>	
+		// This has to be prepended because load() replaces existing content (the per-page ul)
+		$.ajax({
+			url: '_component_toc.html',
+			success: function(data) { $('.table-of-contents').prepend(data); },
+			dataType: 'html'
+		})
+		</script>
+		<ul>
+		  <li><a href="">General Purpose</a></li>
+		  <li><a href="">X-Mill Variable Helix</a></li>
+		  <li><a href="">Threadmill</a></li>
+		  <li><a href="">P-20 Pro</a></li>
+		  <li><a href="">High Velocity</a></li>
+		  <li><a href="">A-Mill for Aluminum</a></li>
+		</ul>
 	</aside>
 
 	<article class="material-cards">

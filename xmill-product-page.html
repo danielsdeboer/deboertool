@@ -12,136 +12,140 @@
 
 <body>
 
-<header>
-	<script>
-		$('body > header').load('_nav.html');
-	</script>
-</header>
-
-<article>
-	<header>
-			<h1>X-Mill: A variable helix rougher for any material</h1>
-			<p>It took 2 years to develop the current X-Mill (with continuous improvements since then). We had to match the material to the geometry to the edge prep to the coating... We even bought our own coating machine to make this tool possible.</p>
-			
-			<table>
-				<tbody>
-					<tr>
-						<td>Application:</td>
-						<td>High speed roughing, some finishing</td>
-					</tr>
-					<tr>
-						<td>Material:</td>
-						<td>Cast Iron, Tool Steel, Carbon Steels</td>
-					</tr>
-					<tr>
-						<td>Environment:</td>
-						<td>Flood coolant or air blast coolant</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<ul>
-				<li>
-					<a href=""></a>
-					<aside>X-Mill Product Guide (PDF)</aside>
-				</li>
-				<li>
-					<a href=""></a>
-					<aside>X-Mill Speeds and Feeds (PDF)</aside>
-				</li>
-				<li>
-					<a href=""></a>
-					<aside>X-Mill Video (YouTube)</aside>
-				</li>
-				<li>
-					<a href=""></a>
-					<aside>Catalogue Section (PDF)</aside>
-				</li>
-			</ul>
+	<header class="page-1-header">
+		<script>
+		// This jquery is design-phase only, imp-phase in PHP
+		$('body > .page-1-header').load('_component_header.html');
+		</script>		
 	</header>
 
-	<section class="material">
-		<figure>
-			<!-- div contains background image -->
-		</figure>
+<div class="page-wrapper">
+	<aside class="table-of-contents">
+		<script>
+		// This jquery is design-phase only, imp-phase in PHP
+		// This has to be prepended because load() replaces existing content (the per-page ul)
+		$.ajax({
+			url: '_component_toc.html',
+			success: function(data) { $('.table-of-contents').prepend(data); },
+			dataType: 'html'
+		})
+		</script>
+		<ul>
+			<li><a href="">X-Mill Stub</a></li>
+			<li><a href="">X-Mill Standard</a></li>
+			<li><a href="">X-Mill Long Reach</a></li>
+			<li><a href="">X-Mill Metric</a></li>
+		</ul>
+	</aside>
 
-		<section>
-				<h1>X-Mill Stub</h1>
-				<h2>Flat Bottom, Radius, Ball Nose (inch sizes)</h2>
-				<p>Great for application where you want to minimize vibrations. Shorter overall length of cut and overall length.</p>
-				<span><a href="xmill-stub-product-listing.html">View the X-Mill Stub product listing</a></span>
-		</section>
-	</section>
 
-	<section class="material">
-		<figure>
-			<!-- div contains background image -->
-		</figure>
-		
-		<section>
-			<h1>X-Mill Regular</h1>
-			<h2>Flat Bottom, Radius, Ball Nose (inch sizes)</h2>
-			<p>Our most popular X-Mill series. Standard lengths of cut and overall lengths. Great for most applications.</p>
-			<span><a href="#">View the X-Mill Regular product page</a></span>
-		</section>
-	</section>
-
-	<section class="material">
-		<figure>
-			<!-- div contains background image -->
-		</figure>
+	<article class="material-cards">
+		<div class="toc-container"></div>
 	
-		<section>
-			<h1>X-Mill Long Reach</h1>
-			<h2>Radius, Ball Nose (inch sizes)</h2>
-			<p>For working in a tough-to-reach places. Extended lengths of reach with undersized necks. Feathered lead-out to minimise step-down machining lines.</p>
-			<span><a href="#">View the X-Mill Long Reach product page</a></span>
-		</section>
-	</section>
+		<div class="card-container">
+			<header>
+					<h1>X-Mill: A variable helix rougher for any material</h1>
+					<p>It took 2 years to develop the current X-Mill (with continuous improvements since then). We had to match the material to the geometry to the edge prep to the coating... We even bought our own coating machine to make this tool possible.</p>
+					
+					<table>
+						<tbody>
+							<tr>
+								<td>Application:</td>
+								<td>High speed roughing, some finishing</td>
+							</tr>
+							<tr>
+								<td>Material:</td>
+								<td>Cast Iron, Tool Steel, Carbon Steels</td>
+							</tr>
+							<tr>
+								<td>Environment:</td>
+								<td>Flood coolant or air blast coolant</td>
+							</tr>
+						</tbody>
+					</table>
 
-	<section class="material">
-		<figure>
-			<!-- div contains background image -->
-		</figure>
+					<ul>
+						<li>
+							<a href=""></a>
+							<aside>X-Mill Product Guide (PDF)</aside>
+						</li>
+						<li>
+							<a href=""></a>
+							<aside>X-Mill Speeds and Feeds (PDF)</aside>
+						</li>
+						<li>
+							<a href=""></a>
+							<aside>X-Mill Video (YouTube)</aside>
+						</li>
+						<li>
+							<a href=""></a>
+							<aside>Catalogue Section (PDF)</aside>
+						</li>
+					</ul>
+			</header>
 
-		<section>
-			<h1>X-Mill Metric</h1>
-			<h2>Radius (metric sizes)</h2>
-			<p>We have a limited selection of Metric X-Mills available in standard sizes and lengths.</p>
-			<span><a href="#">View the X-Mill Metric product page</a></span>
-		</section>
-	</section>
-</article>
+			<section>
+				<div>
+					<!-- div contains background image -->
+				</div>
 
-<aside class="cart">
-	<a href="">
-		<img src="assets/cart.svg">
-	</a>
-</aside>
+				<div>
+						<h1>X-Mill Stub</h1>
+						<h2>Flat Bottom, Radius, Ball Nose (inch sizes)</h2>
+						<p>Great for application where you want to minimize vibrations. Shorter overall length of cut and overall length.</p>
+						<span class="button-rect"><a href="xmill-stub-product-listing.html">View the X-Mill Stub product listing</a></span>
+				</div>
+			</section>
 
-	
-<script
->$(document).ready(function(){
-	$("#clickToReveal").click(function(){
-		$(".reveal").slideDown("slow");
-    });
-});
+			<section class="material">
+				<div>
+					<!-- div contains background image -->
+				</div>
+				
+				<div>
+					<h1>X-Mill Regular</h1>
+					<h2>Flat Bottom, Radius, Ball Nose (inch sizes)</h2>
+					<p>Our most popular X-Mill series. Standard lengths of cut and overall lengths. Great for most applications.</p>
+					<span class="button-rect"><a href="#">View the X-Mill Regular product page</a></span>
+				</div>
+			</section>
 
-$(document).ready(function(){
-	$("#clickToClose").click(function(){
-		$(".reveal").slideUp("slow");
-    });
-});
+			<section class="material">
+				<div>
+					<!-- div contains background image -->
+				</div>
+			
+				<div>
+					<h1>X-Mill Long Reach</h1>
+					<h2>Radius, Ball Nose (inch sizes)</h2>
+					<p>For working in a tough-to-reach places. Extended lengths of reach with undersized necks. Feathered lead-out to minimise step-down machining lines.</p>
+					<span class="button-rect"><a href="#">View the X-Mill Long Reach product page</a></span>
+				</div>
+			</section>
 
-</script>
+			<section class="material">
+				<div>
+					<!-- div contains background image -->
+				</div>
 
-<footer>
-	<script>
-		$('body > footer').load('_footer.html');
-	</script>
-</footer>
+				<div>
+					<h1>X-Mill Metric</h1>
+					<h2>Radius (metric sizes)</h2>
+					<p>We have a limited selection of Metric X-Mills available in standard sizes and lengths.</p>
+					<span class="button-rect"><a href="#">View the X-Mill Metric product page</a></span>
+				</div>
+			</section>
+		</div>
+	</article>
 
+	<footer class="component-footer">
+		<script>
+		// This jquery is design-phase only, imp-phase in PHP
+		$('body .component-footer').load('_component_footer.html');
+		</script>		
+	</footer>
 
+</div>
 
 </body>
 </html>

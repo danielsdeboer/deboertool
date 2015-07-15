@@ -443,4 +443,19 @@ body {
   height: 100%;
   width: 100%; }
 
+.material-cards section div {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto 90%; }
+.material-cards section:nth-of-type(1) div:nth-of-type(1) {
+  background-image: url("../assets/product-vertical-general-purpose.jpg"); }
+.material-cards section:nth-of-type(2) div:nth-of-type(1) {
+  background-image: url("../assets/product-vertical-xmill.jpg"); }
+.material-cards section:nth-of-type(3) div:nth-of-type(1) {
+  background-image: url("../assets/product-vertical-threadmill.jpg"); }
+.material-cards section:nth-of-type(4) div:nth-of-type(1) {
+  background-image: url("../assets/product-vertical-p20-pro.jpg"); }
+.material-cards section:nth-of-type(5) div:nth-of-type(1) {
+  background-image: url("../assets/product-vertical-high-velocity.jpg"); }
+
 /*# sourceMappingURL=product-listing.css.map */
