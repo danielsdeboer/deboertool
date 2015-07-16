@@ -8,7 +8,7 @@
   height: $h-header;
   justify-content: space-between;
   left: 0;
-  min-height: $h-header;
+  max-height: $h-header;
   position: fixed;
   top: 0;
   width: 100%;
@@ -69,10 +69,6 @@
       height: 1.2em;
       width: 1em;
     }
-
-    
-
-
   }
 
   li:hover {
@@ -100,6 +96,20 @@
 
   figure {
     text-align: center;
+
+    img {
+      height: 5rem;
+    }
+
+    a:link,
+    a:visited,
+    a:active {
+      color: $light;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: .8;
+      text-decoration: none;
+    }
   }
 
   aside {

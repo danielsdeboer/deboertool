@@ -6,7 +6,7 @@
   left: 2.5%;
   padding: 1em 0;
   position: fixed;
-  top: 20vh;
+  top: 15rem;
   width: 10%; }
   @media screen and (max-width: 1600px) {
     .table-of-contents {
@@ -16,6 +16,9 @@
     .table-of-contents {
       left: 0.5%;
       width: 15%; } }
+  @media screen and (max-width: 800px) {
+    .table-of-contents {
+      display: none; } }
   .table-of-contents a:link,
   .table-of-contents a:active,
   .table-of-contents a:visited {
@@ -24,7 +27,7 @@
     color: #fff;
     display: block;
     line-height: 1;
-    padding: .4em 1em;
+    padding: .6em 1em;
     text-decoration: none;
     transition: background .2s ease-in; }
   .table-of-contents a:hover {

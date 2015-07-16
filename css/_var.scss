@@ -24,7 +24,7 @@ $std-trans: .2s;
 $std-trans-type: ease-in-out;
 
 // sizing
-$h-header: 15vh; // var = $h-header; if this changes, change the jquery (window.height * var) in index.html to match
+$h-header: 9rem; // var = $h-header; if this changes, change the jquery (window.height * var) in index.html to match
 $h-article: 75vh;
 $h-footer: 10vh;
 
@@ -36,6 +36,7 @@ $bg-popup: $light;
 $level1: 2px 2px 5px 2px rgba(66, 66, 66, .5);
 $level1-inset: inset 0 7px 5px -5px rgba(66, 66, 66, .5);
 $level2: 1px 2px 5px 1px rgba(66, 66, 66, .5);
+$level2-inset: inset 0 4px 8px -3px rgba(66, 66, 66, .5);
 $level3: 0 4px 10px 2px rgba(66, 66, 66, .5);
 
 // directories

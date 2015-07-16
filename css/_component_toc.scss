@@ -13,7 +13,7 @@ $hover-color: $orange;
   left: $w-toc-margin;
   padding: 1em 0;
   position: fixed;
-  top: $h-header + 5vh;
+  top: $h-header + 5rem;
   width: $w-toc-body;
 
   @include desktop-large {

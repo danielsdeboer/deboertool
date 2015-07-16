@@ -1,327 +1,120 @@
+// scss-lint:disable NestingDepth
+
+@import 'var'; // Import this one first, it has our variables, they are important
+
+// Component stack
+
+@import 'component-stack'; // Components such as header and footer
+
+// Other stuff
+
+@import 'reset'; // CSS HTML5 reset
+@import 'mixins';
+@import 'site-wide'; // Stuff that applies to every. single. page.
+
 body {
-	
+  font-family: $base-font;
 }
 
-/* Search Bar & Search Results */
-
-.searchBar {
-	position: relative;
-	box-sizing: border-box;
-	margin: 0 auto;
-	margin-top: 5rem;
-	padding: 1.5em;
-	width: 70%;
-	background: white;
-	box-shadow: 2px 2px 7px rgba(66, 66, 66, 1);
-	font-family: 'Raleway', sans-serif;
-	transition: width 0.2s ease-in-out;
+.page-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
 
-.searchBar form {
-	display: inline-block;
-}
+.search-header {
+  background-color: $light;
+  box-shadow: $level1;
+  display: flex;
+  flex-direction: column;
+  margin-top: $h-header + 2rem;
+  padding: 1.5vh;
+  transition: width .2s ease-in-out;
+  width: 70%;
 
-.searchBar > form input {
-	display: inline-block;
-	margin: 0; padding: 0 0.5rem;
-	height: 2.5rem; width: 20em;
-	font-family: 'Raleway', sans-serif;
-	font-size: 90%;
-	border: 1px solid #BDBDBD;
-	box-sizing: border-box;
-}
+  div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 
-.searchBar button {
-	display: inline-block;
-	margin: 0;
-	font-family: 'Raleway', sans-serif;
-	background-color: orange;
-	color: white;
-	text-decoration: none;
-	border: none;
-	height: 2.5rem;
-	padding: 0 1rem;
-	box-sizing: border-box;
-}
+    &:nth-of-type(1) {
+      margin-bottom: 1rem;
+    }
 
-.searchBar a:link,
-.searchBar a:active,
-.searchBar a:visited {
-	color: orange;
-	text-decoration: none;
-	padding-left: 2rem;
-	text-transform: capitalize;
-}
+    &:nth-of-type(2) {
+      align-items: center;
+      border-top: 1px solid $grey-mid;
+      justify-content: center;
+      padding-top: .7rem;
 
-.searchBar a:hover {
-	text-decoration: underline;
-}
+      form {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
 
-.searchBar button:hover {
-	background: linear-gradient(to bottom, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
-	transition: all 0.2s ease-in-out;
-}
+    form {
+      display: flex;
+      font-family: 'Raleway', sans-serif; // doesn't inherit, super fun
+    }
+  }
 
-/* Advanced Search and Reveal Div */
+  input {
+    border: 1px solid $grey-mid;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif; // doesn't inherit
+    height: 2.5rem;
+    margin: 0; padding: 0 .5rem;
+    width: 20em;
+  }
 
-.searchBar .reveal {
-	border-top: 1px solid #bdbdbd;
-	margin-top: 1em;
-	width: 100%;
-	display: none;
-	text-align: left;
-}
+  button {
+    background-color: $orange;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    color: $light;
+    height: 2.5rem;
+    margin-left: .5rem;
+    padding: 0 1rem;
+    text-decoration: none;
+    transition: background .2s ease-in-out;
 
-.searchBar .reveal h1 {
-	line-height: 2.5;
-}
+    &:hover {
+      background-color: darken($orange, 10%);
+      border: 1px solid $grey-mid;
+      box-shadow: $level2-inset;
+    }
+  }
 
-.searchBar .reveal select {
-	height: 1.75em;
-	font-family: 'Roboto', sans-serif;
-	font-size: 85%;
-	border: 1px solid #bdbdbd;
-}
+  $margin: .25rem;
 
-.searchBar .reveal a {
-	padding-left: 0.25rem;
-}
+  select {
+    border: 1px solid $grey-mid;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif; // doesn't inherit
+    height: 2.5rem;
+    margin: $margin;
+    min-width: 31%;
+    padding: 0 .25rem;
+  }
 
-/* ####### RESULTS ######### */
+  h1,
+  a:link,
+  a:visited,
+  a:active {
+    color: $grey-dark;
+    margin: $margin * 2;
+    text-align: left;
+    text-decoration: none;
+  }
 
-/* container */
-.searchResults {
-	margin: 0 auto;
-	width: 68%;
-	box-shadow: 1px 1px 5px rgba(66, 66, 66, 0.5);
-	transition: width 0.2s ease-in-out;
-}
+  a:hover {
+    text-decoration: underline;
+  }
 
-/* table */
-
-.searchResults table {
-	width: 100%;
-	background: white;
-	vertical-align: middle;
-	border-bottom: 1px solid #BDBDBD;
-	font-family: 'Roboto', sans-serif;
-	font-size: 95%;
-}
-
-/* columns */
-
-.searchResults table:first-child tr:first-child td {  /* a little extra padding for the first result to comp for searchBar box-shadow */
-	padding-top: 0.5rem;
-}
-
-.searchResults td {
-	padding: 0.5rem 0.75rem;
-}
-
-.searchResults tr:nth-child(1) td:nth-child(2) { /* set the width of the "add to cart" cell */
-	width: 9em;
-	min-width: 9em;
-	vertical-align: middle;
-	text-align: left;
-	white-space: nowrap;
-}
-
-.searchResults tr:nth-child(2) td:nth-child(odd) {
-	min-width: 4%;
-	text-align: right;
-	padding: 0;
-	white-space: nowrap;
-}
-
-.searchResults tr:nth-child(2) td:nth-child(even) {
-	width: 17%;
-	text-align: left;
-	white-space: nowrap;
-}
-
-.searchResults tr:nth-child(2) td:nth-child(1) {
-	padding-left: 0.75rem;
-}
-
-.searchResults tr:nth-child(2) td:nth-child(8) {
-	width: 5%;
-}
-
-/*.searchResults table tr:nth-child(3) td {
-	padding: 0.25rem 0.75rem 0.5rem 0.75rem;
-}*/
-
-.searchResults section:last-child table td:last-child { /* last search result box has no bottom border */
-	border-bottom: 0;
-	margin-bottom: 2rem;
-}
-
-
-/* images links and buttons */
-
-.searchResults table img {
-	padding: 0.75rem 0;
-	height: 2.8em;
-}
-
-.searchResults table a {
-	color: orange;
-	text-decoration: none
-}
-
-.searchResults table a:hover {
-	text-decoration: underline;
-}
-
-.searchResults button {
-	display: block;
-	background-color: orange;
-	color: white;
-	margin: 0 auto;
-	border: none;
-	height: 4rem;
-	padding: 0 1rem;
-	transition: background 0.2s ease-in-out;
-}
-
-.searchResults button:hover {
-	background: #000;
-	transition: background 0.2s ease-in-out;
-}
-
-/* @media stuff */
-
-@media screen and (max-width: 1600px) {
-	.searchBar {
-		width: 80%;
-	}
-
-	.searchResults {
-		width: 78%;
-	}
-}
-
-@media screen and (max-width: 1400px) {
-	.searchBar {
-		width: 80%;
-	}
-
-	.searchResults {
-		width: 78%;
-		font-size: 90%;
-	}
-}
-
-@media screen and (max-width: 1100px) {
-	.searchBar {
-		width: 90%;
-	}
-
-	.searchResults {
-		width: 88%;
-		font-size: 90%;
-	}
-
-	.searchResults tr:nth-child(2) td:nth-child(5),
-	.searchResults tr:nth-child(2) td:nth-child(6) {
-		display: none;
-	}
-
-}
-
-@media screen and (max-width: 800px) { /* This is roughly where we start considering a screen "mobile" */
-	.searchBar {
-		width: 98%;
-	}
-
-	.searchBar {
-		margin-top: 3.5rem;
-		text-align: center;
-		padding: 0.5em 1em;
-	}
-
-	.searchBar form {
-		display: block;
-		width: 99%;
-		margin: 0 auto;
-		margin-bottom: 0.5em;
-	}
-
-	.searchBar form input {
-		padding: 0 0.25rem;
-		height: 2.5rem; 
-		width: 100%
-	}
-
-	.searchBar > button {
-		box-sizing: border-box;
-		height: 2.5rem;
-		padding: 0 0.5rem;
-		margin: 0;
-		width: 30%;
-		font-size: 100%;
-	}
-
-	.searchBar .reveal form {
-		text-align: left;
-		display: inline;
-	}
-
-	.searchBar .reveal select {
-		height: 2rem;
-		width: 30%;
-		text-align: left;
-		margin-bottom: 0.5rem;
-	}
-
-	.searchResults {
-		width: 96%;
-		font-size: 90%;
-	}
-
-	.searchResults tr:nth-child(2) td:nth-child(1),
-	.searchResults tr:nth-child(2) td:nth-child(3),
-	.searchResults tr:nth-child(2) td:nth-child(5),
-	.searchResults tr:nth-child(2) td:nth-child(6) {
-		display: none;
-	}
-
-	.searchResults tr:nth-child(1) td:nth-child(2) {
-		width: 5em; min-width: 5em;
-	}
-
-	.searchResults button {
-		width: 5em;
-		white-space: normal;
-	}
-}
-
-@media screen and (max-width: 500px) {
-
-	.searchBar {
-		font-size: 90%;
-	}
-
-	.searchResults {
-		font-size: 90%;
-	}
-
-	.searchResults table img {
-		height: 2em;
-	}
-
-	.searchResults tr:nth-child(2) td:nth-child(2) {
-		width: auto;
-		display: none;
-	}
-
-	.searchResults tr:nth-child(2) td:nth-child(3) {
-		padding: 0.5rem;
-	}
-
-	.searchResults tr:nth-child(2) td:nth-child(8) {
-		padding-left: 0.25rem;
-		text-align: left;
-	}
-
+  h1 {
+    text-align: right;
+  }
 }

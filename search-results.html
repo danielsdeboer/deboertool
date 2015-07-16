@@ -1,123 +1,133 @@
-<nav class="searchBar">
-	<form>
-		<input type="search" placeholder="Search products">
-	</form>
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/search-results.css">
+<link href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
+</head>
 
-	<button>Search</button>
-	<button id="clickToReveal">Advanced</button>
-	<button>Reset</button>
+<body>
+<div class="page-wrapper">
+	<nav class="search-header">
+		<div>
+			<form>
+				<input type="search" placeholder="Search products">
+			</form>
 
-	<div class="reveal">
-		<h1>Narrow your search results:</h1>
-		<form>
+			<button>Search</button>
+			<button id="clickToReveal">Advanced</button>
+			<button>Reset</button>
+		</div>
 
-			<select name="series">
-				<option disabled selected>Series</option>
-				<option>General Purpose</option>
-				<option>X-Mill</option>
-				<option>HV</option>
-				<option>P-20 Pro</option>
-				<option>A-Mill</option>
-			</select>
+		<div>
+			<h1>Narrow your search results:</h1>
+			<form>
+				<select name="series">
+					<option disabled selected>Series</option>
+					<option>General Purpose</option>
+					<option>X-Mill</option>
+					<option>HV</option>
+					<option>P-20 Pro</option>
+					<option>A-Mill</option>
+				</select>
 
-			<select name="Units">
-				<option disabled selected>Units</option>
-				<option>Units: Imperial</option>
-				<option>Units: Metric</option>
-			</select>			
+				<select name="Units">
+					<option disabled selected>Units</option>
+					<option>Units: Imperial</option>
+					<option>Units: Metric</option>
+				</select>			
 
-			<select name="Diameter">
-				<option disabled selected>Cut Diameter</option>
-				<option>Dia: 1/4</option>
-				<option>Dia: 5/16</option>
-				<option>Dia: 3/8</option>
-				<option>Dia: 1/2</option>
-			</select>
+				<select name="Diameter">
+					<option disabled selected>Cut Diameter</option>
+					<option>Dia: 1/4</option>
+					<option>Dia: 5/16</option>
+					<option>Dia: 3/8</option>
+					<option>Dia: 1/2</option>
+				</select>
 
-			<select name="Shank">
-				<option disabled selected>Shank Diameter</option>
-				<option>Shank: 1/2</option>
-			</select>
+				<select name="Shank">
+					<option disabled selected>Shank Diameter</option>
+					<option>Shank: 1/2</option>
+				</select>
 
-			<select name="OAL">
-				<option disabled selected>Overall Length</option>
-				<option>OAL: 3"</option>
-				<option>OAL: 4"</option>
-				<option>OAL: 5"</option>
-			</select>
+				<select name="OAL">
+					<option disabled selected>Overall Length</option>
+					<option>OAL: 3"</option>
+					<option>OAL: 4"</option>
+					<option>OAL: 5"</option>
+				</select>
 
-			<select name="LOC">
-				<option disabled selected>Cut Length</option>
-				<option>LOC: 3"</option>
-				<option>LOC: 4"</option>
-				<option>LOC: 5"</option>
-			</select>
+				<select name="LOC">
+					<option disabled selected>Cut Length</option>
+					<option>LOC: 3"</option>
+					<option>LOC: 4"</option>
+					<option>LOC: 5"</option>
+				</select>
 
-			<select name="LOC">
-				<option selected>No Neck</option>
-				<option>Straight Neck</option>
-				<option>Tapered Neck</option>
-			</select>
-		</form>
+				<select name="LOC">
+					<option selected>No Neck</option>
+					<option>Straight Neck</option>
+					<option>Tapered Neck</option>
+				</select>
+			</form>
 
-		<a href="#" id="clickToClose">hide advanced search</a>
+			<a href="#" id="clickToClose">hide advanced search</a>
 
-</nav>
+	</nav>
 
-<article class="searchResults">
-	<table>
-		<tbody>
-			<tr>
-				<td colspan="8">
-					<img src="assets/product_search_3.jpg">
-				</td>
-				<td rowspan="3"><button>Add to Cart</button></td>
-			</tr>
-			<tr>
-				<td>Series:</td> 
-				<td><strong>General Purpose</strong></td>
-				<td>Part #:</td> 
-				<td><a href="#">130-0500-401A</a></td>
-				<td>Description:</td> 
-				<td>1/2 2F FB LG EM ALTIN</td>
-				<td>Stock:</td> 
-				<td><strong>0</strong></td>
+	<article class="searchResults">
+		<table>
+			<tbody>
+				<tr>
+					<td colspan="8">
+						<img src="assets/product_search_3.jpg">
+					</td>
+					<td rowspan="3"><button>Add to Cart</button></td>
+				</tr>
+				<tr>
+					<td>Series:</td> 
+					<td><strong>General Purpose</strong></td>
+					<td>Part #:</td> 
+					<td><a href="#">130-0500-401A</a></td>
+					<td>Description:</td> 
+					<td>1/2 2F FB LG EM ALTIN</td>
+					<td>Stock:</td> 
+					<td><strong>0</strong></td>
 
-			</tr>
-			<tr>
-				<td colspan="8"><strong>Product Specification</strong>: General Purpose - Flat Bottom - 1/2" Shank - 4" OAL - 2.0" LOC</td>
-			</tr>
-		</tbody>
-	</table>
+				</tr>
+				<tr>
+					<td colspan="8"><strong>Product Specification</strong>: General Purpose - Flat Bottom - 1/2" Shank - 4" OAL - 2.0" LOC</td>
+				</tr>
+			</tbody>
+		</table>
 
-	<table>
-		<tbody>
-			<tr>
-				<td colspan="8">
-					<img src="assets/product_search_2.jpg">
-				</td>
-				<td rowspan="3"><button>Add to Cart</button></td>
-			</tr>
-			<tr>
-				<td>Series:</td>
-				<td><strong>General Purpose</strong></td>
-				<td>Part #:</td>
-				<td><a href="#">110-0500-201A</a></td>
-				<td>Description:</td>
-				<td>1/2 2F FB EM ALTIN</td>
-				<td>Stock:</td>
-				<td><strong>119</strong></td>
-			</tr>
-			<tr>
-				<td colspan="8"><strong>Product Specification</strong>: General Purpose - Flat Bottom - 1/2" Shank - 3" OAL - 1.0" LOC</td>
-			</tr>
-		</tbody>
-	</table>
+		<table>
+			<tbody>
+				<tr>
+					<td colspan="8">
+						<img src="assets/product_search_2.jpg">
+					</td>
+					<td rowspan="3"><button>Add to Cart</button></td>
+				</tr>
+				<tr>
+					<td>Series:</td>
+					<td><strong>General Purpose</strong></td>
+					<td>Part #:</td>
+					<td><a href="#">110-0500-201A</a></td>
+					<td>Description:</td>
+					<td>1/2 2F FB EM ALTIN</td>
+					<td>Stock:</td>
+					<td><strong>119</strong></td>
+				</tr>
+				<tr>
+					<td colspan="8"><strong>Product Specification</strong>: General Purpose - Flat Bottom - 1/2" Shank - 3" OAL - 1.0" LOC</td>
+				</tr>
+			</tbody>
+		</table>
 
-</article>
+	</article>
+</div>
 
-<script
->$(document).ready(function(){
+<script>
+$(document).ready(function(){
 	$("#clickToReveal").click(function(){
 		$(".reveal").slideDown("slow");
     });
@@ -130,3 +140,5 @@ $(document).ready(function(){
 });
 
 </script>
+</body>
+</html>

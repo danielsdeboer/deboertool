@@ -74,6 +74,7 @@
 <figure>
   <a href=".">
     <img src="assets/logo-white.png">
+    <p>De Boer Tool</p>
   </a>
 </figure>
 
@@ -98,16 +99,16 @@
 </nav>
 
 <script>
-  $(document).ready(function() {
-    $('.button-search').click(function(e) {
-      e.preventDefault();
-      $('.page-wrapper').fadeOut(function() {
-        $.ajax({
-          url: 'search-results.html',
-          success: function(data) { $('.page-wrapper').hide().html(data).fadeIn(); },
-          dataType: 'html'
-        });
+$(document).ready(function() {
+  $('.button-search').click(function(e) {
+    e.preventDefault();
+    $('.page-wrapper').fadeOut(function() {
+      $.ajax({
+        url: 'search-results.html',
+        success: function(data) { $('.page-wrapper').hide().html(data).fadeIn(); },
+        dataType: 'html'
       });
     });
   });
+});
 </script>
