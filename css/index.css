@@ -1,11 +1,24 @@
 .table-of-contents {
   background: #424242;
   box-shadow: 1px 2px 5px 1px rgba(66, 66, 66, 0.5);
+  box-sizing: border-box;
   font-size: 85%;
-  left: 3%;
+  left: 2.5%;
   padding: 1em 0;
   position: fixed;
-  top: 20vh; }
+  top: 20vh;
+  width: 10%; }
+  @media screen and (max-width: 1600px) {
+    .table-of-contents {
+      left: 1.5%;
+      width: 12.5%; } }
+  @media screen and (max-width: 1200px) {
+    .table-of-contents {
+      left: 0.5%;
+      width: 15%; } }
+  @media screen and (max-width: 800px) {
+    .table-of-contents {
+      display: none; } }
   .table-of-contents a:link,
   .table-of-contents a:active,
   .table-of-contents a:visited {
@@ -13,12 +26,19 @@
     border-bottom: 1px solid transparent;
     color: #fff;
     display: block;
-    line-height: 2;
-    padding: 0 1em;
+    line-height: 1;
+    padding: .6em 1em;
     text-decoration: none;
     transition: background .2s ease-in; }
   .table-of-contents a:hover {
     background-color: #ff7f2a; }
+  .table-of-contents h1 {
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    margin-bottom: .5em;
+    padding: .4em 1em; }
+    .table-of-contents h1 span {
+      font-size: 85%; }
 
 .button-rect a:link,
 .button-rect a:active,
@@ -36,12 +56,50 @@
   background: #ff7f2a; }
 
 .material-cards {
+  display: flex;
+  flex-direction: row;
   margin-top: 15vh;
-  width: 70%; }
+  justify-content: stretch;
+  width: 100%; }
+  .material-cards .toc-container {
+    display: flex;
+    order: 1;
+    width: 15%; }
+    @media screen and (max-width: 1600px) {
+      .material-cards .toc-container {
+        width: 14%; } }
+    @media screen and (max-width: 1200px) {
+      .material-cards .toc-container {
+        width: 15.5%; } }
+    @media screen and (max-width: 800px) {
+      .material-cards .toc-container {
+        display: none; } }
+  .material-cards .card-container {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    order: 2;
+    padding: 0 3vw 0 1.25%;
+    width: 85%; }
+    @media screen and (max-width: 1600px) {
+      .material-cards .card-container {
+        padding-left: 1.65%;
+        padding-right: 1.65%;
+        width: 86%; } }
+    @media screen and (max-width: 1200px) {
+      .material-cards .card-container {
+        padding-left: 0.55%;
+        padding-right: 0.55%;
+        width: 84.5%; } }
+    @media screen and (max-width: 800px) {
+      .material-cards .card-container {
+        width: 100%; } }
   .material-cards section {
     box-shadow: 2px 2px 5px 2px rgba(66, 66, 66, 0.5);
     display: flex;
-    margin-top: 2vh; }
+    margin-top: 2vh;
+    width: 100%; }
     .material-cards section > div:nth-of-type(1) {
       order: 1;
       width: 40%; }
@@ -51,26 +109,38 @@
       flex-direction: column;
       justify-content: center;
       order: 2;
-      padding: 6vh 0;
+      padding: 2vh 0 4vh;
       width: 60%; }
       .material-cards section > div:nth-of-type(2) h1 {
         font-size: 6vh;
         font-weight: 900;
-        line-height: .9; }
+        line-height: .9;
+        padding: .1em .25em;
+        text-align: center; }
       .material-cards section > div:nth-of-type(2) h2 {
         font-size: 3vh;
         font-weight: 400;
-        line-height: 2; }
+        line-height: 1;
+        padding: .5em .5em .25em;
+        text-align: center; }
       .material-cards section > div:nth-of-type(2) p {
         line-height: 1.4;
         padding: .5em;
         width: 70%; }
+        @media screen and (max-width: 1600px) {
+          .material-cards section > div:nth-of-type(2) p {
+            width: 80%; } }
+        @media screen and (max-width: 1200px) {
+          .material-cards section > div:nth-of-type(2) p {
+            width: 85%; } }
       .material-cards section > div:nth-of-type(2) p:last-of-type {
         margin-bottom: 1.5em; }
     .material-cards section:nth-of-type(odd) {
       flex-direction: row; }
     .material-cards section:nth-of-type(even) {
       flex-direction: row-reverse; }
+    .material-cards section:last-of-type {
+      margin-bottom: 3em; }
     .material-cards section div {
       background-position: center center;
       background-repeat: no-repeat;
@@ -176,7 +246,7 @@
     color: #fff;
     display: flex;
     font-weight: 300;
-    padding: 0 1.5vw;
+    padding: 0;
     position: relative;
     text-transform: uppercase;
     transition: background 0.2s ease-in-out;
@@ -185,11 +255,19 @@
     .page-1-header li > a:visited,
     .page-1-header li > a:active {
       color: #fff;
+      display: block;
       height: 100%;
-      padding: 1.5vh 0;
+      padding: 1.5vh 1.5vw;
       text-decoration: none;
       white-space: nowrap;
       width: 100%; }
+    .page-1-header li span {
+      display: block;
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      height: 1.2em;
+      width: 1em; }
   .page-1-header li:hover {
     background-position: 0 100%; }
     .page-1-header li:hover > .hover-menu {
@@ -197,6 +275,10 @@
       transform: translateY(0);
       visibility: visible;
       z-index: 1; }
+  .page-1-header li:nth-of-type(1) span {
+    background-image: url("../assets/search.svg"); }
+  .page-1-header li:nth-of-type(2) span {
+    background-image: url("../assets/cart.svg"); }
   .page-1-header figure {
     text-align: center; }
   .page-1-header aside {
@@ -288,6 +370,60 @@
 .services .menu-tile:nth-of-type(3) {
   background-color: #fff;
   background-image: url(""); }
+
+.header-search input {
+  border: 1px solid #424242;
+  font-family: "Raleway", sans-serif;
+  font-size: 3vh;
+  margin: 3vh 0;
+  padding: 1vh;
+  width: 60%; }
+
+.component-footer {
+  align-items: center;
+  background-color: #424242;
+  box-sizing: border-box;
+  color: #bdbdbd;
+  display: flex;
+  flex-direction: row;
+  font-family: "Raleway", sans-serif;
+  font-size: 95%;
+  vertical-align: middle;
+  width: 100%; }
+  .component-footer figure {
+    align-self: stretch;
+    background-image: url("assets/logo-deboertool-lion.svg");
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    border: 1px solid blue;
+    order: 2;
+    text-align: center;
+    width: 20%; }
+  .component-footer nav {
+    order: 2;
+    padding-right: .5em;
+    text-align: right;
+    width: 40%; }
+  .component-footer section {
+    order: 3;
+    padding: 2em 0;
+    padding-left: .5em;
+    width: 60%; }
+    .component-footer section p {
+      max-width: 40em; }
+    .component-footer section p:first-of-type {
+      padding-bottom: .5em; }
+    .component-footer section p:last-of-type {
+      padding-top: .5em; }
+  .component-footer a:link,
+  .component-footer a:active,
+  .component-footer a:visited {
+    color: #ffcc80;
+    text-decoration: none; }
+  .component-footer a:hover {
+    color: #fff;
+    text-decoration: underline; }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
@@ -381,13 +517,15 @@ body {
     font-size: 4.8vw;
     height: 60vh;
     justify-content: center;
-    width: 40vw; }
+    text-align: right;
+    width: 60vw; }
     .page-2-article > div > div:nth-of-type(1) {
-      align-items: flex-start;
+      align-items: flex-end;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      width: 80%; }
+      padding-right: 3vw;
+      width: 60%; }
       .page-2-article > div > div:nth-of-type(1) > img {
         box-sizing: border-box;
         height: auto;
@@ -395,14 +533,14 @@ body {
         width: 90%; }
     .page-2-article > div > div:nth-of-type(2) {
       align-items: flex-start;
-      background-image: url("../assets/xmill-stub.png");
-      background-position: center center;
+      background-image: url("../assets/special.jpg");
+      background-position: center 30%;
       background-repeat: no-repeat;
-      background-size: auto 90%;
+      background-size: 100% auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      width: 20%; }
+      width: 40%; }
       .page-2-article > div > div:nth-of-type(2) > img {
         height: 100%; }
     .page-2-article > div h1 {
@@ -416,7 +554,7 @@ body {
       font-size: 35%;
       font-weight: 300;
       line-height: 1.2;
-      margin-left: 2vw;
+      margin-left: vw;
       padding: .75em 0 1em;
       width: 80%; }
     .page-2-article > div h3 {

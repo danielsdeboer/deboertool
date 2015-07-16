@@ -83,7 +83,31 @@
     </a>
   </aside>
   <ul>
-    <li><a href="shopping-cart.html">Cart</a></li>
+    <li>
+      <a href=""><span></span></a>
+      <div class="hover-menu header-search">
+        <form>
+          <input type="search" placeholder="Search">
+          <button class="button-search"></button>  
+        </form>
+      </div>
+    </li>
+    <li><a href="shopping-cart.html"><span></span></a></li>
     <li><a href="login.html">Login</a></li>
   </ul>
 </nav>
+
+<script>
+  $(document).ready(function() {
+    $('.button-search').click(function(e) {
+      e.preventDefault();
+      $('.page-wrapper').fadeOut(function() {
+        $.ajax({
+          url: 'search-results.html',
+          success: function(data) { $('.page-wrapper').hide().html(data).fadeIn(); },
+          dataType: 'html'
+        });
+      });
+    });
+  });
+</script>
