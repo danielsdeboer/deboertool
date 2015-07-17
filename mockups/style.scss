@@ -85,7 +85,7 @@ body {
     flex-direction: row;
     justify-content: stretch;
     margin-bottom: 0;
-    width: 100%;
+    width: 95%;
 
     div { // Nav boxes
       border-right: 1px solid $grey-mid;
@@ -113,13 +113,19 @@ body {
 
   section {
     border: 1px solid $grey-mid;
-    border-top: 0;
     box-sizing: border-box;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    margin-top: -1px;
     padding: $p-std;
     width: 100%;
+
+    &:first-of-type {
+      box-shadow: 0 -1.5px 5px 0 rgba(0, 0, 0, .2);
+    }
+
+    &:last-of-type {
+      box-shadow: 0 1.5px 5px 0 rgba(0, 0, 0, .2);
+    }
   }
 }
 
@@ -142,25 +148,25 @@ body {
   }
 
   div {
-    line-height: 1.75;
+    line-height: 2.4;
     padding: $p-std;
     white-space: nowrap;
   }
 
   div:nth-of-type(1) {
-    text-align: right;
     flex-grow: 1;
+    text-align: right;
 
     p {
-      padding-right: 1rem;
       border-right: 1px solid $grey-mid;
+      padding-right: 1rem;
     }
   }
 
   div:nth-of-type(2) {
+    flex-grow: 1;
     padding-left: 0;
     text-align: left;
-    flex-grow: 1;
   }
 
   div:nth-of-type(3) {
@@ -168,11 +174,15 @@ body {
   }
 
   input,
-  textarea {
+  textarea,
+  select {
     box-sizing: border-box;
     display: block;
     font-family: $font-mono;
+    font-size: 1.1em;
+    height: 2em;
     min-width: 25em;
+    padding: 0 .25em;
     width: 100%;
   }
 
@@ -187,9 +197,13 @@ body {
     }
   }
 
+  select {
+    margin-top: .2em;
+  }
+
   .mid {
-    min-width: 7em;
-    width: 7em;
+    min-width: 10em;
+    width: 10em;
   }
 
   .small {
@@ -199,4 +213,83 @@ body {
   }
 }
 
+.process-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 85%;
+  margin: 0 2%;
 
+  header {
+    border-bottom: 1px solid $grey-mid;
+    padding-left: 1em;
+
+    h1 {
+      font-size: 100%;
+      font-weight: 600;
+    }
+  }
+}
+
+.info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+$icon: 2em; 
+
+.action-bar {
+  display: flex;
+  flex-direction: row;
+}
+
+.action-icon {
+  background-color: $grey-dark;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 70% auto;
+  border-radius: 100%;
+  height: $icon;
+  margin: .25em;
+  transition: background .15s ease-in-out;
+  width: $icon;
+
+  &:hover {
+    background-color: $orange-dark;
+  }
+
+  &:nth-of-type(1) {
+    background-image: url('delete.svg');
+  }
+
+  &:nth-of-type(2) {
+    background-image: url('up.svg');
+    background-size: 80% auto;
+  }
+
+  &:nth-of-type(3) {
+    background-image: url('swap.svg');
+  }
+}
+
+.inline {
+  align-items: center;
+  border-bottom: 1px solid $grey-mid;
+  display: flex;
+  flex-direction: row;
+
+  > div {
+    padding: 0 .5em;
+  }
+
+  input,
+  textarea,
+  select {
+    box-sizing: border-box;
+    font-family: $font-mono;
+    font-size: 1.1em;
+    height: 1.9em;
+    margin: .5em 0;
+    padding: 0 .25em;
+  }
+}
