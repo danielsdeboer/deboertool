@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<head>
+<head lang="en">
 <link rel="stylesheet" type="text/css" href="css/search-results.css">
 <link href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
 </head>
 
 <body>
@@ -17,7 +20,7 @@
 			<button>Reset</button>
 		</div>
 
-		<div>
+		<div id="reveal">
 			<h1>Narrow your search results:</h1>
 			<form>
 				<select name="series">
@@ -73,7 +76,44 @@
 
 	</nav>
 
-	<article class="searchResults">
+	<article class="material-cards-small">
+		<section>
+			<div>
+			</div>
+			<div>
+				<a href="">110-0500-401A</a>
+				<p>1/2 4F FB EM ALTIN</p>
+				<p>General Purpose</p>
+				<p>Flat Bottom</p>
+				<p>1/2" Shank</p>
+				<p>3" OAL</p>
+				<p>1" LOC</p>
+			</div>
+		</section>
+
+		<section>
+			<div>
+			</div>
+			<div>
+				<a href="">110-0500-401A</a>
+				<p>1/2 4F FB EM ALTIN</p>
+				<p>General Purpose</p>
+				<p>Flat Bottom</p>
+				<p>1/2" Shank</p>
+				<p>3" OAL</p>
+				<p>1" LOC</p>
+			</div>
+		</section>
+
+		<section>
+			text
+		</section>
+
+		<section>
+			text
+		</section>
+<!-- 
+
 		<table>
 			<tbody>
 				<tr>
@@ -121,24 +161,42 @@
 					<td colspan="8"><strong>Product Specification</strong>: General Purpose - Flat Bottom - 1/2" Shank - 3" OAL - 1.0" LOC</td>
 				</tr>
 			</tbody>
-		</table>
+		</table> -->
 
 	</article>
 </div>
 
 <script>
+
+$(window).load(function() {
+	$('#reveal').slideUp('slow');
+});
+
 $(document).ready(function(){
 	$("#clickToReveal").click(function(){
-		$(".reveal").slideDown("slow");
-    });
+		$("#reveal").slideToggle("slow", function() {
+			// if ($('#reveal').is(':visible'))
+			// 		$('#reveal').css('display','flex');
+		});
+  });
 });
 
-$(document).ready(function(){
-	$("#clickToClose").click(function(){
-		$(".reveal").slideUp("slow");
-    });
-});
+
+
+// $(document).ready(function(){
+// 	$("#clickToClose").click(function(){
+// 		$("#reveal").slideUp("slow");
+//     });
+// });
 
 </script>
+
+<footer class="component-footer">
+	<script>
+	// This jquery is design-phase only, imp-phase in PHP
+	$('body .component-footer').load('_component_footer.html');
+	</script>		
+</footer>
+
 </body>
 </html>

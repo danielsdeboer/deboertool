@@ -1,0 +1,58 @@
+$base-font: 'Raleway', sans-serif;
+$grey-dark: #616161;
+
+$m-std: 1rem;
+$p-std: 1rem;
+
+// color stack
+$alert: #fff59d;
+
+// material level
+$level1: 2px 2px 5px 0 rgba(66, 66, 66, .5);
+
+@import '../css/reset';
+
+body {
+  font-family: $base-font;
+  font-size: 100%;
+  width: 100%;
+}
+
+.quote-metadata,
+.quote-actions {
+  align-items: center;
+  border: 1px solid $grey-dark;
+  box-shadow: $level1;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: $m-std $m-std ($m-std / 2);
+  padding: $p-std ($p-std * 2);
+
+  h1 {
+    font-size: 200%;
+    font-weight: 700;
+  }
+
+  select,
+  button {
+    box-sizing: border-box;
+    font-family: $base-font; // doesn't inherit, how wonderful
+    font-size: 120%;
+    height: 2em;
+  }
+
+  span {
+    background-color: $alert;
+  }
+}
+
+.quote-actions {
+  margin-top: $m-std / 2;
+
+  h1 {
+    font-size: 150%;
+    font-weight: 400;
+  }
+}
