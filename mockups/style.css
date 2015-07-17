@@ -29,9 +29,10 @@ body {
   width: 100%; }
 
 .quote-metadata,
-.quote-actions {
+.quote-actions,
+.quote-body {
   align-items: center;
-  border: 1px solid #616161;
+  border: 1px solid #bdbdbd;
   box-shadow: 2px 2px 5px 0 rgba(66, 66, 66, 0.5);
   box-sizing: border-box;
   display: flex;
@@ -40,19 +41,23 @@ body {
   margin: 1rem 1rem 0.5rem;
   padding: 1rem 2rem; }
   .quote-metadata h1,
-  .quote-actions h1 {
+  .quote-actions h1,
+  .quote-body h1 {
     font-size: 200%;
     font-weight: 700; }
   .quote-metadata select,
   .quote-metadata button,
   .quote-actions select,
-  .quote-actions button {
+  .quote-actions button,
+  .quote-body select,
+  .quote-body button {
     box-sizing: border-box;
     font-family: "Raleway", sans-serif;
-    font-size: 120%;
+    font-size: 90%;
     height: 2em; }
   .quote-metadata span,
-  .quote-actions span {
+  .quote-actions span,
+  .quote-body span {
     background-color: #fff59d; }
 
 .quote-actions {
@@ -60,5 +65,99 @@ body {
   .quote-actions h1 {
     font-size: 150%;
     font-weight: 400; }
+
+.quote-body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  margin-top: 0.5rem; }
+  .quote-body h1 {
+    font-size: 110%;
+    font-weight: 400; }
+  .quote-body nav {
+    align-items: center;
+    border: 1px solid #bdbdbd;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    margin-bottom: 0;
+    width: 100%; }
+    .quote-body nav div {
+      border-right: 1px solid #bdbdbd;
+      box-sizing: border-box;
+      text-align: center;
+      transition: background .25s ease-in-out; }
+      .quote-body nav div:hover {
+        background: #ffccbc; }
+    .quote-body nav a:link,
+    .quote-body nav a:active,
+    .quote-body nav a:visited {
+      border-bottom: 1px solid transparent;
+      color: #616161;
+      display: block;
+      height: 4em;
+      line-height: 4em;
+      padding: 0 3rem;
+      text-decoration: none; }
+  .quote-body section {
+    border: 1px solid #bdbdbd;
+    border-top: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 1rem;
+    width: 100%; }
+
+.row-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 85%;
+  margin: 0 2%; }
+  .row-container a:link,
+  .row-container a:visited,
+  .row-container a:active {
+    color: #ff5722;
+    display: block;
+    text-decoration: none; }
+  .row-container a:hover {
+    text-decoration: underline; }
+  .row-container div {
+    line-height: 1.75;
+    padding: 1rem;
+    white-space: nowrap; }
+  .row-container div:nth-of-type(1) {
+    text-align: right;
+    flex-grow: 1; }
+    .row-container div:nth-of-type(1) p {
+      padding-right: 1rem;
+      border-right: 1px solid #bdbdbd; }
+  .row-container div:nth-of-type(2) {
+    padding-left: 0;
+    text-align: left;
+    flex-grow: 1; }
+  .row-container div:nth-of-type(3) {
+    flex-grow: 2; }
+  .row-container input,
+  .row-container textarea {
+    box-sizing: border-box;
+    display: block;
+    font-family: "Inconsolata", monospace;
+    min-width: 25em;
+    width: 100%; }
+  .row-container textarea {
+    margin-top: .25em;
+    min-height: 10em; }
+  .row-container input:nth-of-type(n+2) {
+    margin-top: .2em; }
+  .row-container .mid {
+    min-width: 7em;
+    width: 7em; }
+  .row-container .small {
+    display: inline;
+    min-width: 2.75em;
+    width: 2.75em; }
 
 /*# sourceMappingURL=style.css.map */
