@@ -5,6 +5,7 @@
   <link href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='autogrow.js'></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
 </head>
@@ -63,7 +64,7 @@
     </div>
     <div class="row-container">
       <div>
-        <p>small Description</p>
+        <p>Short Description</p>
         <p>Long Description</p>
       </div>
       <div>
@@ -120,9 +121,124 @@ etc etc etc
     </div>
   </section>
 
-  <section class="process-container">
+  <section class="process-container"> 
     <header>
       <h1>Order Processing</h1>
+    </header>
+    <div class="inline">
+      <div class="process-description">
+        <textarea placeholder="Process Description" class="grow"></textarea>
+      </div>
+  </section>
+
+  <section class="process-container">
+    
+    <header>
+      <h1>Raw Material</h1>
+    </header>
+    
+    <div class="inline">
+      <div class="blank-type">
+        <select>
+          <option>Standard Blank</option>
+          <option>Special Blank</option>
+        </select>
+        <h4>Blank Type</h4>
+      </div>
+      <div class="choose-grade">
+        <select>
+          <option>TSF22</option>
+        </select>
+        <h4>Grade</h4>
+      </div>
+      <div class="choose-dia">
+        <select>
+          <option>1 (inch)</option>
+        </select>
+        <h4>Diameter</h4>
+      </div>
+      <div class="choose-oal">
+        <select>
+          <option>4 (inch)</option>
+        </select>
+        <h4>Overall</h4>
+      </div>
+      <div class="choose-blank">
+        <select class="long">
+          <option>Blank Option 1</option>
+          <option>Blank Option 2</option>
+        </select>
+        <h4>Blank Part # / description</h4>
+      </div>
+      <div class="qty-per-rod">
+        <input type="text" placeholder="Qty Per Blank">
+        <h4>Tools Per Blank</h4>
+      </div>
+      <div class="blank-cost">
+        <p>$11.11</p>
+        <h4>Blank Cost</h4>
+      </div>
+      <div class="conversion-factor">
+        <input type="text" placeholder="Conversion Factor" value="1.3">
+        <h4>Conversion Factor</h4>
+      </div>
+      <div class="Subtotal (CAD)">
+        <p>$11.11</p>
+        <h4>Subtotal</h4>
+      </div>
+    </div>
+
+    <div class="inline">
+      <div class="blank-type">
+        <select>
+          <option>Special Blank</option>
+          <option>Standard Blank</option>
+        </select>
+        <h4>Blank Type</h4>
+      </div>
+
+      <div class="blank-description">
+        <input type="text" placeholder="Special Blank Description" class="long">
+        <h4>Special Blank Description</h4>
+      </div>
+
+      <div class="special-blank-supplier">
+        <input type="text" placeholder="Supplier Name">
+        <h4>Supplier Name</h4>
+      </div>
+
+      <div class="qty-per-rod">
+        <input type="text" placeholder="Qty Per Blank">
+        <h4>Tools Per Blank</h4>
+      </div>
+      <div class="blank-cost">
+        <p>$11.11</p>
+        <h4>Blank Cost</h4>
+      </div>
+      <div class="conversion-factor">
+        <input type="text" placeholder="Conversion Factor" value="1.3">
+        <h4>Conversion Factor</h4>
+      </div>
+      <div class="Subtotal (CAD)">
+        <p>$11.11</p>
+        <h4>Subtotal</h4>
+      </div>
+    </div>
+    <footer>
+      <div>
+        <div>
+        </div>
+      </div>
+      <div>
+        <h4>Process Subtotal</h4>
+        <p>$11.11</p>
+      </div>
+    </footer>
+  </section>
+
+  <section class="process-container">
+    <header>
+      <h1>Throughfeed</h1>
     </header>
     <div class="inline">
       
@@ -143,7 +259,7 @@ etc etc etc
         <input type="text" placeholder="Process Name">
       </div>
       <div class="process-description">
-        <input type="text" placeholder="Process Description">
+        <textarea placeholder="Process Description" class="grow"></textarea>
       </div>
       <div class="process-minutes">
         <input type="text" placeholder="Minutes" class="min">
@@ -156,11 +272,260 @@ etc etc etc
       </div>
     </div>
     <footer>
+      <div>
+        <div>
+        </div>
+      </div>
+      <div>
+        <h4>Process Subtotal</h4>
+        <p>$11.11</p>
+      </div>
+    </footer>
+  </section>
 
+  <section class="process-container">
+    <header>
+      <h1>Prep</h1>
+    </header>
+    <div class="inline">
+      
+      <div class="action-bar">
+        <div class="action-icon">
+        </div>
+        <div class="action-icon">
+        </div>
+        <div class="action-icon">
+        </div>
+      </div>
+      
+      <div class="process-order">
+        <p>1</p>
+      </div>
+      
+      <div class="process-name">
+        <input type="text" placeholder="Process Name">
+      </div>
+      <div class="process-description">
+        <textarea placeholder="Process Description" class="grow"></textarea>
+      </div>
+      <div class="process-minutes">
+        <input type="text" placeholder="Minutes" class="min">
+      </div>
+      <div class="process-cost">
+        <p>1.00</p>
+      </div>
+      <div class="process-subtotal">
+        <p>$1.00</p>
+      </div>
+    </div>
+
+    <footer>
+      <div>
+        <div>
+        </div>
+      </div>
+      <div>
+        <h4>Process Subtotal</h4>
+        <p>$11.11</p>
+      </div>
+    </footer>
+  </section>
+
+  <section class="process-container">
+    <header>
+      <h1>CNC</h1>
+    </header>
+    <div class="inline">
+      
+      <div class="action-bar">
+        <div class="action-icon">
+        </div>
+        <div class="action-icon">
+        </div>
+        <div class="action-icon">
+        </div>
+      </div>
+      
+      <div class="process-order">
+        <p>1</p>
+      </div>
+      
+      <div class="process-name">
+        <input type="text" placeholder="Process Name">
+      </div>
+      <div class="process-description">
+        <textarea placeholder="Process Description" class="grow"></textarea>
+      </div>
+      <div class="process-minutes">
+        <input type="text" placeholder="Minutes" class="min">
+      </div>
+      <div class="process-cost">
+        <p>1.00</p>
+      </div>
+      <div class="process-subtotal">
+        <p>$1.00</p>
+      </div>
+    </div>
+    <footer>
+      <div>
+        <div>
+        </div>
+      </div>
+      <div>
+        <h4>Process Subtotal</h4>
+        <p>$11.11</p>
+      </div>
+    </footer>
+  </section>
+
+    <section class="process-container">
+    <header>
+      <h1>Post</h1>
+    </header>
+    <div class="inline">
+      
+      <div class="action-bar">
+        <div class="action-icon">
+        </div>
+        <div class="action-icon">
+        </div>
+        <div class="action-icon">
+        </div>
+      </div>
+      
+      <div class="process-order">
+        <p>1</p>
+      </div>
+      
+      <div class="process-name">
+        <input type="text" placeholder="Process Name">
+      </div>
+      <div class="process-description">
+        <textarea placeholder="Process Description" class="grow"></textarea>
+      </div>
+      <div class="process-minutes">
+        <input type="text" placeholder="Minutes" class="min">
+      </div>
+      <div class="process-cost">
+        <p>1.00</p>
+      </div>
+      <div class="process-subtotal">
+        <p>$1.00</p>
+      </div>
+    </div>
+    <footer>
+      <div>
+        <div>
+        </div>
+      </div>
+      <div>
+        <h4>Process Subtotal</h4>
+        <p>$11.11</p>
+      </div>
+    </footer>
+  </section>
+
+    <section class="process-container">
+    <header>
+      <h1>Coat</h1>
+    </header>
+    <div class="inline">
+      
+      <div class="action-bar">
+        <div class="action-icon">
+        </div>
+        <div class="action-icon">
+        </div>
+        <div class="action-icon">
+        </div>
+      </div>
+      
+      <div class="process-order">
+        <p>1</p>
+      </div>
+      
+      <div class="process-name">
+        <input type="text" placeholder="Process Name">
+      </div>
+      <div class="process-description">
+        <textarea placeholder="Process Description" class="grow"></textarea>
+      </div>
+      <div class="process-minutes">
+        <input type="text" placeholder="Minutes" class="min">
+      </div>
+      <div class="process-cost">
+        <p>1.00</p>
+      </div>
+      <div class="process-subtotal">
+        <p>$1.00</p>
+      </div>
+    </div>
+    <footer>
+      <div>
+        <div>
+        </div>
+      </div>
+      <div>
+        <h4>Process Subtotal</h4>
+        <p>$11.11</p>
+      </div>
+    </footer>
+  </section>
+
+    <section class="process-container">
+    <header>
+      <h1>Ship</h1>
+    </header>
+    <div class="inline">
+      
+      <div class="action-bar">
+        <div class="action-icon">
+        </div>
+        <div class="action-icon">
+        </div>
+        <div class="action-icon">
+        </div>
+      </div>
+      
+      <div class="process-order">
+        <p>1</p>
+      </div>
+      
+      <div class="process-name">
+        <input type="text" placeholder="Process Name">
+      </div>
+      <div class="process-description">
+        <textarea placeholder="Process Description" class="grow"></textarea>
+      </div>
+      <div class="process-minutes">
+        <input type="text" placeholder="Minutes" class="min">
+      </div>
+      <div class="process-cost">
+        <p>1.00</p>
+      </div>
+      <div class="process-subtotal">
+        <p>$1.00</p>
+      </div>
+    </div>
+    <footer>
+      <div>
+        <div>
+        </div>
+      </div>
+      <div>
+        <h4>Process Subtotal</h4>
+        <p>$11.11</p>
+      </div>
     </footer>
   </section>
 
 </article>
+
+<script>
+$(document).ready(function() {
+  $('.grow').autogrow();
+});
+</script>
 
 </body>
 </html>
