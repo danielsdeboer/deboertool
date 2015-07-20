@@ -180,6 +180,8 @@ body {
     .process-container header h1 {
       font-size: 120%;
       font-weight: 600; }
+    .process-container header .process-inner-container {
+      width: 100%; }
 
 .info-container {
   display: flex;
@@ -193,18 +195,18 @@ body {
   justify-content: center; }
 
 .action-icon {
+  height: 2.5em;
+  width: 2.5em;
   background-color: #616161;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 70% auto;
   border-radius: 100%;
-  height: 2em;
   margin: .25em;
-  transition: background .15s ease-in-out, box-shadow .15s ease-in-out;
-  width: 2em; }
+  transition: background .15s ease-in-out, box-shadow .15s ease-in-out; }
   .action-icon:hover {
     background-color: #ff5722;
-    box-shadow: 2px 2px 5px 0 rgba(66, 66, 66, 0.5); }
+    box-shadow: 0 2px 3px 1px rgba(66, 66, 66, 0.5); }
   .action-icon:nth-of-type(1) {
     background-image: url("delete.svg"); }
   .action-icon:nth-of-type(2) {
@@ -236,6 +238,8 @@ body {
   .inline textarea {
     height: 5em;
     margin-top: .65em;
+    min-height: 8em;
+    padding: .25em .5em;
     width: 20em; }
   .inline .long {
     width: 20em; }

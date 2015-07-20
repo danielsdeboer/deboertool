@@ -18,7 +18,10 @@ $orange-light: #ffccbc;
 $level1:      2px 2px 5px 0 rgba(66, 66, 66, .5);
 $level1-moz:  2px 2px 1px 0 rgba(66, 66, 66, .3);
 
+$level2:      0 2px 3px 1px rgba(66, 66, 66, .5);
+
 @import '../css/reset';
+@import 'css/mixins';
 
 body {
   font-family: $base-font;
@@ -229,6 +232,10 @@ body {
       font-size: 120%;
       font-weight: 600;
     }
+
+    .process-inner-container {
+      width: 100%;
+    }
   }
 }
 
@@ -248,20 +255,7 @@ $icon: 2em;
 }
 
 .action-icon {
-  background-color: $grey-dark;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 70% auto;
-  border-radius: 100%;
-  height: $icon;
-  margin: .25em;
-  transition: background .15s ease-in-out, box-shadow .15s ease-in-out;
-  width: $icon;
-
-  &:hover {
-    background-color: $orange-dark;
-    box-shadow: $level1;
-  }
+  @include button(2.5em, $grey-dark, $orange-dark);
 
   &:nth-of-type(1) {
     background-image: url('delete.svg');
@@ -305,6 +299,8 @@ $icon: 2em;
   textarea {
     height: 5em;
     margin-top: .65em;
+    min-height: 8em;
+    padding: .25em .5em;
     width: 20em;
   }
 

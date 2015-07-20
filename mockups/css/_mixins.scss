@@ -1,0 +1,20 @@
+@mixin hw($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+@mixin button($size: 2em, $color: #414141, $color2: #ff5722) {
+  @include hw($size, $size);
+  background-color: $color;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 70% auto;
+  border-radius: 100%;
+  margin: .25em;
+  transition: background .15s ease-in-out, box-shadow .15s ease-in-out;
+
+  &:hover {
+    background-color: $color2;
+    box-shadow: $level2;
+  }
+}

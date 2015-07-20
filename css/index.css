@@ -478,9 +478,10 @@ body {
 
 .page-1-article {
   align-items: center;
-  background-image: url("../assets/hero-xmill.jpg");
-  background-position: center center;
-  background-size: cover;
+  background-image: url("../assets/hero-1080p.jpg");
+  background-position: center 10%;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
   display: flex;
   flex-direction: column;
   height: 75vh;
