@@ -23,96 +23,105 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+* {
+  box-sizing: border-box; }
+
 body {
   font-family: "Raleway", sans-serif;
-  font-size: 100%;
-  padding-bottom: 3em;
-  width: 100%; }
+  font-size: 100%; }
 
-.quote-metadata,
-.quote-actions,
-.quote-body {
-  align-items: center;
-  border: 1px solid #bdbdbd;
-  box-shadow: 2px 2px 5px 0 rgba(66, 66, 66, 0.5);
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 1rem 1rem 0.5rem;
-  padding: 1rem 2rem; }
-  .quote-metadata h1,
-  .quote-actions h1,
-  .quote-body h1 {
-    font-size: 200%;
-    font-weight: 700; }
-  .quote-metadata select,
-  .quote-metadata button,
-  .quote-actions select,
-  .quote-actions button,
-  .quote-body select,
-  .quote-body button {
-    box-sizing: border-box;
-    font-family: "Raleway", sans-serif;
-    font-size: 90%;
-    height: 2em; }
-  .quote-metadata span,
-  .quote-actions span,
-  .quote-body span {
-    background-color: #fff59d; }
-
-.quote-actions {
-  margin-top: 0.5rem; }
-  .quote-actions h1 {
-    font-size: 150%;
-    font-weight: 400; }
-
-.quote-body {
+.outer-container {
+  height: auto;
+  width: 100%;
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: stretch;
-  margin-top: 0.5rem; }
-  .quote-body h1 {
-    font-size: 110%;
-    font-weight: 400; }
-  .quote-body nav {
-    align-items: center;
+  justify-content: center;
+  padding: .5vw 1vw; }
+  .outer-container .quote-metadata,
+  .outer-container .quote-actions,
+  .outer-container .quote-body {
+    height: auto;
+    width: 100%;
     border: 1px solid #bdbdbd;
-    box-sizing: border-box;
+    box-shadow: 2px 2px 5px 0 rgba(66, 66, 66, 0.5);
+    padding: 1rem; }
+    .outer-container .quote-metadata select,
+    .outer-container .quote-metadata button,
+    .outer-container .quote-actions select,
+    .outer-container .quote-actions button,
+    .outer-container .quote-body select,
+    .outer-container .quote-body button {
+      height: 2em;
+      width: auto;
+      box-sizing: border-box;
+      font-family: "Raleway", sans-serif;
+      font-size: 90%; }
+  .outer-container .quote-metadata {
+    align-items: center;
     display: flex;
     flex-direction: row;
-    justify-content: stretch;
-    margin-bottom: 0;
-    width: 95%; }
-    .quote-body nav div {
-      border-right: 1px solid #bdbdbd;
-      box-sizing: border-box;
-      text-align: center;
-      transition: background .25s ease-in-out; }
-      .quote-body nav div:hover {
-        background: #ffccbc; }
-    .quote-body nav a:link,
-    .quote-body nav a:active,
-    .quote-body nav a:visited {
-      border-bottom: 1px solid transparent;
-      color: #616161;
-      display: block;
-      height: 4em;
-      line-height: 4em;
-      padding: 0 3rem;
-      text-decoration: none; }
-  .quote-body section {
-    border: 1px solid #bdbdbd;
-    box-sizing: border-box;
+    justify-content: "space-between"; }
+    .outer-container .quote-metadata h1 {
+      font-size: 200%;
+      font-weight: 700; }
+  .outer-container .quote-actions {
+    align-items: center;
     display: flex;
-    margin-top: -1px;
-    padding: 1rem;
-    width: 100%; }
-    .quote-body section:first-of-type {
-      box-shadow: 0 -1.5px 5px 0 rgba(0, 0, 0, 0.2); }
-    .quote-body section:last-of-type {
-      box-shadow: 0 1.5px 5px 0 rgba(0, 0, 0, 0.2); }
+    flex-direction: row;
+    justify-content: "space-between";
+    margin-top: 0.5rem; }
+    .outer-container .quote-actions span {
+      background-color: #fff59d; }
+    .outer-container .quote-actions h1 {
+      font-size: 150%; }
+  .outer-container .quote-body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    margin-top: 0.5rem; }
+    .outer-container .quote-body h1 {
+      font-size: 110%;
+      font-weight: 400; }
+
+.quote-body nav {
+  align-items: center;
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  margin-bottom: 0;
+  width: 95%; }
+  .quote-body nav div {
+    border-right: 1px solid #bdbdbd;
+    box-sizing: border-box;
+    text-align: center;
+    transition: background .25s ease-in-out; }
+    .quote-body nav div:hover {
+      background: #fff3e0; }
+  .quote-body nav a:link,
+  .quote-body nav a:active,
+  .quote-body nav a:visited {
+    border-bottom: 1px solid transparent;
+    color: #616161;
+    display: block;
+    height: 4em;
+    line-height: 4em;
+    padding: 0 3rem;
+    text-decoration: none; }
+.quote-body section {
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  display: flex;
+  margin-top: -1px;
+  padding: 1rem;
+  width: 100%; }
+  .quote-body section:first-of-type {
+    box-shadow: 0 -1.5px 5px 0 rgba(0, 0, 0, 0.2); }
+  .quote-body section:last-of-type {
+    box-shadow: 0 1.5px 5px 0 rgba(0, 0, 0, 0.2); }
 
 .row-container {
   display: flex;
@@ -383,7 +392,7 @@ section footer {
     transition: background .25s ease-in-out;
     width: 50%; }
     .actions div:hover {
-      background: #ffccbc; }
+      background: #fff3e0; }
   .actions a:link,
   .actions a:active,
   .actions a:visited {

@@ -12,7 +12,7 @@ $grey-light: #e0e0e0;
 $grey-mid: #bdbdbd;
 $grey-dark: #616161;
 $orange-dark: #ff5722;
-$orange-light: #ffccbc;
+$orange-light: #fff3e0;
 
 // material level
 $level1:      2px 2px 5px 0 rgba(66, 66, 66, .5);
@@ -23,64 +23,79 @@ $level2:      0 2px 3px 1px rgba(66, 66, 66, .5);
 @import '../css/reset';
 @import 'css/mixins';
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: $base-font;
   font-size: 100%;
-  padding-bottom: 3em;
-  width: 100%;
 }
 
-.quote-metadata,
-.quote-actions,
+.outer-container {
+  @include hw(auto, 100%);
+  @include flex(center, column, center);
+  padding: .5vw 1vw;
+
+  // stuff that applies to all the card containers
+
+  .quote-metadata,
+  .quote-actions,
+  .quote-body {
+    @include hw(auto, 100%);
+    border: 1px solid $grey-mid;
+    box-shadow: $level1;
+    padding: $p-std;
+
+    select,
+    button {
+      @include hw(2em, auto);
+      box-sizing: border-box;
+      font-family: $base-font; // doesn't inherit, how wonderful
+      font-size: 90%;
+    }
+  }
+
+  // stuff that applies to block 1 (metadata about the quote over time)
+
+  .quote-metadata {
+    @include flex(center, row, 'space-between');
+
+    h1 {
+      font-size: 200%;
+      font-weight: 700;
+    }
+  }
+
+  // stuff that applies to block 2 (actions pertaining to the current revision only)
+
+  .quote-actions {
+    @include flex(center, row, 'space-between');
+    margin-top: $m-std / 2;
+
+    span {
+      background-color: $alert;
+    }
+
+    h1 {
+      font-size: 150%;
+    }
+  }
+
+  // stuff that defines the current quote revision (pricing, etc)
+
+  .quote-body {
+    @include flex(center, column, stretch);
+    margin-top: $m-std / 2;
+
+    h1 {
+      font-size: 110%;
+      font-weight: 400;
+    }
+  }
+}
+
 .quote-body {
-  align-items: center;
-  border: 1px solid $grey-mid;
-  box-shadow: $level1;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: $m-std $m-std ($m-std / 2);
-  padding: $p-std ($p-std * 2);
-
-  h1 {
-    font-size: 200%;
-    font-weight: 700;
-  }
-
-  select,
-  button {
-    box-sizing: border-box;
-    font-family: $base-font; // doesn't inherit, how wonderful
-    font-size: 90%;
-    height: 2em;
-  }
-
-  span {
-    background-color: $alert;
-  }
-}
-
-.quote-actions {
-  margin-top: $m-std / 2;
-
-  h1 {
-    font-size: 150%;
-    font-weight: 400;
-  }
-}
-
-.quote-body {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
-  margin-top: $m-std / 2;
-
-  h1 {
-    font-size: 110%;
-    font-weight: 400;
-  }
 
   nav {
     align-items: center;
