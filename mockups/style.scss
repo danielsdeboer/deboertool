@@ -23,6 +23,7 @@ $level1-moz:  2px 2px 1px 0 rgba(66, 66, 66, .3);
 body {
   font-family: $base-font;
   font-size: 100%;
+  padding-bottom: 3em;
   width: 100%;
 }
 
@@ -395,7 +396,51 @@ div {
 }
 
 .pricing {
-  
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+
+  div {
+    align-items: center;
+    // border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    div {
+      border-bottom: 1px solid $grey-mid;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 90%;
+
+      div {
+        border: 0;
+        display: flex;
+        font-size: 90%;
+        line-height: 1.75;
+        width: 50%;
+
+        &:nth-of-type(1) {
+          border-right: 1px solid $grey-mid;
+          justify-content: flex-end;
+          padding-right: .5em;
+        }
+
+        &:nth-of-type(2) {
+          font-weight: 600;
+          justify-content: flex-start;
+          padding-left: .5em;
+        }
+      }
+    }
+  }
+
+  h1 {
+    font-size: 100%;
+    font-weight: 600;
+    line-height: 1.5;
+  }
 }
 
 section {
@@ -449,5 +494,40 @@ section {
       font-size: 150%;
       line-height: 1;
     }
+  }
+}
+
+.actions {
+  align-items: center;
+  border: 1px solid $grey-mid;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  margin-bottom: 0;
+  width: 95%;
+
+  div { // Nav boxes
+    border-right: 1px solid $grey-mid;
+    box-sizing: border-box;
+    text-align: center;
+    transition: background .25s ease-in-out;
+    width: 50%;
+
+    &:hover { // background color
+      background: $orange-light;
+    }
+  }
+
+  a:link,
+  a:active,
+  a:visited {
+    border-bottom: 1px solid transparent;
+    color: $grey-dark;
+    display: block;
+    height: 4em;
+    line-height: 4em;
+    padding: 0 $m-std*3;
+    text-decoration: none;
   }
 }

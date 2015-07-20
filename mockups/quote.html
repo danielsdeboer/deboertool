@@ -335,7 +335,10 @@ etc etc etc
     <header>
       <h1>CNC</h1>
     </header>
-    <div class="inline">
+
+
+
+    <div class="inline"> <!-- CNC PROCESS # 1 -->
       
       <div class="action-bar">
         <div class="action-icon">
@@ -351,21 +354,72 @@ etc etc etc
       </div>
       
       <div class="process-name">
-        <input type="text" placeholder="Process Name">
+        <input type="text" placeholder="Process Name" value="Test Process">
       </div>
+
       <div class="process-description">
-        <textarea placeholder="Process Description" class="grow"></textarea>
+        <textarea placeholder="Process Description" class="grow">
+This is an example of text
+That is available for editing
+It is simply in a textbox
+And not locked away in a popup      
+        </textarea>
       </div>
+
       <div class="process-minutes">
-        <input type="text" placeholder="Minutes" class="min">
+        <input type="text" placeholder="Minutes" class="min" value="12">
       </div>
+
       <div class="process-cost">
-        <p>1.00</p>
+        <p>2.00</p>
       </div>
+
       <div class="process-subtotal">
-        <p>$1.00</p>
+        <p>$24.00</p>
       </div>
     </div>
+
+
+    <div class="inline"> <!-- CNC PROCESS # 2 -->
+      
+      <div class="action-bar">
+        <div class="action-icon">
+        </div>
+        <div class="action-icon">
+        </div>
+        <div class="action-icon">
+        </div>
+      </div>
+      
+      <div class="process-order">
+        <p>1</p>
+      </div>
+      
+      <div class="process-name">
+        <input type="text" placeholder="Process Name" value="Sample Process 2">
+      </div>
+
+      <div class="process-description">
+        <textarea placeholder="Process Description" class="grow">
+More text available for editing.
+Notes about the CNC process
+Would go here.
+        </textarea>
+      </div>
+
+      <div class="process-minutes">
+        <input type="text" placeholder="Minutes" class="min" value="5">
+      </div>
+
+      <div class="process-cost">
+        <p>2.00</p>
+      </div>
+
+      <div class="process-subtotal">
+        <p>$10.00</p>
+      </div>
+    </div>
+
     <footer>
       <div>
         <div>
@@ -373,7 +427,7 @@ etc etc etc
       </div>
       <div>
         <h4>Process Subtotal</h4>
-        <p>$11.11</p>
+        <p>$34.00</p>
       </div>
     </footer>
   </section>
@@ -518,6 +572,59 @@ etc etc etc
       </div>
     </footer>
   </section>
+
+  <section class="pricing">
+    <div> <!-- Calculations used to make the pricing -->
+      <div>
+        <h1>Pricing Input</h1>
+      </div>
+      <div>
+        <div>Subtotal</div>
+        <div>$111.11</div>
+      </div>
+      <div>
+        <div>Setup Cost</div>
+        <div>$120.20</div>
+      </div>
+      <div>
+        <div>Engineering Factor</div>
+        <div>1.0</div>
+      </div>
+      <div>
+        <div>Rush Factor</div>
+        <div>1.0</div>
+      </div>
+    </div>
+
+    <div> <!-- Pricing Results -->
+      <div>
+        <h1>Pricing Output</h1>
+      </div>
+
+      <div>
+        <div>3 pcs</div>
+        <div>$55.55</div>
+      </div>
+
+      <div>
+        <div>6 pcs</div>
+        <div>$45.54</div>
+      </div>
+
+      <div>
+        <div>12 pcs</div>
+        <div>$39.98</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="actions">
+    <div>
+      <a href="">Save Quote</a>
+    </div>
+    <div>
+      <a href="">Set Quote Status Active</a>
+    </div>
 
 </article>
 
