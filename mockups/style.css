@@ -61,7 +61,7 @@ body {
     align-items: center;
     display: flex;
     flex-direction: row;
-    justify-content: "space-between"; }
+    justify-content: space-between; }
     .outer-container .quote-metadata h1 {
       font-size: 200%;
       font-weight: 700; }
@@ -69,7 +69,7 @@ body {
     align-items: center;
     display: flex;
     flex-direction: row;
-    justify-content: "space-between";
+    justify-content: space-between;
     margin-top: 0.5rem; }
     .outer-container .quote-actions span {
       background-color: #fff59d; }
@@ -84,6 +84,15 @@ body {
     .outer-container .quote-body h1 {
       font-size: 110%;
       font-weight: 400; }
+    .outer-container .quote-body .inline-link {
+      display: inline; }
+    .outer-container .quote-body .customer-button {
+      height: 2em;
+      width: auto;
+      display: inline-block;
+      margin-left: .5em;
+      transition: box-shadow .2s ease-in-out;
+      vertical-align: middle; }
 
 .quote-body nav {
   align-items: center;

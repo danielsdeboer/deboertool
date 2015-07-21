@@ -34,3 +34,41 @@
   top: 50vh;
   transform: translateX(-50%) translateY(-50%);
 }
+
+@mixin hw($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+$grey:#414141;
+$orange: #ff5722;
+
+@mixin button($size: 2em, $color: $grey, $color2: $orange) {
+  @include hw($size, $size);
+  background-color: $color;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 70% auto;
+  border-radius: 100%;
+  margin: .25em;
+  transition: background .15s ease-in-out, box-shadow .15s ease-in-out;
+
+  &:hover {
+    background-color: $color2;
+    box-shadow: $level2;
+  }
+}
+
+@mixin flex($align: center, $direction: row, $justify: center) {
+  align-items: $align;
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+}
+
+@mixin bgimg($img, $v-align: center) {
+  background-image: url($root + $assets + $img);
+  background-position: center $v-align;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}

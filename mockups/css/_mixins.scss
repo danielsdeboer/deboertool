@@ -3,7 +3,10 @@
   width: $width;
 }
 
-@mixin button($size: 2em, $color: #414141, $color2: #ff5722) {
+$grey:#414141;
+$orange: #ff5722;
+
+@mixin button($size: 2em, $color: $grey, $color2: $orange) {
   @include hw($size, $size);
   background-color: $color;
   background-position: center center;

@@ -59,7 +59,7 @@ body {
   // stuff that applies to block 1 (metadata about the quote over time)
 
   .quote-metadata {
-    @include flex(center, row, 'space-between');
+    @include flex(center, row, space-between);
 
     h1 {
       font-size: 200%;
@@ -70,7 +70,7 @@ body {
   // stuff that applies to block 2 (actions pertaining to the current revision only)
 
   .quote-actions {
-    @include flex(center, row, 'space-between');
+    @include flex(center, row, space-between);
     margin-top: $m-std / 2;
 
     span {
@@ -91,6 +91,18 @@ body {
     h1 {
       font-size: 110%;
       font-weight: 400;
+    }
+
+    .inline-link {
+      display: inline;
+    }
+
+    .customer-button {
+      @include hw(2em, auto);
+      display: inline-block;
+      margin-left: .5em;
+      transition: box-shadow .2s ease-in-out;
+      vertical-align: middle;
     }
   }
 }

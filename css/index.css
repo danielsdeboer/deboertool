@@ -31,7 +31,7 @@
     text-decoration: none;
     transition: background .2s ease-in; }
   .table-of-contents a:hover {
-    background-color: #ff7f2a; }
+    background-color: #ff5722; }
   .table-of-contents h1 {
     border-bottom: 1px solid #fff;
     color: #fff;
@@ -53,7 +53,7 @@
   text-transform: uppercase;
   transition: background-color 0.2s ease-in-out; }
 .button-rect a:hover {
-  background: #ff7f2a; }
+  background: #ff5722; }
 
 .material-cards {
   display: flex;
@@ -235,7 +235,7 @@
     display: flex;
     flex-direction: row; }
   .page-1-header li {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #ff7f2a 50%);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #ff5722 50%);
     background-size: 100% 200%;
     color: #fff;
     display: flex;
@@ -308,7 +308,7 @@
   text-align: right; }
 
 .hover-menu {
-  background-color: #ff7f2a;
+  background-color: #ff5722;
   box-shadow: inset 0 7px 5px -5px rgba(66, 66, 66, 0.5), 2px 2px 5px 2px rgba(66, 66, 66, 0.5);
   display: flex;
   flex-direction: row;
@@ -477,51 +477,56 @@ body {
   font-family: "Raleway", sans-serif; }
 
 .page-1-article {
-  align-items: center;
+  height: 75vh;
+  width: 100%;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   background-image: url("../assets/hero-1080p.jpg");
-  background-position: center 10%;
+  background-position: center 20%;
   background-repeat: no-repeat;
   background-size: 100% auto;
-  display: flex;
-  flex-direction: column;
-  height: 75vh;
-  justify-content: center;
-  margin-top: 9rem;
-  text-align: center;
-  vertical-align: middle; }
-  .page-1-article div {
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.7);
-    background-position: 70% 60%;
-    background-repeat: no-repeat;
-    background-size: 80% auto;
-    border: 5px solid #fff;
-    border-radius: 6em;
-    box-shadow: 1px 2px 5px 1px rgba(66, 66, 66, 0.5);
+  margin-top: 9rem; }
+  .page-1-article .inner-container {
+    height: auto;
+    width: 90%;
+    align-items: flex-end;
     display: flex;
-    flex-direction: column;
-    font-size: 4vw;
-    height: 6em;
-    justify-content: center;
-    transition: background-color 2s ease-in-out;
-    width: 6em; }
-    .page-1-article div:hover {
-      background-color: rgba(255, 255, 255, 0.8); }
-    .page-1-article div h1 {
+    flex-direction: row;
+    justify-content: space-around; }
+    .page-1-article .inner-container article {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.7);
+      border: 1px solid #9e9e9e;
+      margin-bottom: 4vh;
+      padding: 1em;
+      text-align: center;
+      transition: background-color 1s ease-in-out; }
+      .page-1-article .inner-container article:hover {
+        background-color: white; }
+    .page-1-article .inner-container .hero-left,
+    .page-1-article .inner-container .hero-right {
+      height: 10em;
+      width: 20%; }
+      .page-1-article .inner-container .hero-left h1,
+      .page-1-article .inner-container .hero-right h1 {
+        font-size: 3vh; }
+    .page-1-article .inner-container .hero-middle {
+      height: 15em;
+      width: 35%; }
+      .page-1-article .inner-container .hero-middle h1 {
+        font-size: 5vh; }
+      .page-1-article .inner-container .hero-middle h2 {
+        font-size: 2.5vh; }
+    .page-1-article .inner-container h1 {
       color: #424242;
-      font-weight: 700;
-      line-height: .8;
-      margin-top: .45em; }
-    .page-1-article div h2 {
-      font-size: 35%;
-      margin-top: .75em;
-      width: 80%; }
-    .page-1-article div h3 {
-      background: 0;
-      font-size: 25%;
-      font-weight: 200;
-      letter-spacing: 2px;
-      margin-top: 2em; }
+      font-weight: 700; }
+    .page-1-article .inner-container h2 {
+      margin: .5em 0 1em; }
 
 .page-2-article {
   align-items: center;
@@ -597,7 +602,7 @@ body {
       text-transform: uppercase;
       transition: background-color 0.2s ease-in-out; }
     .page-2-article > div a:hover {
-      background: #ff7f2a; }
+      background: #ff5722; }
 
 .page-1-footer {
   align-items: center;
@@ -696,7 +701,7 @@ body {
       text-transform: uppercase;
       transition: background-color 0.2s ease-in-out; }
     .page-3-article > div a:hover {
-      background: #ff7f2a; }
+      background: #ff5722; }
 
 .page-3-footer {
   align-items: center;
@@ -785,7 +790,7 @@ body {
       text-transform: uppercase;
       transition: background-color 0.2s ease-in-out; }
     .page-4-article > div a:hover {
-      background: #ff7f2a; }
+      background: #ff5722; }
 
 .page-4-footer {
   align-items: center;
