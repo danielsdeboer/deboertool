@@ -18,6 +18,12 @@
   }
 }
 
+@mixin mobile-small {
+  @media screen and (max-width: $break4)  {
+    @content;
+  }
+}
+
 @mixin center-middle {
   left: 50%;
   top: 50%;

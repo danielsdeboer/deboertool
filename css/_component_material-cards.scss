@@ -1,7 +1,7 @@
 // card structure should be something like:
 //
 // <article class="material-cards">
-//   <section>  
+//   <section>
 //     <div>
 //       <!-- picture goes here (background) -->
 //     </div>
@@ -20,17 +20,19 @@
 
 @import 'mixins';
 
+* {
+  box-sizing: border-box;
+}
+
 .material-cards {
-  display: flex;
-  flex-direction: row;
+  @include hw(auto, 100%);
+  @include flex(flex-start, row, stretch);
   margin-top: $h-header;
-  justify-content: stretch;
-  width: 100%;
 
   .toc-container { // this container interacts with the component_toc width (fixed element)
-    display: flex;
+    @include hw (auto, $w-toc-container);
+    @include flex(flex-start, row, center1);
     order: 1;
-    width: $w-toc-container;
 
     @include desktop-large {
       width: $w-toc-container-break1;
@@ -48,28 +50,25 @@
   $p: 1.1;
 
   .card-container {
-    align-items: center;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
+    @include hw(auto, (100% - $w-toc-container));
+    @include flex(center, column, center);
     order: 2;
     padding: 0 3vw 0 ($w-toc-margin * .5);
-    width: 100% - $w-toc-container;
 
     @include desktop-large {
+      @include hw(auto, (100% - $w-toc-container-break1));
       padding-left: $w-toc-margin-break1 * $p;
       padding-right: $w-toc-margin-break1 * $p;
-      width: 100% - $w-toc-container-break1;
     }
 
     @include desktop-small {
+      @include hw(auto, (100% - $w-toc-container-break2));
       padding-left: $w-toc-margin-break2 * $p;
       padding-right: $w-toc-margin-break2 * $p;
-      width: 100% - $w-toc-container-break2;
     }
 
     @include mobile-large {
-      width: 100%;
+      @include hw(auto, 100%);
     }
   }
 
@@ -79,19 +78,29 @@
     margin-top: 2vh;
     width: 100%;
 
+    @include mobile-small {
+      @include flex(center, column, stretch);
+    }
+
     > div:nth-of-type(1) {
+      @include hw(auto, 40%);
       order: 1;
       width: 40%;
+
+      @include mobile-small {
+        @include hw(40vh, 100%);
+      }
     }
 
     > div:nth-of-type(2) {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      @include hw(auto, 60%);
+      @include flex(center, column, center);
       order: 2;
       padding: 2vh 0 4vh;
-      width: 60%;
+
+      @include mobile-small {
+        @include hw(auto, 100%);
+      }
 
       h1 {
         font-size: 6vh;
@@ -130,10 +139,18 @@
 
     &:nth-of-type(odd) {
       flex-direction: row;
+
+      @include mobile-small {
+        flex-direction: column;
+      }
     }
 
     &:nth-of-type(even) {
       flex-direction: row-reverse;
+
+      @include mobile-small {
+        flex-direction: column;
+      }
     }
 
     &:last-of-type {
