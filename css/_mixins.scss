@@ -69,11 +69,24 @@
   justify-content: $justify;
 }
 
-@mixin bgimg($img, $v-align: center) {
-  background-image: url($root + $assets + $img);
-  background-position: center $v-align;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
+@mixin bgimg($img, $size: 0, $h-align: 0, $v-align: 0, $repeat: 0) {
+  @if $img != 0 {
+    background-image: url($root + $assets + $img);
+  }
+
+  @if $size != 0 {
+    background-size: $size;
+  }
+
+  @if $h-align != 0 {
+    @if $v-align != 0 {
+      background-position: $h-align $v-align;
+    }
+  }
+
+  @if $repeat != 0 {
+    background-repeat: $repeat;
+  }
 }
 
 @mixin trans($prop, $time: .2s, $type: ease-in-out) {

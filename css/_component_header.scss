@@ -69,8 +69,21 @@ $g3: lighten($g1, 20%);
   // this is our bookmark + search container
 
   aside {
+    @include flex(center, row, flex-start);
     background-color: $g3;
     height: 70%;
+    padding: 0 2em;
+
+    img {
+      height: 2em;
+    }
+
+    a:link,
+    a:visited,
+    a:active {
+      @include font($size: 85%, $color:$light);
+      margin-left: 1em;
+    }
   }
 
   // here we set the different flex orientations for the nav containers
@@ -100,6 +113,7 @@ $g3: lighten($g1, 20%);
     ul {
       @include hw(100%, auto);
       @include flex(flex-end, row, flex-start);
+      margin: 0 1em;
       white-space: nowrap;
     }
 
@@ -136,7 +150,7 @@ $g3: lighten($g1, 20%);
       @include font(0, .95em, 0, $light);
       @include trans(background-color);
       display: block; // need this so css pays attention to padding and margin while arranging the layout
-      padding: .5em 1em;
+      padding: .85em 1em;
       text-transform: uppercase;
     }
   }
@@ -153,18 +167,71 @@ $g3: lighten($g1, 20%);
   }
 
   .hover-menu {
-    @include hw($h-header, 100%);
+    @include hw(14vw, 100%);
     @include flex(center, row, center);
-    @include trans(opacity);
-    @include tl(0, 0);
+    @include tl($h-header, 0);
     background-color: $orange;
     box-shadow: $level1-inset, $level1;
     opacity: 0;
     position: fixed; // position:fixed instead of :absolute in order to make a full-width menu that spread horizontally
-    transition-delay: $std-trans; // the transition is slightly delayed to match the wipe-up effect on the links
+    transition: visibility .25s ease-in-out, opacity .25s ease-in-out;
     visibility: hidden;
-    z-index: 0;
+    z-index: 1;
+
+    // these are the individual menu items; the a:link determines the size of the div
+    // the meta image properties are defined here, as well as background
+    // the actual background images are defined under .products and .services below
+
+    > div {
+      @include bgimg(0, auto 35%, 105%, center, no-repeat);
+      background-color: light;
+      margin: 0 1rem;
+
+      a:link,
+      a:visited,
+      a:active {
+        @include hw(11vw, 11vw);
+        @include flex(center, column, flex-end);
+        @include font(0, 1.2em, 700, lighten($grey-dark, 10%));
+        border: 1px solid $light;
+        padding: .5em;
+      }
+
+      h1 {
+        text-align: center;
+        white-space: normal;
+      }
+    }
+  }
+
+  // define the product backgrounds and background parameters
+
+  .products {
+    > div {
+      &:nth-of-type(1) {
+        @include bgimg('product-general-purpose.jpg');
+        background-color: $light;
+      }
+
+      &:nth-of-type(2) {
+        @include bgimg('product-xmill.jpg');
+        background-color: $light;
+      }
+
+      &:nth-of-type(3) {
+        @include bgimg('product-threadmill.jpg');
+        background-color: $light;
+      }
+
+      &:nth-of-type(4) {
+        @include bgimg('product-p20-pro.jpg');
+        background-color: $light;
+      }
+
+      &:nth-of-type(5) {
+        @include bgimg('product-high-velocity.jpg');
+        background-color: $light;
+      }
+    }
   }
 }
-
-
