@@ -78,3 +78,32 @@ $orange: #ff5722;
   background-repeat: no-repeat;
   background-size: 100% auto;
 }
+
+@mixin trans($prop, $time: .2s, $type: ease-in-out) {
+  transition: $prop $time, $type;
+}
+
+@mixin font($family: 0, $size: 0, $weight: 0, $color: 0) {
+  @if $family != 0 {
+    font-family: $family;
+  }
+
+  @if $size != 0 {
+    font-size: $size;
+  }
+
+  @if $weight != 0 {
+    font-weight: $weight;
+  }
+
+  @if $color != 0 {
+    color: $color;
+  }
+
+  text-decoration: none;
+}
+
+@mixin tl($top, $left) {
+  top: $top;
+  left: $left;
+}

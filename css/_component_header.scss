@@ -8,6 +8,7 @@ $g3: lighten($g1, 20%);
   @include hw($h-header, 100%);
   @include flex(center, row, stretch);
   background-color: $g1;
+  box-shadow: $level1;
 
   // The header is divided into 3 container divs
 
@@ -18,21 +19,36 @@ $g3: lighten($g1, 20%);
     // first is for the left bookmark block + main nav
 
     &:nth-of-type(1) {
-      @include flex(flex-start, column, stretch);
       width: 40%;
     }
 
     // second is for the middle lion logo + dbt text
 
     &:nth-of-type(2) {
-      @include flex(center, column, stretch);
+      @include flex(center, column, center);
       width: 20%;
+
+      // lion logo
+      img {
+        width: 80%;
+      }
+
+      a:link,
+      a:active,
+      a:visited {
+        @include font(0, 1.85em, 700, $light);
+        @include trans(color);
+        text-align: center;
+      }
+
+      a:hover {
+        @include font($color:$orange);
+      }
     }
 
     // third is for the right search block + secondary nav
 
     &:nth-of-type(3) {
-      @include flex(flex-end, column, stretch);
       width: 40%;
     }
   }
@@ -44,25 +60,33 @@ $g3: lighten($g1, 20%);
     height: 70%;
   }
 
+  // here we set the different flex orientations for the nav containers
+
+  div {
+    // target left nav container
+    &:nth-of-type(1) {
+      nav {
+        @include flex(center, row, flex-start);
+      }
+    }
+
+    &:nth-of-type(3) {
+      // target right nav container
+      nav {
+        @include flex(center, row, flex-end);
+      }
+    }
+  }
+
   // these are our nav elements which contain ul, li, etc
 
   nav {
     @include hw(30%, 100%);
     background-color: $g3;
 
-    // the first one is left oriented
-    &:nth-of-type(1) {
-      @include flex(center, row, flex-start);
-    }
-
-    // the second one is right oriented
-    &:nth-of-type(2) {
-      @include flex(center, row, flex-end);
-    }
-
     ul {
       @include hw(100%, auto);
-      @include flex(center, row, flex-start);
+      @include flex(flex-end, row, flex-start);
       white-space: nowrap;
     }
 
@@ -73,12 +97,33 @@ $g3: lighten($g1, 20%);
     a:link,
     a:visited,
     a:active {
-      color: $light;
+      @include font(0, .95em, 0, $light);
+      @include trans(background-color);
+      display: block; // need this so css pays attention to padding and margin while arranging the layout
       padding: .5em 1em;
+      text-transform: uppercase;
+    }
+
+    a:hover {
+      background: $orange;
+    }
+  }
+
+  // inside each nav > ul > li we can embed a div class .hover-menu which is revealed on mousover on the li
+  // instead of setting display:none we set visibility:hidden and opacity:0
+  // this allows the div reveal to be animated (transition:opacity)
+
+  nav {
+    li:hover > .hover-menu {
+      opacity: 1;
+      visibility: visible;
     }
   }
 
   .hover-menu {
+    @include trans(opacity);
+    @include tl(100%, 0);
+    background-color: red;
     opacity: 0;
     position: absolute;
     visibility: hidden;
