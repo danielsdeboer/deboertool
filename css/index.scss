@@ -19,7 +19,7 @@ body {
 .page-1-article {
   @include hw($h-article, 100%);
   @include flex(flex-end, row, center);
-  @include bgimg('hero-1080p.jpg', 20%);
+  @include bgimg('hero-1080p.jpg', 100% auto, center, 20%, no-repeat);
   margin-top: $h-header;
 
   .inner-container {

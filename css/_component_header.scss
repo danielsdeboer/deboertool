@@ -1,29 +1,32 @@
 @import 'mixins';
 
-$g1: #424242;
-$g2: lighten($g1, 10%);
-$g3: lighten($g1, 20%);
-
 .page-1-header {
   @include hw($h-header, 100%);
   @include flex(center, row, stretch);
-  background-color: $g1;
+  @include tl(0, 0);
+  background-color: $grey-dark;
   box-shadow: $level1;
+  position: fixed;
   z-index: 1;
 
   // The header is divided into 3 container divs
 
   > div {
-    background-color: $g2;
     height: 100%;
 
     // first is for the left bookmark block + main nav
 
     &:nth-of-type(1) {
       width: 40%;
+      padding-left: 7vw;
+
+      @include desktop-mid {
+        padding-left: 4vw;
+      }
 
       @include desktop-small {
         width: 37.5%;
+        padding-left: 1vw;
       }
     }
 
@@ -59,46 +62,76 @@ $g3: lighten($g1, 20%);
 
     &:nth-of-type(3) {
       width: 40%;
+      padding-right: 7vw;
+
+      @include desktop-mid {
+        padding-left: 4vw;
+      }
 
       @include desktop-small {
         width: 37.5%;
+        padding-right: 1vw;
       }
     }
   }
 
-  // this is our bookmark + search container
+  // this is our "customer messages" container for things like sales and free shipping
 
   aside {
-    @include flex(center, row, flex-start);
-    background-color: $g3;
     height: 70%;
-    padding: 0 2em;
+    padding: 0 4em;
+
+    @include desktop-small {
+      padding: 0 2em;
+    }
 
     img {
-      height: 2em;
+      min-width: 1rem;
+      width: 1rem;
     }
 
     a:link,
     a:visited,
     a:active {
       @include font($size: 85%, $color:$light);
-      margin-left: 1em;
+      margin: 0 1em;
     }
   }
 
   // here we set the different flex orientations for the nav containers
+  // and the aside containers
+  // and media queries to hide certain things.
 
   div {
-    // target left nav container
+
     &:nth-of-type(1) {
-      nav {
+      // target left nav & aside container
+      nav,
+      aside {
         @include flex(center, row, flex-start);
+      }
+
+      // hide "meet the team" at desktop-small screen width
+
+      li:nth-of-type(2) {
+        @include desktop-small {
+          display: none;
+        }
+      }
+
+      // hide "about use" at mobile-large screen width
+
+      li:nth-of-type(1) {
+        @include mobile-large {
+          display: none;
+        }
       }
     }
 
     &:nth-of-type(3) {
-      // target right nav container
-      nav {
+      // target right nav & aside container
+      nav,
+      aside {
         @include flex(center, row, flex-end);
       }
     }
@@ -108,7 +141,10 @@ $g3: lighten($g1, 20%);
 
   nav {
     @include hw(30%, 100%);
-    background-color: $g3;
+
+    img {
+      height: 1.2em;
+    }
 
     ul {
       @include hw(100%, auto);
@@ -125,22 +161,6 @@ $g3: lighten($g1, 20%);
 
       &:hover {
         background-position: 0 100%;
-      }
-
-      // hide "meet the team" at desktop-small screen width
-
-      &:nth-of-type(2) {
-        @include desktop-small {
-          display: none;
-        }
-      }
-
-      // hide "about use" at mobile-large screen width
-
-      &:nth-of-type(1) {
-        @include mobile-large {
-          display: none;
-        }
       }
     }
 
@@ -165,73 +185,148 @@ $g3: lighten($g1, 20%);
       visibility: visible;
     }
   }
+}
 
-  .hover-menu {
-    @include hw(14vw, 100%);
-    @include flex(center, row, center);
-    @include tl($h-header, 0);
-    background-color: $orange;
-    box-shadow: $level1-inset, $level1;
-    opacity: 0;
-    position: fixed; // position:fixed instead of :absolute in order to make a full-width menu that spread horizontally
-    transition: visibility .25s ease-in-out, opacity .25s ease-in-out;
-    visibility: hidden;
-    z-index: 1;
+.hover-menu {
+  @include hw(16vw, 100%);
+  @include flex(center, row, center);
+  @include tl($h-header, 0);
+  background-color: $orange;
+  box-shadow: $level1-inset, $level1;
+  opacity: 0;
+  position: fixed; // position:fixed instead of :absolute in order to make a full-width menu that spread horizontally
+  transition: visibility .25s ease-in-out, opacity .25s ease-in-out;
+  visibility: hidden;
+  z-index: 1;
 
-    // these are the individual menu items; the a:link determines the size of the div
-    // the meta image properties are defined here, as well as background
-    // the actual background images are defined under .products and .services below
+  // these are the individual menu items; the a:link determines the size of the div
+  // the meta image properties are defined here, as well as background
+  // the actual background images are defined under .products and .services below
 
-    > div {
-      @include bgimg(0, auto 35%, 105%, center, no-repeat);
-      background-color: light;
-      margin: 0 1rem;
+  > div {
+    @include bgimg(0, auto 35%, 105%, center, no-repeat);
+    background-color: $light;
+    margin: 0 .5rem;
 
-      a:link,
-      a:visited,
-      a:active {
-        @include hw(11vw, 11vw);
-        @include flex(center, column, flex-end);
-        @include font(0, 1.2em, 700, lighten($grey-dark, 10%));
-        border: 1px solid $light;
-        padding: .5em;
-      }
+    a:link,
+    a:visited,
+    a:active {
+      @include hw(14vw, 14vw);
+      @include flex(center, column, flex-end);
+      @include font(0, 1.5vw, 400, lighten($grey-dark, 10%));
+      border: 1px solid $grey-dark;
+      padding: .5em;
+      text-transform: capitalize;
+    }
 
-      h1 {
-        text-align: center;
-        white-space: normal;
-      }
+    h1 {
+      @include trans(all);
+      color: $grey-dark;
+      text-align: center;
+      white-space: normal;
     }
   }
+}
 
-  // define the product backgrounds and background parameters
+// define the product backgrounds and background parameters
 
-  .products {
-    > div {
-      &:nth-of-type(1) {
-        @include bgimg('product-general-purpose.jpg');
-        background-color: $light;
-      }
+.products {
+  > div {
+    &:nth-of-type(1) {
+      @include bgimg('product-general-purpose.jpg');
+    }
 
-      &:nth-of-type(2) {
-        @include bgimg('product-xmill.jpg');
-        background-color: $light;
-      }
+    &:nth-of-type(2) {
+      @include bgimg('product-xmill.jpg');
+    }
 
-      &:nth-of-type(3) {
-        @include bgimg('product-threadmill.jpg');
-        background-color: $light;
-      }
+    &:nth-of-type(3) {
+      @include bgimg('product-threadmill.jpg');
+    }
 
-      &:nth-of-type(4) {
-        @include bgimg('product-p20-pro.jpg');
-        background-color: $light;
-      }
+    &:nth-of-type(4) {
+      @include bgimg('product-p20-pro.jpg');
+    }
 
-      &:nth-of-type(5) {
-        @include bgimg('product-high-velocity.jpg');
-        background-color: $light;
-      }
+    &:nth-of-type(5) {
+      @include bgimg('product-high-velocity.jpg');
+    }
+
+    &:nth-of-type(6) {
+      @include bgimg('more.svg', 60% auto, center, center, no-repeat);
+    }
+  }
+}
+
+// services dropdown background images
+
+.services {
+  > div {
+    &:nth-of-type(1) {
+      @include bgimg('product-general-purpose.jpg');
+    }
+
+    &:nth-of-type(2) {
+      @include bgimg('product-xmill.jpg');
+    }
+
+    &:nth-of-type(3) {
+      @include bgimg('product-threadmill.jpg');
+    }
+
+    &:nth-of-type(4) {
+      @include bgimg('product-p20-pro.jpg');
+    }
+
+    &:nth-of-type(5) {
+      @include bgimg('product-high-velocity.jpg');
+    }
+
+    &:nth-of-type(6) {
+      @include bgimg('more.svg', 60% auto, center, center, no-repeat);
+    }
+  }
+}
+
+// custom sizing and components for the search box dropdown
+
+.search {
+  height: 10vw;
+
+  form {
+    @include hw(auto, 90%);
+    @include flex(flex-end, row, center);
+    width: 100%;
+  }
+
+  input {
+    @include hw(7vh, 60%);
+    @include font(0, 1.5vw, 400, $grey-dark);
+    border: 1px solid $grey-dark;
+    padding: 1.5vh;
+  }
+
+  button {
+    @include hw(4.5vh, 5vh);
+    @include bgimg('search.svg', 80% auto, center, center, no-repeat);
+    background-color: $grey-dark;
+    border: 1px solid $grey-dark;
+    cursor: pointer;
+  }
+}
+
+.cart {
+  height: 10vw;
+
+  h1 {
+    @include font(0, 3vw);
+    @include trans(background-color);
+    padding: 1vw 3vw;
+    text-transform: none;
+
+    &:hover {
+      @include trans(background-color);
+      background-color: rgba($grey-dark, .3);
     }
   }
 }

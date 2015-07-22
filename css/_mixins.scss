@@ -6,6 +6,12 @@
   }
 }
 
+@mixin desktop-mid {
+  @media screen and (max-width: $break1-5)  {
+    @content;
+  }
+}
+
 @mixin desktop-small {
   @media screen and (max-width: $break2)  {
     @content;
