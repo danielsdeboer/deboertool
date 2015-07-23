@@ -1,6 +1,6 @@
 @import 'mixins';
 
-.page-1-header {
+.header-fixed {
   @include hw($h-header, 100%);
   @include flex(center, row, stretch);
   @include tl(0, 0);
@@ -9,16 +9,23 @@
   position: fixed;
   z-index: 1;
 
+  @include mobile-large {
+    height: $h-header - 3rem;
+  }
+
   // The header is divided into 3 container divs
 
+  $div-padding: 7vh; // This controls the left padding for left div and right for right
+
   > div {
+    @include flex(center, column, flex-end);
     height: 100%;
 
     // first is for the left bookmark block + main nav
 
     &:nth-of-type(1) {
       width: 40%;
-      padding-left: 7vw;
+      padding-left: $div-padding;
 
       @include desktop-mid {
         padding-left: 4vw;
@@ -39,6 +46,10 @@
       // lion logo
       img {
         width: 80%;
+
+        @include mobile-large {
+          width: 50%;
+        }
       }
 
       a:link,
@@ -47,6 +58,10 @@
         @include font(0, 1.85em, 700, $light);
         @include trans(color);
         text-align: center;
+
+        @include mobile-large {
+          font-size: 1em;
+        }
       }
 
       a:hover {
@@ -62,7 +77,7 @@
 
     &:nth-of-type(3) {
       width: 40%;
-      padding-right: 7vw;
+      padding-right: $div-padding;
 
       @include desktop-mid {
         padding-left: 4vw;
@@ -109,21 +124,35 @@
       nav,
       aside {
         @include flex(center, row, flex-start);
-      }
 
-      // hide "meet the team" at desktop-small screen width
-
-      li:nth-of-type(2) {
-        @include desktop-small {
+        @include mobile-large {
           display: none;
         }
       }
 
-      // hide "about use" at mobile-large screen width
+      // target left nav width for responsive stuffs
+      nav {
+        @include hw(30%, 80%);
 
-      li:nth-of-type(1) {
-        @include mobile-large {
-          display: none;
+        @include desktop-small {
+          @include hw(30%, 100%);
+        }
+
+        .menu-outer {
+
+          // hide "meet the team" at desktop-small screen width
+          &:nth-of-type(2) {
+            @include desktop-small {
+              display: none;
+            }
+          }
+
+          // hide "about us" at mobile-large screen width
+          &:nth-of-type(1) {
+            @include mobile-large {
+              display: none;
+            }
+          }
         }
       }
     }
@@ -133,56 +162,21 @@
       nav,
       aside {
         @include flex(center, row, flex-end);
+
+        @include mobile-large {
+          display: none;
+        }        
       }
-    }
-  }
 
-  // these are our nav elements which contain ul, li, etc
-
-  nav {
-    @include hw(30%, 100%);
-
-    img {
-      height: 1.2em;
-    }
-
-    ul {
-      @include hw(100%, auto);
-      @include flex(flex-end, row, flex-start);
-      margin: 0 1em;
-      white-space: nowrap;
-    }
-
-    li {
-      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, $orange 50%); // allows the slide-up animation with a solid gradient
-      background-size: 100% 200%;
-      position: relative;
-      transition: background .2s ease-in-out;
-
-      &:hover {
-        background-position: 0 100%;
+      nav {
+        @include hw(30%, 80%);
       }
-    }
 
-    a:link,
-    a:visited,
-    a:active {
-      @include font(0, .95em, 0, $light);
-      @include trans(background-color);
-      display: block; // need this so css pays attention to padding and margin while arranging the layout
-      padding: .85em 1em;
-      text-transform: uppercase;
-    }
-  }
-
-  // inside each nav > ul > li we can embed a div class .hover-menu which is revealed on mousover on the li
-  // instead of setting display:none we set visibility:hidden and opacity:0
-  // this allows the div reveal to be animated (transition:opacity)
-
-  nav {
-    li:hover > .hover-menu {
-      opacity: 1;
-      visibility: visible;
+      aside {
+        @include mobile-large {
+          display: none;
+        }
+      }
     }
   }
 }
@@ -328,5 +322,46 @@
       @include trans(background-color);
       background-color: rgba($grey-dark, .3);
     }
+  }
+}
+
+.menu-outer {
+  @include hw(100%, 25%);
+
+  @include desktop-small {
+    width: 33.3333%;
+  }
+
+  a:link,
+  a:visited,
+  a:active {
+    @include font(0, .95em, 0, $light);
+    text-transform: uppercase;
+  }
+
+  &:hover > .hover-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.menu-inner {
+  @include hw(100%, 100%);
+  @include flex(center, row, center);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, $orange 50%); // faking a half & half background
+  background-size: 100% 200%;
+  position: relative;
+  transition: background .2s ease-in-out;
+
+  &:hover {
+    background-position: 0 100%;
+  }
+
+  p {
+    white-space: nowrap;
+  }
+
+  img {
+    height: 50%;
   }
 }
