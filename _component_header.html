@@ -6,6 +6,22 @@
     </a>
   </aside>
 
+  <nav class="mobile left">
+    <div class="mobile-menu-container">
+      <a href="" class="menu-link">
+        <img src="assets/menu.svg">
+      </a>
+      <div>
+        <ul>
+          <li><a href="product-listing.html">Products</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="meet-the-team.html">Our Team</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <nav class="desktop left">
     <div class="menu-outer">
       <a href="about-us.html">
@@ -66,9 +82,21 @@
     </a>
   </aside>
 
+  <nav class="mobile right">
+    <div class="mobile-menu-container">
+      <a href="" class="menu-link">
+        <img src="assets/search.svg">
+      </a>
+      <div>
+        <form>
+          <input type="search" placeholder="Search">
+          <button></button>  
+        </form>
+      </div>
+    </div>
+  </nav>
 
   <nav class="desktop right">
-
     <div class="menu-outer">
       <a href="">
         <div class="menu-inner">
@@ -118,3 +146,11 @@ $(document).ready(function() {
   });
 });
 </script> -->
+
+<script>
+$(document).ready(function() {
+  $('.menu-link').click(function(e) {
+    e.preventDefault()
+  });
+})
+</script>

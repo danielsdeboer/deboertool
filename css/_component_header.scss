@@ -10,7 +10,11 @@
   z-index: 1;
 
   @include mobile-large {
-    height: $h-header - 3rem;
+    height: $h-header-mobile
+  }
+
+  @include mobile-small {
+    height: $h-header-mobile-small;
   }
 
   // The header is divided into 3 container divs
@@ -35,6 +39,10 @@
         width: 37.5%;
         padding-left: 1vw;
       }
+
+      @include mobile-small {
+        width: 30%;
+      }
     }
 
     // second is for the middle lion logo + dbt text
@@ -49,6 +57,10 @@
 
         @include mobile-large {
           width: 50%;
+        }
+
+        @include mobile-small {
+          width: 40%;
         }
       }
 
@@ -71,6 +83,10 @@
       @include desktop-small {
         width: 25%;
       }
+
+      @include mobile-small {
+        width: 40%;
+      }
     }
 
     // third is for the right search block + secondary nav
@@ -86,6 +102,10 @@
       @include desktop-small {
         width: 37.5%;
         padding-right: 1vw;
+      }
+
+      @include mobile-small {
+        width: 30%;
       }
     }
   }
@@ -363,5 +383,102 @@
 
   img {
     height: 50%;
+  }
+}
+
+
+// note to self, this entire thing has to be refactored
+.header-fixed {
+  div:nth-of-type(n+1) { // ugly hack because I have too much specificity above
+    .mobile {
+      display: none;
+
+      @include mobile-large {
+        @include hw(100%, 100%);
+        @include flex(center, column, center);
+      }
+
+      img {
+        height: 3rem;
+
+        @include mobile-small {
+          height: 2.5rem;
+        }
+      }
+    }
+  }
+}
+
+
+.mobile-menu-container {
+  @include hw(100%, 100%);
+  @include flex(center, column, center);
+  position: relative;
+
+  div {
+    @include hw(auto, 100%);
+    @include tl($h-header-mobile, 0);
+    background-color: $orange;
+    opacity: 0;
+    position: fixed;
+    transition: all .2s ease-in-out;
+    visibility: hidden;
+
+    @include mobile-small {
+      top: $h-header-mobile-small;
+    }
+  }
+
+  &:hover > div {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  ul {
+    @include flex(center, column, center);
+    width: 100%;
+  }
+
+  li {
+    @include font(0, 2rem, 300, $light);
+    border-bottom: 1px solid $light;
+    padding: .5em 0;
+    text-align: center;
+    width: 75%;
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+  }
+
+  a {
+    &:link,
+    &:visited,
+    &:active {
+      color: $light;
+      text-decoration: none;
+    }
+  }
+
+  form {
+    @include flex(center, row, center);
+    width: 100%;
+    padding: .5em .75em;
+  }
+
+  input {
+    @include font(0, 2em);
+    height: 3rem;
+    border: 1px solid $grey-dark;
+    box-shadow: 0;
+    padding: 0 .5rem;
+  }
+
+  button {
+    @include hw(3rem, 3rem);
+    @include bgimg('search.svg', 90% auto, center, center, no-repeat);
+    border: 1px solid $grey-dark;
+    border-left: 0;
+    box-shadow: 0;
   }
 }

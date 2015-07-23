@@ -29,6 +29,14 @@
   @include flex(flex-start, row, stretch);
   margin-top: $h-header;
 
+  @include mobile-large {
+    margin-top: $h-header-mobile;
+  }
+
+  @include mobile-small {
+    margin-top: $h-header-mobile-small;
+  }
+
   .toc-container { // this container interacts with the component_toc width (fixed element)
     @include hw (auto, $w-toc-container);
     @include flex(flex-start, row, center1);

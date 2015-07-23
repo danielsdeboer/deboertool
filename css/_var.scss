@@ -25,6 +25,8 @@ $std-trans-type: ease-in-out;
 
 // sizing
 $h-header: 9rem; // var = $h-header; if this changes, change the jquery (window.height * var) in index.html to match
+$h-header-mobile: 6rem;
+$h-header-mobile-small: 4rem;
 $h-article: 75vh;
 $h-footer: 10vh;
 
