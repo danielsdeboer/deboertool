@@ -76,7 +76,8 @@ table {
   padding: .5em 2em;
   text-decoration: none;
   text-transform: uppercase;
-  transition: background-color 0.2s ease-in-out; }
+  transition: background-color 0.2s ease-in-out;
+  white-space: nowrap; }
 .button-rect a:hover {
   background: #f57c00; }
 
@@ -220,7 +221,8 @@ table {
   height: 2.5em;
   justify-content: space-between;
   margin: 0 auto;
-  min-height: 3em; }
+  min-height: 3em;
+  white-space: nowrap; }
   .hover-buttons li {
     background-color: #fff;
     background-position: center center;
@@ -297,15 +299,15 @@ table {
     justify-content: flex-end;
     height: 100%; }
     .header-fixed > div:nth-of-type(1) {
-      width: 40%;
-      padding-left: 7vh; }
+      padding-left: 7vh;
+      width: 40%; }
       @media screen and (max-width: 1400px) {
         .header-fixed > div:nth-of-type(1) {
           padding-left: 4vw; } }
       @media screen and (max-width: 1200px) {
         .header-fixed > div:nth-of-type(1) {
-          width: 37.5%;
-          padding-left: 1vw; } }
+          padding-left: 1vw;
+          width: 37.5%; } }
       @media screen and (max-width: 600px) {
         .header-fixed > div:nth-of-type(1) {
           width: 30%; } }
@@ -576,7 +578,7 @@ table {
       width: 100%;
       align-items: center;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: center; } }
   .header-fixed div:nth-of-type(n+1) .mobile img {
     height: 3rem; }
@@ -652,6 +654,11 @@ table {
     border: 1px solid #424242;
     border-left: 0;
     box-shadow: 0; }
+
+@media screen and (max-width: 600px) {
+  .icon-cart,
+  .icon-account {
+    display: none; } }
 
 .component-footer {
   align-items: center;
@@ -748,36 +755,68 @@ body {
     align-items: flex-end;
     display: flex;
     flex-direction: row;
-    justify-content: space-around; }
+    justify-content: space-between;
+    border: 1px solid red;
+    padding: 0 5vw;
+    width: 100%; }
+    @media screen and (max-width: 800px) {
+      .page-1-article .inner-container {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: row;
+        justify-content: center; } }
     .page-1-article .inner-container article {
       align-items: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background-color: rgba(255, 255, 255, 0.7);
-      border: 1px solid #9e9e9e;
       margin-bottom: 4vh;
-      padding: 1em;
+      padding: 2em;
       text-align: center;
       transition: background-color 1s ease-in-out; }
-      .page-1-article .inner-container article:hover {
-        background-color: white; }
+      .page-1-article .inner-container article h1 {
+        line-height: 1;
+        margin-bottom: .25em; }
+      .page-1-article .inner-container article h2 {
+        line-height: 1; }
     .page-1-article .inner-container .hero-left,
     .page-1-article .inner-container .hero-right {
-      height: 10em;
-      width: 20%; }
+      background-color: rgba(245, 124, 0, 0.75);
+      color: #fff;
+      height: 13vw;
+      width: 25vw; }
       .page-1-article .inner-container .hero-left h1,
       .page-1-article .inner-container .hero-right h1 {
-        font-size: 3vh; }
+        font-size: 1.8vw; }
+      @media screen and (max-width: 800px) {
+        .page-1-article .inner-container .hero-left,
+        .page-1-article .inner-container .hero-right {
+          display: none; } }
     .page-1-article .inner-container .hero-middle {
-      height: 15em;
+      background-color: rgba(245, 124, 0, 0.8);
+      color: #fff;
+      height: 17vw;
       width: 35%; }
+      @media screen and (max-width: 800px) {
+        .page-1-article .inner-container .hero-middle {
+          height: 30vw;
+          width: 80%; } }
+      @media screen and (max-width: 600px) {
+        .page-1-article .inner-container .hero-middle {
+          height: 50vw;
+          width: 95%; } }
       .page-1-article .inner-container .hero-middle h1 {
-        font-size: 5vh; }
+        text-shadow: -1px -1px 0 #8f4800, 1px -1px 0 #8f4800, -1px 1px 0 #8f4800, 1px 1px 0 #8f4800;
+        font-size: 3vw; }
+        @media screen and (max-width: 800px) {
+          .page-1-article .inner-container .hero-middle h1 {
+            font-size: 6vw; } }
       .page-1-article .inner-container .hero-middle h2 {
-        font-size: 2.5vh; }
+        font-size: 1.5vw; }
+        @media screen and (max-width: 800px) {
+          .page-1-article .inner-container .hero-middle h2 {
+            font-size: 3vw; } }
     .page-1-article .inner-container h1 {
-      color: #424242;
       font-weight: 700; }
     .page-1-article .inner-container h2 {
       margin: .5em 0 1em; }
