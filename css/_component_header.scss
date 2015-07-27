@@ -10,7 +10,7 @@
   z-index: 1;
 
   @include mobile-large {
-    height: $h-header-mobile
+    height: $h-header-mobile;
   }
 
   @include mobile-small {
@@ -28,16 +28,16 @@
     // first is for the left bookmark block + main nav
 
     &:nth-of-type(1) {
-      width: 40%;
       padding-left: $div-padding;
+      width: 40%;
 
       @include desktop-mid {
         padding-left: 4vw;
       }
 
       @include desktop-small {
-        width: 37.5%;
         padding-left: 1vw;
+        width: 37.5%;
       }
 
       @include mobile-small {
@@ -395,7 +395,7 @@
 
       @include mobile-large {
         @include hw(100%, 100%);
-        @include flex(center, column, center);
+        @include flex(center, row, center);
       }
 
       img {
@@ -480,5 +480,12 @@
     border: 1px solid $grey-dark;
     border-left: 0;
     box-shadow: 0;
+  }
+}
+
+.icon-cart,
+.icon-account {
+  @include mobile-small {
+    display: none;
   }
 }
