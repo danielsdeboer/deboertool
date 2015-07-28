@@ -106,7 +106,7 @@ body {
       }
 
      @include mobile-small {
-        height: 50vw;
+        height: 15em;
         width: 95%;
       }
 
@@ -117,14 +117,26 @@ body {
         @include mobile-large {
           font-size: 6vw;
         }
+
+        @include mobile-small {
+          font-size: 2em;
+          line-height: 1;
+        }
       }
 
       h2 {
         font-size: 1.5vw;
 
-       @include mobile-large {
+        @include mobile-large {
           font-size: 3vw;
         }
+
+        @include mobile-small {
+          font-size: 1.3em;
+          line-height: 1;
+          margin-bottom: 1em;
+        }
+
       }
     }
 
