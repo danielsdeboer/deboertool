@@ -78,6 +78,12 @@ table {
   text-transform: uppercase;
   transition: background-color 0.2s ease-in-out;
   white-space: nowrap; }
+  @media screen and (max-width: 1200px) {
+    .button-rect a:link,
+    .button-rect a:active,
+    .button-rect a:visited {
+      padding: .5em;
+      font-size: 90%; } }
 .button-rect a:hover {
   background: #f57c00; }
 
@@ -756,9 +762,15 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 1px solid red;
     padding: 0 5vw;
     width: 100%; }
+    @media screen and (max-width: 1200px) {
+      .page-1-article .inner-container {
+        align-items: flex-end;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0 1vw; } }
     @media screen and (max-width: 800px) {
       .page-1-article .inner-container {
         align-items: flex-start;
@@ -776,9 +788,12 @@ body {
       transition: background-color 1s ease-in-out; }
       .page-1-article .inner-container article h1 {
         line-height: 1;
-        margin-bottom: .25em; }
+        margin-bottom: 2vw; }
       .page-1-article .inner-container article h2 {
-        line-height: 1; }
+        line-height: 1;
+        margin-bottom: 2vw; }
+      .page-1-article .inner-container article h3 {
+        padding: .5em 0; }
     .page-1-article .inner-container .hero-left,
     .page-1-article .inner-container .hero-right {
       background-color: rgba(245, 124, 0, 0.75);
@@ -788,6 +803,13 @@ body {
       .page-1-article .inner-container .hero-left h1,
       .page-1-article .inner-container .hero-right h1 {
         font-size: 1.8vw; }
+      .page-1-article .inner-container .hero-left h3,
+      .page-1-article .inner-container .hero-right h3 {
+        margin-bottom: 1.5em; }
+      @media screen and (max-width: 1200px) {
+        .page-1-article .inner-container .hero-left,
+        .page-1-article .inner-container .hero-right {
+          width: 27vw; } }
       @media screen and (max-width: 800px) {
         .page-1-article .inner-container .hero-left,
         .page-1-article .inner-container .hero-right {
@@ -796,7 +818,10 @@ body {
       background-color: rgba(245, 124, 0, 0.8);
       color: #fff;
       height: 17vw;
-      width: 35%; }
+      width: 35vw; }
+      @media screen and (max-width: 1200px) {
+        .page-1-article .inner-container .hero-middle {
+          width: 40vw; } }
       @media screen and (max-width: 800px) {
         .page-1-article .inner-container .hero-middle {
           height: 30vw;
