@@ -1,0 +1,158 @@
+// scss-lint:disable NestingDepth
+
+@import 'var'; // Import this one first
+
+// COMPONENTS
+
+@import 'component-stack';
+
+// other stuff
+
+@import 'reset';
+@import 'mixins';
+@import 'site-wide';
+
+$bottom-container-height: 5em;
+
+body {
+  height: 100%;
+  font-family: $base-font;
+}
+
+.fullscreen { // fullscreen content (non-)
+  min-height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.mid-container { // content container with hero image, etc
+  @include hw(100vh, 100%);
+  @include flex(flex-end, row, space-between);
+  @include bgimg('hero-1080p.jpg', auto 90%, center, bottom, repeat);
+  padding: 0 2vw;
+  // has to be the same as the bottom container height for the sticky-bottom layout
+  padding-bottom: $bottom-container-height;
+  // has to be the same the header plus a little extra for looks
+  padding-top: $h-header + 1rem;
+
+  @include desktop-small {
+    @include flex(flex-end, row, space-around);
+  }
+
+  @include mobile-large {
+    @include flex(flex-start, row, center);
+  }
+}
+
+.bottom-container { // footer with "next page" icon inside of it; fixed height
+  @include hw(5em, 100%);
+  @include flex(center, row, center);
+  background: red;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+
+.hero-left,
+.hero-middle,
+.hero-right {
+  @include flex(center, column, center);
+  // background-color: rgba($light, .9);
+  // border: 4px solid $light;
+  margin-bottom: 4vh;
+  padding: 2em;
+  text-align: center;
+  transition: background-color 1s ease-in-out;
+
+  // &:hover {
+  //   background-color: rgba(255, 255, 255, 1);
+  // }
+
+  h1 {
+    line-height: 1;
+    margin-bottom: 2vw;
+  }
+
+  h2 {
+    line-height: 1;
+    margin-bottom: 2vw;
+  }
+
+  h3 {
+    padding: .5em 0;
+  }
+}
+
+.hero-left,
+.hero-right {
+  background-color: rgba($orange, .75);
+  color: $light;
+  height: 13vw;
+  width: 25vw;
+
+  h1 { 
+    font-size: 1.8vw;
+  }
+
+  h3 {
+    margin-bottom: 1.5em;
+  }
+
+  @include desktop-small {
+    width: 27vw;
+  }
+
+  @include mobile-large {
+    display: none;
+  }
+}
+
+.hero-middle {
+  background-color: rgba($orange, .8);
+  color: $light;
+  height: 17vw;
+  width: 35vw;
+
+  @include desktop-small {
+    width: 40vw;
+  }
+
+  @include mobile-large {
+    height: 30vw;
+    width: 80%;
+  }
+
+ @include mobile-small {
+    height: 15em;
+    width: 95%;
+  }
+
+  h1 { 
+    @include shadow(darken($orange, 20%));
+    font-size: 3vw;
+
+    @include mobile-large {
+      font-size: 6vw;
+    }
+
+    @include mobile-small {
+      font-size: 2em;
+      line-height: 1;
+    }
+  }
+
+  h2 {
+    font-size: 1.5vw;
+
+    @include mobile-large {
+      font-size: 3vw;
+    }
+
+    @include mobile-small {
+      font-size: 1.3em;
+      line-height: 1;
+      margin-bottom: 1em;
+    }
+
+  }
+}
