@@ -12,11 +12,12 @@
 @import 'mixins';
 @import 'site-wide';
 
-$bottom-container-height: 5em;
+$bottom-container-height: 7rem;
+$debug-color: #9b9b9b;
 
 body {
-  height: 100%;
   font-family: $base-font;
+  height: 100%;
 }
 
 .fullscreen { // fullscreen content (non-)
@@ -28,10 +29,9 @@ body {
 .mid-container { // content container with hero image, etc
   @include hw(100vh, 100%);
   @include flex(flex-end, row, space-between);
-  @include bgimg('hero-1080p.jpg', auto 90%, center, bottom, repeat);
   padding: 0 2vw;
   // has to be the same as the bottom container height for the sticky-bottom layout
-  padding-bottom: $bottom-container-height;
+  padding-bottom: $bottom-container-height + 1rem;
   // has to be the same the header plus a little extra for looks
   padding-top: $h-header + 1rem;
 
@@ -44,13 +44,34 @@ body {
   }
 }
 
-.bottom-container { // footer with "next page" icon inside of it; fixed height
-  @include hw(5em, 100%);
+// ## MID CONTAINER DEFS ## //
+.page1 {
+  @include bgimg('hero-1080p.jpg', auto 90%, center, bottom, repeat-x);
+}
+
+.page2 {
+  background-color: $light;
+}
+
+.simple {
   @include flex(center, row, center);
-  background: red;
+  background-color: $light;
+}
+
+
+
+.bottom-container { // footer with "next page" icon inside of it; fixed height
+  @include hw($bottom-container-height, 100%);
+  @include flex(center, row, center);
+  background-color: $light;
   bottom: 0;
+  box-shadow: $level1-inset;
   left: 0;
   position: absolute;
+
+  li {
+    @include bgimg('chevron-down.svg');
+  }
 }
 
 .hero-left,
@@ -122,12 +143,12 @@ body {
     width: 80%;
   }
 
- @include mobile-small {
+  @include mobile-small {
     height: 15em;
     width: 95%;
   }
 
-  h1 { 
+  h1 {
     @include shadow(darken($orange, 20%));
     font-size: 3vw;
 
@@ -153,6 +174,37 @@ body {
       line-height: 1;
       margin-bottom: 1em;
     }
-
   }
+}
+
+.hero-sub-text { // below-the-fold hero stuff
+  @include hw(auto, 50%);
+  @include flex(flex-end, column, center);
+  @include debug($debug-color);
+  max-width: 30em;
+  text-align: right;
+
+  h1 {
+    @include debug($debug-color);
+    font-size: 3em;
+    font-weight: 300;
+    margin-bottom: .25em;
+  }
+
+  h2 {
+    @include debug($debug-color);
+    font-size: 1.2em;
+    margin-bottom: .5em;
+  }
+
+  h3 {
+    align-self: center;
+  }
+}
+
+.hero-sub-image { // below-the-fold images
+  @include hw(15em, 15em);
+  @include bgimg('special.jpg', 100% auto, center, center, no-repeat);
+  @include debug($debug-color);
+  margin: 0 1em;
 }

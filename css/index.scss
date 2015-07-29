@@ -16,6 +16,8 @@ body {
   font-family: $base-font;
 }
 
+$debug-color: #9b9b9b;
+
 .page-1-article {
   @include hw($h-article, 100%);
   @include flex(flex-end, row, center);

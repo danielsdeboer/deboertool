@@ -132,3 +132,8 @@
      1px 1px 0 $color;
 }
 
+@mixin debug($border: 0) {
+  @if $border != 0 {
+    border: 1px solid $border;
+  }
+}

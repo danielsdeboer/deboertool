@@ -1,4 +1,4 @@
-$(window).scroll(function() {
+$(window).scroll(function () {
   var scroll = $(window).scrollTop();
   var height = $(window).height() - 200;
 
@@ -10,7 +10,7 @@ $(window).scroll(function() {
 $(document).ready(function() {
   $('#nav1').click(function(event) {
     // window.height has to be the same height as the fixed page header; this is documented in the scss file for that element.
-    var targetOffset = $('.page-2-article').offset().top - ($(window).height() * .15); 
+    var targetOffset = $('.page2').offset().top;
 
     event.preventDefault();
     $('html, body').animate({ scrollTop: targetOffset }, 1000);
