@@ -51,6 +51,32 @@ body {
 
 .page2 {
   background-color: $light;
+
+  .hero-sub-image { // below-the-fold images
+    @include hw(20em, 20em);
+    @include bgimg('special.jpg', 100% auto, center, center, no-repeat);
+    margin: 0 3em;
+  }
+}
+
+.page3 {
+  background-color: $light;
+
+  .hero-sub-image { // below-the-fold images
+    @include hw(30em, 20em);
+    @include bgimg('rush.png', auto 100%, center, center, no-repeat);
+    margin: 0 1em;
+  }
+}
+
+.page4 {
+  background-color: $light;
+
+  .hero-sub-image { // below-the-fold images
+    @include hw(30em, 20em);
+    @include bgimg('regrinds.jpg', auto 100%, center, center, no-repeat);
+    margin: 0 1em;
+  }
 }
 
 .simple {
@@ -180,31 +206,21 @@ body {
 .hero-sub-text { // below-the-fold hero stuff
   @include hw(auto, 50%);
   @include flex(flex-end, column, center);
-  @include debug($debug-color);
   max-width: 30em;
   text-align: right;
 
   h1 {
-    @include debug($debug-color);
-    font-size: 3em;
-    font-weight: 300;
+    font-size: 4em;
+    font-weight: 900;
     margin-bottom: .25em;
   }
 
   h2 {
-    @include debug($debug-color);
     font-size: 1.2em;
     margin-bottom: .5em;
   }
 
   h3 {
-    align-self: center;
+    margin-top: 1em;
   }
-}
-
-.hero-sub-image { // below-the-fold images
-  @include hw(15em, 15em);
-  @include bgimg('special.jpg', 100% auto, center, center, no-repeat);
-  @include debug($debug-color);
-  margin: 0 1em;
 }

@@ -780,6 +780,36 @@ body {
 
 .page2 {
   background-color: #fff; }
+  .page2 .hero-sub-image {
+    height: 20em;
+    width: 20em;
+    background-image: url("../assets/special.jpg");
+    background-size: 100% auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 0 3em; }
+
+.page3 {
+  background-color: #fff; }
+  .page3 .hero-sub-image {
+    height: 30em;
+    width: 20em;
+    background-image: url("../assets/rush.png");
+    background-size: auto 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 0 1em; }
+
+.page4 {
+  background-color: #fff; }
+  .page4 .hero-sub-image {
+    height: 30em;
+    width: 20em;
+    background-image: url("../assets/regrinds.jpg");
+    background-size: auto 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 0 1em; }
 
 .simple {
   align-items: center;
@@ -894,29 +924,16 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid #9b9b9b;
   max-width: 30em;
   text-align: right; }
   .hero-sub-text h1 {
-    border: 1px solid #9b9b9b;
-    font-size: 3em;
-    font-weight: 300;
+    font-size: 4em;
+    font-weight: 900;
     margin-bottom: .25em; }
   .hero-sub-text h2 {
-    border: 1px solid #9b9b9b;
     font-size: 1.2em;
     margin-bottom: .5em; }
   .hero-sub-text h3 {
-    align-self: center; }
-
-.hero-sub-image {
-  height: 15em;
-  width: 15em;
-  background-image: url("../assets/special.jpg");
-  background-size: 100% auto;
-  background-position: center center;
-  background-repeat: no-repeat;
-  border: 1px solid #9b9b9b;
-  margin: 0 1em; }
+    margin-top: 1em; }
 
 /*# sourceMappingURL=front-page.css.map */
