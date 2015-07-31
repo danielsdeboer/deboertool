@@ -15,9 +15,16 @@
     text-transform: uppercase;
     transition: background-color $std-trans $std-trans-type;
     white-space: nowrap;
+
+    @include desktop-small {
+      padding: .5em;
+      font-size: 90%;
+    }
   }
 
   a:hover {
     background: $orange;
   }
+
+
 }

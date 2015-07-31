@@ -1,0 +1,268 @@
+// scss-lint:disable NestingDepth
+
+@import 'var'; // Import this one first
+
+// COMPONENTS
+
+@import 'component-stack';
+
+// other stuff
+
+@import 'reset';
+@import 'mixins';
+@import 'site-wide';
+
+$bottom-container-height: 7rem;
+$debug-color: #9b9b9b;
+
+body {
+  font-family: $base-font;
+  height: 100%;
+}
+
+.fullscreen { // fullscreen content (non-)
+  min-height: 100%;
+  position: relative;
+  width: 100%;
+
+  // for the last block we're going to hide the footer and instead append the site-wide footer
+  // the specificity will ensure this rule takes precedence
+  &:last-of-type {
+    .bottom-container {
+      display: none;
+    }
+  }
+}
+
+.mid-container { // content container with hero image, etc
+  @include hw(100vh, 100%);
+  @include flex(flex-end, row, space-between);
+  padding: 0 2vw;
+  // has to be the same as the bottom container height for the sticky-bottom layout
+  padding-bottom: $bottom-container-height + 1rem;
+  // has to be the same the header plus a little extra for looks
+  padding-top: $h-header + 1rem;
+
+  @include desktop-small {
+    @include flex(flex-end, row, space-around);
+  }
+
+  @include mobile-large {
+    @include flex(flex-start, row, center);
+  }
+
+  @include mobile-small {
+    @include flex(center, column, flex-end);
+    @include hw(auto, 100%);
+    box-shadow: $level1-inset;
+    min-height: 100vh;
+    padding-bottom: 2em;
+    padding-top: 2em;
+  }
+}
+
+// ## MID CONTAINER DEFS ## //
+.page1 {
+  @include bgimg('hero-1080p.jpg', auto 90%, center, bottom, repeat-x);
+}
+
+.page2 {
+  background-color: $light;
+
+  .hero-sub-image { // below-the-fold images
+    @include hw(20em, 20em);
+    @include bgimg('special.jpg', 100% auto, center, center, no-repeat);
+    margin: 0 3em;
+
+    @include mobile-large {
+      @include hw(15em, 15em);
+    }
+  }
+}
+
+.page3 {
+  background-color: $light;
+
+  .hero-sub-image { // below-the-fold images
+    @include hw(20em, 10em);
+    @include bgimg('rush.png', auto 100%, center, center, no-repeat);
+    margin: 0 1em;
+  }
+}
+
+.page4 {
+  background-color: $light;
+
+  .hero-sub-image { // below-the-fold images
+    @include hw(20em, 10em);
+    @include bgimg('regrinds.jpg', auto 100%, center, center, no-repeat);
+    margin: 0 1em;
+  }
+}
+
+.simple {
+  @include flex(center, row, center);
+  background-color: $light;
+
+  @include mobile-small {
+    @include flex(center, column, stretch);
+  }
+}
+
+.bottom-container { // footer with "next page" icon inside of it; fixed height
+  @include hw($bottom-container-height, 100%);
+  @include flex(center, row, center);
+  background-color: $light;
+  bottom: 0;
+  box-shadow: $level1-inset;
+  left: 0;
+  position: absolute;
+
+  @include mobile-small {
+    display: none;
+  }
+
+  li {
+    @include bgimg('chevron-down.svg');
+  }
+}
+
+.hero-left,
+.hero-middle,
+.hero-right {
+  @include flex(center, column, center);
+  // background-color: rgba($light, .9);
+  // border: 4px solid $light;
+  margin-bottom: 4vh;
+  padding: 2em;
+  text-align: center;
+  transition: background-color 1s ease-in-out;
+
+  // &:hover {
+  //   background-color: rgba(255, 255, 255, 1);
+  // }
+
+  h1 {
+    line-height: 1;
+    margin-bottom: 2vw;
+  }
+
+  h2 {
+    line-height: 1;
+    margin-bottom: 2vw;
+  }
+
+  h3 {
+    padding: .5em 0;
+  }
+}
+
+.hero-left,
+.hero-right {
+  background-color: rgba($orange, .75);
+  color: $light;
+  height: 13vw;
+  width: 25vw;
+
+  h1 { 
+    font-size: 1.8vw;
+  }
+
+  h3 {
+    margin-bottom: 1.5em;
+  }
+
+  @include desktop-small {
+    width: 27vw;
+  }
+
+  @include mobile-large {
+    display: none;
+  }
+}
+
+.hero-middle {
+  background-color: rgba($orange, .8);
+  color: $light;
+  height: 17vw;
+  width: 35vw;
+
+  @include desktop-small {
+    width: 40vw;
+  }
+
+  @include mobile-large {
+    height: 30vw;
+    width: 80%;
+  }
+
+  @include mobile-small {
+    height: 45vh;
+    width: 95%;
+  }
+
+  h1 {
+    @include shadow(darken($orange, 20%));
+    font-size: 3vw;
+
+    @include mobile-large {
+      font-size: 6vw;
+    }
+
+    @include mobile-small {
+      font-size: 2em;
+      line-height: 1;
+    }
+  }
+
+  h2 {
+    font-size: 1.5vw;
+
+    @include mobile-large {
+      font-size: 3vw;
+    }
+
+    @include mobile-small {
+      font-size: 1.3em;
+      line-height: 1;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.hero-sub-text { // below-the-fold hero stuff
+  @include hw(auto, 50%);
+  @include flex(flex-end, column, center);
+  max-width: 30em;
+  text-align: right;
+
+  @include mobile-small {
+    @include flex(center, column, center);
+    max-width: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 4em;
+    font-weight: 900;
+    margin-bottom: .25em;
+
+    @include mobile-large {
+      font-size: 3em;
+    }
+  }
+
+  h2 {
+    font-size: 1.2em;
+    margin-bottom: .5em;
+  }
+
+  h3 {
+    margin-top: 1em;
+
+    @include mobile-small {
+      margin-bottom: 3em;
+    }
+  }
+}
