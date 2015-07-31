@@ -748,6 +748,8 @@ body {
   min-height: 100%;
   position: relative;
   width: 100%; }
+  .fullscreen:last-of-type .bottom-container {
+    display: none; }
 
 .mid-container {
   height: 100vh;
@@ -771,6 +773,18 @@ body {
       display: flex;
       flex-direction: row;
       justify-content: center; } }
+  @media screen and (max-width: 600px) {
+    .mid-container {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: auto;
+      width: 100%;
+      box-shadow: inset 0 7px 5px -5px rgba(66, 66, 66, 0.5);
+      min-height: 100vh;
+      padding-bottom: 2em;
+      padding-top: 2em; } }
 
 .page1 {
   background-image: url("../assets/hero-1080p.jpg");
@@ -788,12 +802,16 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     margin: 0 3em; }
+    @media screen and (max-width: 800px) {
+      .page2 .hero-sub-image {
+        height: 15em;
+        width: 15em; } }
 
 .page3 {
   background-color: #fff; }
   .page3 .hero-sub-image {
-    height: 30em;
-    width: 20em;
+    height: 20em;
+    width: 10em;
     background-image: url("../assets/rush.png");
     background-size: auto 100%;
     background-position: center center;
@@ -803,8 +821,8 @@ body {
 .page4 {
   background-color: #fff; }
   .page4 .hero-sub-image {
-    height: 30em;
-    width: 20em;
+    height: 20em;
+    width: 10em;
     background-image: url("../assets/regrinds.jpg");
     background-size: auto 100%;
     background-position: center center;
@@ -817,6 +835,12 @@ body {
   flex-direction: row;
   justify-content: center;
   background-color: #fff; }
+  @media screen and (max-width: 600px) {
+    .simple {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch; } }
 
 .bottom-container {
   height: 7rem;
@@ -830,6 +854,9 @@ body {
   box-shadow: inset 0 7px 5px -5px rgba(66, 66, 66, 0.5);
   left: 0;
   position: absolute; }
+  @media screen and (max-width: 600px) {
+    .bottom-container {
+      display: none; } }
   .bottom-container li {
     background-image: url("../assets/chevron-down.svg"); }
 
@@ -894,7 +921,7 @@ body {
       width: 80%; } }
   @media screen and (max-width: 600px) {
     .hero-middle {
-      height: 15em;
+      height: 45vh;
       width: 95%; } }
   .hero-middle h1 {
     text-shadow: -1px -1px 0 #8f4800, 1px -1px 0 #8f4800, -1px 1px 0 #8f4800, 1px 1px 0 #8f4800;
@@ -926,14 +953,29 @@ body {
   justify-content: center;
   max-width: 30em;
   text-align: right; }
+  @media screen and (max-width: 600px) {
+    .hero-sub-text {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: none;
+      text-align: center;
+      width: 100%; } }
   .hero-sub-text h1 {
     font-size: 4em;
     font-weight: 900;
     margin-bottom: .25em; }
+    @media screen and (max-width: 800px) {
+      .hero-sub-text h1 {
+        font-size: 3em; } }
   .hero-sub-text h2 {
     font-size: 1.2em;
     margin-bottom: .5em; }
   .hero-sub-text h3 {
     margin-top: 1em; }
+    @media screen and (max-width: 600px) {
+      .hero-sub-text h3 {
+        margin-bottom: 3em; } }
 
 /*# sourceMappingURL=front-page.css.map */

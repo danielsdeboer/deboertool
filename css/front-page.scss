@@ -24,6 +24,14 @@ body {
   min-height: 100%;
   position: relative;
   width: 100%;
+
+  // for the last block we're going to hide the footer and instead append the site-wide footer
+  // the specificity will ensure this rule takes precedence
+  &:last-of-type {
+    .bottom-container {
+      display: none;
+    }
+  }
 }
 
 .mid-container { // content container with hero image, etc
@@ -42,6 +50,15 @@ body {
   @include mobile-large {
     @include flex(flex-start, row, center);
   }
+
+  @include mobile-small {
+    @include flex(center, column, flex-end);
+    @include hw(auto, 100%);
+    box-shadow: $level1-inset;
+    min-height: 100vh;
+    padding-bottom: 2em;
+    padding-top: 2em;
+  }
 }
 
 // ## MID CONTAINER DEFS ## //
@@ -56,6 +73,10 @@ body {
     @include hw(20em, 20em);
     @include bgimg('special.jpg', 100% auto, center, center, no-repeat);
     margin: 0 3em;
+
+    @include mobile-large {
+      @include hw(15em, 15em);
+    }
   }
 }
 
@@ -63,7 +84,7 @@ body {
   background-color: $light;
 
   .hero-sub-image { // below-the-fold images
-    @include hw(30em, 20em);
+    @include hw(20em, 10em);
     @include bgimg('rush.png', auto 100%, center, center, no-repeat);
     margin: 0 1em;
   }
@@ -73,7 +94,7 @@ body {
   background-color: $light;
 
   .hero-sub-image { // below-the-fold images
-    @include hw(30em, 20em);
+    @include hw(20em, 10em);
     @include bgimg('regrinds.jpg', auto 100%, center, center, no-repeat);
     margin: 0 1em;
   }
@@ -82,9 +103,11 @@ body {
 .simple {
   @include flex(center, row, center);
   background-color: $light;
+
+  @include mobile-small {
+    @include flex(center, column, stretch);
+  }
 }
-
-
 
 .bottom-container { // footer with "next page" icon inside of it; fixed height
   @include hw($bottom-container-height, 100%);
@@ -94,6 +117,10 @@ body {
   box-shadow: $level1-inset;
   left: 0;
   position: absolute;
+
+  @include mobile-small {
+    display: none;
+  }
 
   li {
     @include bgimg('chevron-down.svg');
@@ -170,7 +197,7 @@ body {
   }
 
   @include mobile-small {
-    height: 15em;
+    height: 45vh;
     width: 95%;
   }
 
@@ -209,10 +236,21 @@ body {
   max-width: 30em;
   text-align: right;
 
+  @include mobile-small {
+    @include flex(center, column, center);
+    max-width: none;
+    text-align: center;
+    width: 100%;
+  }
+
   h1 {
     font-size: 4em;
     font-weight: 900;
     margin-bottom: .25em;
+
+    @include mobile-large {
+      font-size: 3em;
+    }
   }
 
   h2 {
@@ -222,5 +260,9 @@ body {
 
   h3 {
     margin-top: 1em;
+
+    @include mobile-small {
+      margin-bottom: 3em;
+    }
   }
 }
