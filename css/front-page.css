@@ -587,7 +587,7 @@ table {
       flex-direction: row;
       justify-content: center; } }
   .header-fixed div:nth-of-type(n+1) .mobile img {
-    height: 3rem; }
+    height: 2rem; }
     @media screen and (max-width: 600px) {
       .header-fixed div:nth-of-type(n+1) .mobile img {
         height: 2.5rem; } }
@@ -740,6 +740,10 @@ table {
 strong {
   font-weight: 700; }
 
+* {
+  transition: width .2s ease-in-out;
+  transition: height .2x ease-in-out; }
+
 body {
   font-family: "Raleway", sans-serif;
   height: 100%; }
@@ -791,6 +795,12 @@ body {
   background-size: auto 90%;
   background-position: center bottom;
   background-repeat: repeat-x; }
+  @media screen and (max-width: 1200px) {
+    .page1 {
+      background-image: url("../assets/hero-1080p.jpg");
+      background-size: auto 80%;
+      background-position: center bottom;
+      background-repeat: repeat-x; } }
 
 .page2 {
   background-color: #fff; }

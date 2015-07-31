@@ -15,6 +15,11 @@
 $bottom-container-height: 7rem;
 $debug-color: #9b9b9b;
 
+* {
+  transition: width .2s ease-in-out;
+  transition: height .2x ease-in-out;
+}
+
 body {
   font-family: $base-font;
   height: 100%;
@@ -64,6 +69,10 @@ body {
 // ## MID CONTAINER DEFS ## //
 .page1 {
   @include bgimg('hero-1080p.jpg', auto 90%, center, bottom, repeat-x);
+
+  @include desktop-small {
+    @include bgimg('hero-1080p.jpg', auto 80%, center, bottom, repeat-x);
+  }
 }
 
 .page2 {
