@@ -781,4 +781,36 @@ body {
 .page-meet-the-team section:nth-of-type(6) div:nth-of-type(1) {
   background-image: url("../assets/staff-sean-ouckama.jpg"); }
 
+.page-product-listing section div {
+  background-size: auto 90%;
+  background-position: center center;
+  background-repeat: no-repeat; }
+.page-product-listing section:nth-of-type(1) div:nth-of-type(1) {
+  background-image: url("../assets/product-vertical-general-purpose.jpg"); }
+.page-product-listing section:nth-of-type(2) div:nth-of-type(1) {
+  background-image: url("../assets/product-vertical-xmill.jpg"); }
+.page-product-listing section:nth-of-type(3) div:nth-of-type(1) {
+  background-image: url("../assets/product-vertical-threadmill.jpg"); }
+.page-product-listing section:nth-of-type(4) div:nth-of-type(1) {
+  background-image: url("../assets/product-vertical-high-velocity.jpg"); }
+.page-product-listing section:nth-of-type(5) div:nth-of-type(1) {
+  background-image: url("../assets/product-vertical-p20-pro.jpg"); }
+.page-product-listing section:nth-of-type(6) div:nth-of-type(1) {
+  background-image: url("../assets/product-vertical-amill.jpg"); }
+
+.page-services section div {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+.page-services section:nth-of-type(1) div:nth-of-type(1) {
+  background-image: url("../assets/hero-480p.jpg"); }
+.page-services section:nth-of-type(2) div:nth-of-type(1) {
+  background-image: url("../assets/custom-temp.jpg"); }
+.page-services section:nth-of-type(3) div:nth-of-type(1) {
+  background-image: url("../assets/service-regrinding-temp.jpg"); }
+.page-services section:nth-of-type(4) div:nth-of-type(1) {
+  background-image: url("../assets/service-recycle-temp.jpg"); }
+.page-services section:nth-of-type(5) div:nth-of-type(1) {
+  background-image: url("../assets/service-coating-temp.jpg"); }
+
 /*# sourceMappingURL=material.css.map */
