@@ -39,14 +39,7 @@ body {
     }
   }
 
- $list: 'technology.jpg', 'our-people.jpg', 'history.jpg';
-
-  $n: 1;
-
-  @each $img in $list {
-    @include imgseries($n, #{$img});
-    $n: $n + 1;
-  }
+  @include imgseries($list: ('technology.jpg', 'our-people.jpg', 'history.jpg'));
 }
 
 .page-meet-the-team {
@@ -56,14 +49,7 @@ body {
     }
   }
 
-  $list: 'staff-gary-deboer.jpg', 'staff-rebekah-owais.jpg', 'staff-margaret-davidson.jpg', 'staff-dan-deboer.jpg', 'staff-andrew-ogilvie.jpg', 'staff-sean-ouckama.jpg';
-
-  $n: 1;
-
-  @each $img in $list {
-    @include imgseries($n, #{$img});
-    $n: $n + 1;
-  }
+  @include imgseries($list: ('staff-gary-deboer.jpg', 'staff-rebekah-owais.jpg', 'staff-margaret-davidson.jpg', 'staff-dan-deboer.jpg', 'staff-andrew-ogilvie.jpg', 'staff-sean-ouckama.jpg'));
 }
 
 .page-product-listing {
@@ -73,14 +59,7 @@ body {
     }
   }
 
-  $list: 'product-vertical-general-purpose.jpg', 'product-vertical-xmill.jpg', 'product-vertical-threadmill.jpg', 'product-vertical-high-velocity.jpg', 'product-vertical-p20-pro.jpg', 'product-vertical-amill.jpg';
-
-  $n: 1;
-
-  @each $img in $list {
-    @include imgseries($n, #{$img});
-    $n: $n + 1;
-  }
+  @include imgseries($list: ('product-vertical-general-purpose.jpg', 'product-vertical-xmill.jpg', 'product-vertical-threadmill.jpg', 'product-vertical-high-velocity.jpg', 'product-vertical-p20-pro.jpg', 'product-vertical-amill.jpg'));
 }
 
 .page-services {
@@ -90,14 +69,7 @@ body {
     }
   }
 
-  $list: 'hero-480p.jpg', 'custom-temp.jpg', 'service-regrinding-temp.jpg', 'service-recycle-temp.jpg', 'service-coating-temp.jpg';
-
-  $n: 1;
-
-  @each $img in $list {
-    @include imgseries($n, #{$img});
-    $n: $n + 1;
-  }
+  @include imgseries ($list: ('hero-480p.jpg', 'custom-temp.jpg', 'service-regrinding-temp.jpg', 'service-recycle-temp.jpg', 'service-coating-temp.jpg'));
 }
 
 // X-Mill Series Index Background Images
@@ -109,12 +81,5 @@ body {
     }
   }
 
-  $list: 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg';
-
-  $n: 1;
-
-  @each $img in $list {
-    @include imgseries($n, #{$img});
-    $n: $n + 1;
-  }
+  @include imgseries($list: ('product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg'));
 }

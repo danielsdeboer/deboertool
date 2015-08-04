@@ -161,9 +161,22 @@
 }
 
 @mixin imgseries($id, $pic) {
-  section:nth-of-type(#{$id}) {
-    div:nth-of-type(1) {
-      @include bgimg-only($pic);
+
+}
+
+@mixin imgseries($list) {
+  // Set iterator to intial value
+  $n: 1;
+
+  // For each img in list 
+  @each $img in $list {
+    section:nth-of-type(#{$n}) {
+      div:nth-of-type(1) {
+        background-image: url("#{$root}#{$assets}#{$img}");
+      }
     }
+
+    $n: $n + 1;
   }
+
 }
