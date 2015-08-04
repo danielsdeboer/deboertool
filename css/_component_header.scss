@@ -329,6 +329,8 @@
   }
 }
 
+// custom sizing and components for the cart dropdown
+
 .cart {
   height: 10vw;
 
@@ -344,6 +346,8 @@
     }
   }
 }
+
+// custom sizing and components for the cart dropdown
 
 .menu-outer {
   @include hw(100%, 25%);
