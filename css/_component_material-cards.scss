@@ -16,6 +16,12 @@
 // .material-cards section:nth-of-type(1) div:nth-of-type(1) { background-image: url('something.jpg') }
 // .material-cards section:nth-of-type(2) div:nth-of-type(1) { background-image: url('something-else.jpg') }
 //
+// It's also possible to use article class="material-cards page-name" and instead use:
+//
+// .page-name section... etc.
+//
+// This is especially useful when moving all CSS for many pages into one single file.
+//
 // et cetera
 
 @import 'mixins';
@@ -63,18 +69,21 @@
     order: 2;
     padding: 0 3vw 0 ($w-toc-margin * .5);
 
+    // For this break adjust width + padding
     @include desktop-large {
       @include hw(auto, (100% - $w-toc-container-break1));
       padding-left: $w-toc-margin-break1 * $p;
       padding-right: $w-toc-margin-break1 * $p;
     }
 
+    // For this break adjust width + padding
     @include desktop-small {
       @include hw(auto, (100% - $w-toc-container-break2));
       padding-left: $w-toc-margin-break2 * $p;
       padding-right: $w-toc-margin-break2 * $p;
     }
 
+    // for this break adjust width
     @include mobile-large {
       @include hw(auto, 100%);
     }
@@ -86,7 +95,8 @@
     margin-top: 2vh;
     width: 100%;
 
-    @include mobile-small {
+    // At this break switch to column layout
+    @include mobile-large {
       @include flex(center, column, stretch);
     }
 
@@ -95,8 +105,12 @@
       order: 1;
       width: 40%;
 
-      @include mobile-small {
-        @include hw(40vh, 100%);
+      // At this break, for column layout, change the size for verticality
+      // Now we need to specify a height, this could be a vh or % but
+      // the flexibility isn't necessary here and a Xrem height makes
+      // pictures look a bit better at different sizes.
+      @include mobile-large {
+        @include hw(30rem, 100%);
       }
     }
 
@@ -106,7 +120,8 @@
       order: 2;
       padding: 2vh 0 4vh;
 
-      @include mobile-small {
+      // At this break, for column layout, change the size for verticality
+      @include mobile-large {
         @include hw(auto, 100%);
       }
 
@@ -148,7 +163,8 @@
     &:nth-of-type(odd) {
       flex-direction: row;
 
-      @include mobile-small {
+      // change the layout to column-based
+      @include mobile-large {
         flex-direction: column;
       }
     }
@@ -156,7 +172,8 @@
     &:nth-of-type(even) {
       flex-direction: row-reverse;
 
-      @include mobile-small {
+      // change layout to column-based
+      @include mobile-large {
         flex-direction: column;
       }
     }

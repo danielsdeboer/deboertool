@@ -1,0 +1,103 @@
+// scss-lint:disable NestingDepth
+
+@import 'var'; // Import this one first, it has our variables, they are important
+
+// Component stack
+
+@import 'component-stack';
+
+// Other stuff
+
+@import 'reset';
+@import 'mixins';
+@import 'site-wide';
+
+body {
+  font-family: $base-font;
+}
+
+* {
+  transition: width .2s ease-in-out, height .2s ease-in-out;
+}
+
+.page-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+// ###################
+// # PAGES NAMESPACE #
+// ###################
+
+.page-about-us {
+  section {
+    div {
+      @include bgimg-spec(cover, center, center, no-repeat);
+    }
+  }
+
+  section:nth-of-type(1) {
+    div:nth-of-type(1) {
+      @include bgimg-only('technology.jpg');
+    }
+  }
+
+  section:nth-of-type(2) {
+    div:nth-of-type(1) {
+      @include bgimg-only('our-people.jpg');
+    }
+  }
+
+  section:nth-of-type(3) {
+    div:nth-of-type(1) {
+      @include bgimg-only('history.jpg');
+    }
+  }
+}
+
+.page-meet-the-team {
+  section {
+    div {
+      @include bgimg-spec(cover, center, center, no-repeat);
+    }
+  }
+
+  section:nth-of-type(1) {
+    div:nth-of-type(1) {
+      @include bgimg-only('staff-gary-deboer.jpg');
+    }
+  }
+
+  section:nth-of-type(2) {
+    div:nth-of-type(1) {
+      @include bgimg-only('staff-rebekah-owais.jpg');
+    }
+  }
+
+  section:nth-of-type(3) {
+    div:nth-of-type(1) {
+      @include bgimg-only('staff-margaret-davidson.jpg');
+    }
+  }
+
+  section:nth-of-type(4) {
+    div:nth-of-type(1) {
+      @include bgimg-only('staff-dan-deboer.jpg');
+    }
+  }
+
+  section:nth-of-type(5) {
+    div:nth-of-type(1) {
+      @include bgimg-only('staff-andrew-ogilvie.jpg');
+    }
+  }
+
+  section:nth-of-type(6) {
+    div:nth-of-type(1) {
+      @include bgimg-only('staff-sean-ouckama.jpg');
+    }
+  }
+}

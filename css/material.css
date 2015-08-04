@@ -151,7 +151,7 @@ table {
     display: flex;
     margin-top: 2vh;
     width: 100%; }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 800px) {
       .material-cards section {
         align-items: center;
         display: flex;
@@ -162,9 +162,9 @@ table {
       width: 40%;
       order: 1;
       width: 40%; }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 800px) {
         .material-cards section > div:nth-of-type(1) {
-          height: 40vh;
+          height: 30rem;
           width: 100%; } }
     .material-cards section > div:nth-of-type(2) {
       height: auto;
@@ -175,7 +175,7 @@ table {
       justify-content: center;
       order: 2;
       padding: 2vh 0 4vh; }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 800px) {
         .material-cards section > div:nth-of-type(2) {
           height: auto;
           width: 100%; } }
@@ -205,12 +205,12 @@ table {
         margin-bottom: 1.5em; }
     .material-cards section:nth-of-type(odd) {
       flex-direction: row; }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 800px) {
         .material-cards section:nth-of-type(odd) {
           flex-direction: column; } }
     .material-cards section:nth-of-type(even) {
       flex-direction: row-reverse; }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 800px) {
         .material-cards section:nth-of-type(even) {
           flex-direction: column; } }
     .material-cards section:last-of-type {
@@ -740,251 +740,45 @@ table {
 strong {
   font-weight: 700; }
 
+body {
+  font-family: "Raleway", sans-serif; }
+
 * {
   transition: width .2s ease-in-out, height .2s ease-in-out; }
 
-body {
-  font-family: "Raleway", sans-serif;
-  height: 100%; }
-
-.fullscreen {
-  min-height: 100%;
-  position: relative;
+.page-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   width: 100%; }
-  .fullscreen:last-of-type .bottom-container {
-    display: none; }
 
-.mid-container {
-  height: 100vh;
-  width: 100%;
-  align-items: flex-end;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0 2vw;
-  padding-bottom: 8rem;
-  padding-top: 10rem; }
-  @media screen and (max-width: 1200px) {
-    .mid-container {
-      align-items: flex-end;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around; } }
-  @media screen and (max-width: 800px) {
-    .mid-container {
-      align-items: flex-start;
-      display: flex;
-      flex-direction: row;
-      justify-content: center; } }
-  @media screen and (max-width: 600px) {
-    .mid-container {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      height: auto;
-      width: 100%;
-      box-shadow: inset 0 7px 5px -5px rgba(66, 66, 66, 0.5);
-      min-height: 100vh;
-      padding-bottom: 2em;
-      padding-top: 2em; } }
+.page-about-us section div {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+.page-about-us section:nth-of-type(1) div:nth-of-type(1) {
+  background-image: url("../assets/technology.jpg"); }
+.page-about-us section:nth-of-type(2) div:nth-of-type(1) {
+  background-image: url("../assets/our-people.jpg"); }
+.page-about-us section:nth-of-type(3) div:nth-of-type(1) {
+  background-image: url("../assets/history.jpg"); }
 
-.page1 {
-  background-image: url("../assets/hero-1080p.jpg");
-  background-size: auto 90%;
-  background-position: center bottom;
-  background-repeat: repeat-x; }
-  @media screen and (max-width: 1200px) {
-    .page1 {
-      background-image: url("../assets/hero-1080p.jpg");
-      background-size: auto 80%;
-      background-position: center bottom;
-      background-repeat: repeat-x; } }
+.page-meet-the-team section div {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+.page-meet-the-team section:nth-of-type(1) div:nth-of-type(1) {
+  background-image: url("../assets/staff-gary-deboer.jpg"); }
+.page-meet-the-team section:nth-of-type(2) div:nth-of-type(1) {
+  background-image: url("../assets/staff-rebekah-owais.jpg"); }
+.page-meet-the-team section:nth-of-type(3) div:nth-of-type(1) {
+  background-image: url("../assets/staff-margaret-davidson.jpg"); }
+.page-meet-the-team section:nth-of-type(4) div:nth-of-type(1) {
+  background-image: url("../assets/staff-dan-deboer.jpg"); }
+.page-meet-the-team section:nth-of-type(5) div:nth-of-type(1) {
+  background-image: url("../assets/staff-andrew-ogilvie.jpg"); }
+.page-meet-the-team section:nth-of-type(6) div:nth-of-type(1) {
+  background-image: url("../assets/staff-sean-ouckama.jpg"); }
 
-.page2 {
-  background-color: #fff; }
-  .page2 .hero-sub-image {
-    height: 20em;
-    width: 20em;
-    background-image: url("../assets/special.jpg");
-    background-size: 100% auto;
-    background-position: center center;
-    background-repeat: no-repeat;
-    margin: 0 3em; }
-    @media screen and (max-width: 800px) {
-      .page2 .hero-sub-image {
-        height: 15em;
-        width: 15em; } }
-
-.page3 {
-  background-color: #fff; }
-  .page3 .hero-sub-image {
-    height: 20em;
-    width: 10em;
-    background-image: url("../assets/rush.png");
-    background-size: auto 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    margin: 0 1em; }
-
-.page4 {
-  background-color: #fff; }
-  .page4 .hero-sub-image {
-    height: 20em;
-    width: 10em;
-    background-image: url("../assets/regrinds.jpg");
-    background-size: auto 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    margin: 0 1em; }
-
-.simple {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  background-color: #fff; }
-  @media screen and (max-width: 600px) {
-    .simple {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: stretch; } }
-
-.bottom-container {
-  height: 7rem;
-  width: 100%;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  background-color: #fff;
-  bottom: 0;
-  box-shadow: inset 0 7px 5px -5px rgba(66, 66, 66, 0.5);
-  left: 0;
-  position: absolute; }
-  @media screen and (max-width: 600px) {
-    .bottom-container {
-      display: none; } }
-  .bottom-container li {
-    background-image: url("../assets/chevron-down.svg"); }
-
-.hero-left,
-.hero-middle,
-.hero-right {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 4vh;
-  padding: 2em;
-  text-align: center;
-  transition: background-color 1s ease-in-out; }
-  .hero-left h1,
-  .hero-middle h1,
-  .hero-right h1 {
-    line-height: 1;
-    margin-bottom: 2vw; }
-  .hero-left h2,
-  .hero-middle h2,
-  .hero-right h2 {
-    line-height: 1;
-    margin-bottom: 2vw; }
-  .hero-left h3,
-  .hero-middle h3,
-  .hero-right h3 {
-    padding: .5em 0; }
-
-.hero-left,
-.hero-right {
-  background-color: rgba(245, 124, 0, 0.75);
-  color: #fff;
-  height: 13vw;
-  width: 25vw; }
-  .hero-left h1,
-  .hero-right h1 {
-    font-size: 1.8vw; }
-  .hero-left h3,
-  .hero-right h3 {
-    margin-bottom: 1.5em; }
-  @media screen and (max-width: 1200px) {
-    .hero-left,
-    .hero-right {
-      width: 27vw; } }
-  @media screen and (max-width: 800px) {
-    .hero-left,
-    .hero-right {
-      display: none; } }
-
-.hero-middle {
-  background-color: rgba(245, 124, 0, 0.8);
-  color: #fff;
-  height: 17vw;
-  width: 35vw; }
-  @media screen and (max-width: 1200px) {
-    .hero-middle {
-      width: 40vw; } }
-  @media screen and (max-width: 800px) {
-    .hero-middle {
-      height: 30vw;
-      width: 80%; } }
-  @media screen and (max-width: 600px) {
-    .hero-middle {
-      height: 45vh;
-      width: 95%; } }
-  .hero-middle h1 {
-    text-shadow: -1px -1px 0 #8f4800, 1px -1px 0 #8f4800, -1px 1px 0 #8f4800, 1px 1px 0 #8f4800;
-    font-size: 3vw; }
-    @media screen and (max-width: 800px) {
-      .hero-middle h1 {
-        font-size: 6vw; } }
-    @media screen and (max-width: 600px) {
-      .hero-middle h1 {
-        font-size: 2em;
-        line-height: 1; } }
-  .hero-middle h2 {
-    font-size: 1.5vw; }
-    @media screen and (max-width: 800px) {
-      .hero-middle h2 {
-        font-size: 3vw; } }
-    @media screen and (max-width: 600px) {
-      .hero-middle h2 {
-        font-size: 1.3em;
-        line-height: 1;
-        margin-bottom: 1em; } }
-
-.hero-sub-text {
-  height: auto;
-  width: 50%;
-  align-items: flex-end;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 30em;
-  text-align: right; }
-  @media screen and (max-width: 600px) {
-    .hero-sub-text {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      max-width: none;
-      text-align: center;
-      width: 100%; } }
-  .hero-sub-text h1 {
-    font-size: 4em;
-    font-weight: 900;
-    margin-bottom: .25em; }
-    @media screen and (max-width: 800px) {
-      .hero-sub-text h1 {
-        font-size: 3em; } }
-  .hero-sub-text h2 {
-    font-size: 1.2em;
-    margin-bottom: .5em; }
-  .hero-sub-text h3 {
-    margin-top: 1em; }
-    @media screen and (max-width: 600px) {
-      .hero-sub-text h3 {
-        margin-bottom: 3em; } }
-
-/*# sourceMappingURL=front-page.css.map */
+/*# sourceMappingURL=material.css.map */

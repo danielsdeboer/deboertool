@@ -16,6 +16,10 @@ body {
   font-family: $base-font;
 }
 
+* {
+  transition: width .2s ease-in-out, height .2s ease-in-out;
+}
+
 .page-wrapper {
   align-items: center;
   display: flex;

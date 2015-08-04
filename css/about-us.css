@@ -76,7 +76,14 @@ table {
   padding: .5em 2em;
   text-decoration: none;
   text-transform: uppercase;
-  transition: background-color 0.2s ease-in-out; }
+  transition: background-color 0.2s ease-in-out;
+  white-space: nowrap; }
+  @media screen and (max-width: 1200px) {
+    .button-rect a:link,
+    .button-rect a:active,
+    .button-rect a:visited {
+      padding: .5em;
+      font-size: 90%; } }
 .button-rect a:hover {
   background: #f57c00; }
 
@@ -220,7 +227,8 @@ table {
   height: 2.5em;
   justify-content: space-between;
   margin: 0 auto;
-  min-height: 3em; }
+  min-height: 3em;
+  white-space: nowrap; }
   .hover-buttons li {
     background-color: #fff;
     background-position: center center;
@@ -297,15 +305,15 @@ table {
     justify-content: flex-end;
     height: 100%; }
     .header-fixed > div:nth-of-type(1) {
-      width: 40%;
-      padding-left: 7vh; }
+      padding-left: 7vh;
+      width: 40%; }
       @media screen and (max-width: 1400px) {
         .header-fixed > div:nth-of-type(1) {
           padding-left: 4vw; } }
       @media screen and (max-width: 1200px) {
         .header-fixed > div:nth-of-type(1) {
-          width: 37.5%;
-          padding-left: 1vw; } }
+          padding-left: 1vw;
+          width: 37.5%; } }
       @media screen and (max-width: 600px) {
         .header-fixed > div:nth-of-type(1) {
           width: 30%; } }
@@ -576,10 +584,10 @@ table {
       width: 100%;
       align-items: center;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: center; } }
   .header-fixed div:nth-of-type(n+1) .mobile img {
-    height: 3rem; }
+    height: 2rem; }
     @media screen and (max-width: 600px) {
       .header-fixed div:nth-of-type(n+1) .mobile img {
         height: 2.5rem; } }
@@ -652,6 +660,11 @@ table {
     border: 1px solid #424242;
     border-left: 0;
     box-shadow: 0; }
+
+@media screen and (max-width: 600px) {
+  .icon-cart,
+  .icon-account {
+    display: none; } }
 
 .component-footer {
   align-items: center;
@@ -729,6 +742,9 @@ strong {
 
 body {
   font-family: "Raleway", sans-serif; }
+
+* {
+  transition: width .2s ease-in-out, height .2s ease-in-out; }
 
 .page-wrapper {
   align-items: center;
