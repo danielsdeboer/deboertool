@@ -159,3 +159,11 @@
     border: 1px solid $border;
   }
 }
+
+@mixin imgseries($id, $pic) {
+  section:nth-of-type(#{$id}) {
+    div:nth-of-type(1) {
+      @include bgimg-only($pic);
+    }
+  }
+}

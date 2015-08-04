@@ -39,22 +39,13 @@ body {
     }
   }
 
-  section:nth-of-type(1) {
-    div:nth-of-type(1) {
-      @include bgimg-only('technology.jpg');
-    }
-  }
+ $list: 'technology.jpg', 'our-people.jpg', 'history.jpg';
 
-  section:nth-of-type(2) {
-    div:nth-of-type(1) {
-      @include bgimg-only('our-people.jpg');
-    }
-  }
+  $n: 1;
 
-  section:nth-of-type(3) {
-    div:nth-of-type(1) {
-      @include bgimg-only('history.jpg');
-    }
+  @each $img in $list {
+    @include imgseries($n, #{$img});
+    $n: $n + 1;
   }
 }
 
@@ -65,40 +56,13 @@ body {
     }
   }
 
-  section:nth-of-type(1) {
-    div:nth-of-type(1) {
-      @include bgimg-only('staff-gary-deboer.jpg');
-    }
-  }
+  $list: 'staff-gary-deboer.jpg', 'staff-rebekah-owais.jpg', 'staff-margaret-davidson.jpg', 'staff-dan-deboer.jpg', 'staff-andrew-ogilvie.jpg', 'staff-sean-ouckama.jpg';
 
-  section:nth-of-type(2) {
-    div:nth-of-type(1) {
-      @include bgimg-only('staff-rebekah-owais.jpg');
-    }
-  }
+  $n: 1;
 
-  section:nth-of-type(3) {
-    div:nth-of-type(1) {
-      @include bgimg-only('staff-margaret-davidson.jpg');
-    }
-  }
-
-  section:nth-of-type(4) {
-    div:nth-of-type(1) {
-      @include bgimg-only('staff-dan-deboer.jpg');
-    }
-  }
-
-  section:nth-of-type(5) {
-    div:nth-of-type(1) {
-      @include bgimg-only('staff-andrew-ogilvie.jpg');
-    }
-  }
-
-  section:nth-of-type(6) {
-    div:nth-of-type(1) {
-      @include bgimg-only('staff-sean-ouckama.jpg');
-    }
+  @each $img in $list {
+    @include imgseries($n, #{$img});
+    $n: $n + 1;
   }
 }
 
@@ -109,40 +73,13 @@ body {
     }
   }
 
-  section:nth-of-type(1) {
-    div:nth-of-type(1) {
-      @include bgimg-only('product-vertical-general-purpose.jpg');
-    }
-  }
+  $list: 'product-vertical-general-purpose.jpg', 'product-vertical-xmill.jpg', 'product-vertical-threadmill.jpg', 'product-vertical-high-velocity.jpg', 'product-vertical-p20-pro.jpg', 'product-vertical-amill.jpg';
 
-  section:nth-of-type(2) {
-    div:nth-of-type(1) {
-      @include bgimg-only('product-vertical-xmill.jpg');
-    }
-  }
+  $n: 1;
 
-  section:nth-of-type(3) {
-    div:nth-of-type(1) {
-      @include bgimg-only('product-vertical-threadmill.jpg');
-    }
-  }
-
-  section:nth-of-type(4) {
-    div:nth-of-type(1) {
-      @include bgimg-only('product-vertical-high-velocity.jpg');
-    }
-  }
-
-  section:nth-of-type(5) {
-    div:nth-of-type(1) {
-      @include bgimg-only('product-vertical-p20-pro.jpg');
-    }
-  }
-
-  section:nth-of-type(6) {
-    div:nth-of-type(1) {
-      @include bgimg-only('product-vertical-amill.jpg');
-    }
+  @each $img in $list {
+    @include imgseries($n, #{$img});
+    $n: $n + 1;
   }
 }
 
@@ -153,33 +90,31 @@ body {
     }
   }
 
-  section:nth-of-type(1) {
-    div:nth-of-type(1) {
-      @include bgimg-only('hero-480p.jpg');
+  $list: 'hero-480p.jpg', 'custom-temp.jpg', 'service-regrinding-temp.jpg', 'service-recycle-temp.jpg', 'service-coating-temp.jpg';
+
+  $n: 1;
+
+  @each $img in $list {
+    @include imgseries($n, #{$img});
+    $n: $n + 1;
+  }
+}
+
+// X-Mill Series Index Background Images
+
+.page-xmill-series-index {
+  section {
+    div {
+      @include bgimg-spec(auto 90%, center, center, no-repeat);
     }
   }
 
-  section:nth-of-type(2) {
-    div:nth-of-type(1) {
-      @include bgimg-only('custom-temp.jpg');
-    }
-  }
+  $list: 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg';
 
-  section:nth-of-type(3) {
-    div:nth-of-type(1) {
-      @include bgimg-only('service-regrinding-temp.jpg');
-    }
-  }
+  $n: 1;
 
-  section:nth-of-type(4) {
-    div:nth-of-type(1) {
-      @include bgimg-only('service-recycle-temp.jpg');
-    }
-  }
-
-  section:nth-of-type(5) {
-    div:nth-of-type(1) {
-      @include bgimg-only('service-coating-temp.jpg');
-    }
+  @each $img in $list {
+    @include imgseries($n, #{$img});
+    $n: $n + 1;
   }
 }

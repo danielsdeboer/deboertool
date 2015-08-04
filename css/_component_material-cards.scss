@@ -63,6 +63,7 @@
 
   $p: 1.1;
 
+  // this is the content container that houses material cards
   .card-container {
     @include hw(auto, (100% - $w-toc-container));
     @include flex(center, column, center);
@@ -87,6 +88,13 @@
     @include mobile-large {
       @include hw(auto, 100%);
     }
+  }
+
+  header {
+    @include flex(center, column, center);
+    box-shadow: $level1;
+    margin-top: 2vh;
+    width: 100%;
   }
 
   section {
