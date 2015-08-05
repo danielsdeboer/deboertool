@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700);
+
 // scss-lint:disable NestingDepth
 
 @import 'var'; // Import this one first, it has our variables, they are important
@@ -81,7 +83,7 @@ body {
     }
   }
 
-  @include imgseries($list: ('product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg'));
+  @include imgseries($list: ('product-vertical-xmill.jpg', 'xmill-series-standard-420p.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg'));
 }
 
 .page-this-website {
@@ -92,6 +94,16 @@ body {
   }
 
   @include imgseries($list: ('site-carts-temp.gif', 'site-calc-temp.jpg', 'site-account-temp.jpg'));
+}
+
+.page-xmill-stub-listing {
+  section {
+    div {
+      @include bgimg-spec(auto 90%, center, center, no-repeat);
+    }
+  }
+
+  @include imgseries($list: ('product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg'));
 }
 
 // #####################

@@ -119,11 +119,12 @@
       @include hw(auto, 60%);
       @include flex(center, column, center);
       order: 2;
-      padding: 2vh 0 4vh;
+      padding: 2em;
 
-      // At this break, for column layout, change the size for verticality
+      // At this break, for column layout, change the size for verticality, reduce padding
       @include mobile-large {
         @include hw(auto, 100%);
+        padding: 1em;
       }
 
       h1 {
@@ -195,6 +196,35 @@
       background-size: cover;
     }
   }
+
+  th,
+  td {
+    border-bottom: 1px solid $grey-mid;
+    padding: .25em .5em;
+    text-align: center;
+  }
+
+  th {
+    font-size: .8em;
+  }
+
+  td {
+    font-family: 'Anonymous Pro', monospace;
+  }
+
+  tr {
+    td:last-of-type {
+      font-weight: 700;
+    }
+  }
+
+  a:link,
+  a:visited,
+  a:active {
+    color: $orange;
+    text-decoration: none;
+    transition: background .2s ease-in-out;
+  }
 }
 
 .series-header {
@@ -223,7 +253,7 @@
     font-size: 2rem;
     font-weight: 400;
     line-height: 1;
-    margin: .5em 0;
+    margin: 1em 0;
   }
 
   p,
@@ -240,11 +270,11 @@
   }
 
   p {
-    margin-bottom: 1em;
+    margin-bottom: 2em;
   }
 
   table {
-    margin-bottom: 1.5em;
+    margin-bottom: 2em;
   }
 
   td {
