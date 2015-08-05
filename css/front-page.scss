@@ -16,8 +16,7 @@ $bottom-container-height: 7rem;
 $debug-color: #9b9b9b;
 
 * {
-  transition: width .2s ease-in-out;
-  transition: height .2x ease-in-out;
+  transition: width .2s ease-in-out, height .2s ease-in-out;
 }
 
 body {

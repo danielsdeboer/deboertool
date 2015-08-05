@@ -9,6 +9,12 @@
   flex-direction: row;
   justify-content: stretch;
   margin-top: 9rem; }
+  @media screen and (max-width: 800px) {
+    .material-cards {
+      margin-top: 6rem; } }
+  @media screen and (max-width: 600px) {
+    .material-cards {
+      margin-top: 4rem; } }
   .material-cards .toc-container {
     height: auto;
     width: 15%;
@@ -56,7 +62,7 @@
     display: flex;
     margin-top: 2vh;
     width: 100%; }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 800px) {
       .material-cards section {
         align-items: center;
         display: flex;
@@ -67,9 +73,9 @@
       width: 40%;
       order: 1;
       width: 40%; }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 800px) {
         .material-cards section > div:nth-of-type(1) {
-          height: 40vh;
+          height: 30rem;
           width: 100%; } }
     .material-cards section > div:nth-of-type(2) {
       height: auto;
@@ -80,12 +86,12 @@
       justify-content: center;
       order: 2;
       padding: 2vh 0 4vh; }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 800px) {
         .material-cards section > div:nth-of-type(2) {
           height: auto;
           width: 100%; } }
       .material-cards section > div:nth-of-type(2) h1 {
-        font-size: 6vh;
+        font-size: 3.5rem;
         font-weight: 900;
         line-height: .9;
         padding: .1em .25em;
@@ -106,16 +112,19 @@
         @media screen and (max-width: 1200px) {
           .material-cards section > div:nth-of-type(2) p {
             width: 85%; } }
+        @media screen and (max-width: 600px) {
+          .material-cards section > div:nth-of-type(2) p {
+            width: 100%; } }
       .material-cards section > div:nth-of-type(2) p:last-of-type {
         margin-bottom: 1.5em; }
     .material-cards section:nth-of-type(odd) {
       flex-direction: row; }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 800px) {
         .material-cards section:nth-of-type(odd) {
           flex-direction: column; } }
     .material-cards section:nth-of-type(even) {
       flex-direction: row-reverse; }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 800px) {
         .material-cards section:nth-of-type(even) {
           flex-direction: column; } }
     .material-cards section:last-of-type {
@@ -124,5 +133,51 @@
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover; }
+
+.series-header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 2px 2px 5px 2px rgba(66, 66, 66, 0.5);
+  margin-top: 2vh;
+  padding: 2rem;
+  width: 100%; }
+  .series-header h1,
+  .series-header h2 {
+    text-align: center;
+    line-height: 1; }
+  .series-header h1 {
+    font-size: 3.5rem;
+    font-weight: 900; }
+  .series-header h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: .5em 0; }
+  .series-header p,
+  .series-header table {
+    width: 75%; }
+    @media screen and (max-width: 800px) {
+      .series-header p,
+      .series-header table {
+        width: 90%; } }
+    @media screen and (max-width: 800px) {
+      .series-header p,
+      .series-header table {
+        width: 100%; } }
+  .series-header p {
+    margin-bottom: 1em; }
+  .series-header table {
+    margin-bottom: 1.5em; }
+  .series-header td {
+    border-bottom: 1px solid #9e9e9e;
+    padding: .5em; }
+  .series-header tr td:nth-of-type(1) {
+    border-right: 1px solid #9e9e9e;
+    text-align: right;
+    width: 40%; }
+  .series-header tr:last-of-type td {
+    border-bottom: 0; }
 
 /*# sourceMappingURL=_component_material-cards.css.map */

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About this website - De Boer Tool</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/material.css">
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700,900' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> <!-- roboto for listings -->
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> <!-- jQuery -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<meta charset="UTF-8">
+</head>
+
+<body>
+
+  <header class="header-fixed">
+    <script>
+    // This jquery is design-phase only, imp-phase in PHP
+    $('body > .header-fixed').load('_component_header.html');
+    </script>
+  </header>
+
+<div class="page-wrapper">
+
+	<aside class="table-of-contents">
+		<script>
+		// This jquery is design-phase only, imp-phase in PHP
+		// This has to be prepended because load() replaces existing content (the per-page ul)
+		$.ajax({
+			url: '_component_toc.html',
+			success: function(data) { $('.table-of-contents').prepend(data); },
+			dataType: 'html'
+		})
+		</script>
+		<ul>
+			<li><a href="">Online Ordering</a></li>
+			<li><a href="">Live Pricing</a></li>
+			<li><a href="">Account History</a></li>
+		</ul>
+	</aside>
+
+	<article class="material-cards page-this-website">
+		<div class="toc-container"></div>
+
+		<div class="card-container">
+			<section>
+				<div>
+					<!-- div contains background image -->
+				</div>
+				<div>
+					<h1>Online Ordering</h1>
+					<h2>Let the robots do all the work!</h2>
+					<p>About 100 years ago if you wanted some carbide endmills you were pretty much out of luck because carbide endmills hadn't been invented yet.</p>
+					<p>Then 50 years ago you'd have to call up a distributor and they'd comb through a well-thumbed yearly catalogue to find exactly what you were looking for, put in the mail, and you'd get it... hopefully. If you wanted to track your package, get your invoice, see your account balance, there was a lot of calling, mailing, writing checks, and well... <a href="http://i.ytimg.com/vi/zFHb1MS2o_E/hqdefault.jpg">time consuming stuff</a>.</p>
+					<p>Then came the internet. And we were one of the first cutting tool manufacturers to whole-heartedly embrace the web as an end-to-end ecommerce platform. Our website is over 10 years old!</p>
+					<p>Over the years we've accumulated functionality, so now you can see your discouted pricing online in CAD, USD, or EUR, purchase online, send in RFQs online. Want to know more? Keep scrolling. (And remember most of the really good stuff requires an account and a login.)</p>
+					<span class="button-rect"><a href="#">Register An Account</a></span>
+				</div>
+			</section>
+
+			<section>
+				<div>
+					<!-- div contains background image -->
+				</div>
+				<div>
+					<h1>Live Pricing</h1>
+					<h2>Back away slowly from the calculator...</h2>
+					<p>Want a run-of-the-mill list price? No problem. All our pricing is available on the site. Simply click on any part number or SKU on the site and you'll get the list price, right away.</p>
+					<p>But if you have a credit account with us, you already know it gets better than that. There are <em>discounts</em>.</p>
+					<p>Even better, if you login to the website, the pricing you see will be discounted just for you. Our best price, every time. No need to get out the calculate, no need to make a spreadsheet, just search for your part and voila.</p>
+					<p>Or, if you know our part numbers like the back of your hand or you simply want to copy and paste, you can use our Instant Order form.</p>
+					<span class='button-rect'><a href="#">Place An Instant Order</a></span>
+				</div>
+			</section>
+
+			<section>
+				<div>
+					<!-- div contains background image -->
+				</div>
+				<div>
+					<h1>Account History</h1>
+					<h2>Now 100% easier to give us money</h2>
+					<p>We make it easy to get the information you need to keep your account up to date. Simply login to the website, click on the account icon, and get an instant snapshot of your account.</p>
+					<p>You can download invoices, review package tracking numbers, see frequently purchase items, manage who gets what email, and more!</p>
+					<span class="button-rect"><a href="#">View Your Account History</a></span>
+				</div>
+			</section>
+		</div>
+	</article>
+
+	<footer class="component-footer">
+		<script>
+		// This jquery is design-phase only, imp-phase in PHP
+		$('body .component-footer').load('_component_footer.html');
+		</script>		
+	</footer>
+	
+</div>
+
+</body>
+</html>

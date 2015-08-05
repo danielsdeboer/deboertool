@@ -16,6 +16,12 @@
 // .material-cards section:nth-of-type(1) div:nth-of-type(1) { background-image: url('something.jpg') }
 // .material-cards section:nth-of-type(2) div:nth-of-type(1) { background-image: url('something-else.jpg') }
 //
+// It's also possible to use article class="material-cards page-name" and instead use:
+//
+// .page-name section... etc.
+//
+// This is especially useful when moving all CSS for many pages into one single file.
+//
 // et cetera
 
 @import 'mixins';
@@ -57,24 +63,28 @@
 
   $p: 1.1;
 
+  // this is the content container that houses material cards
   .card-container {
     @include hw(auto, (100% - $w-toc-container));
     @include flex(center, column, center);
     order: 2;
     padding: 0 3vw 0 ($w-toc-margin * .5);
 
+    // For this break adjust width + padding
     @include desktop-large {
       @include hw(auto, (100% - $w-toc-container-break1));
       padding-left: $w-toc-margin-break1 * $p;
       padding-right: $w-toc-margin-break1 * $p;
     }
 
+    // For this break adjust width + padding
     @include desktop-small {
       @include hw(auto, (100% - $w-toc-container-break2));
       padding-left: $w-toc-margin-break2 * $p;
       padding-right: $w-toc-margin-break2 * $p;
     }
 
+    // for this break adjust width
     @include mobile-large {
       @include hw(auto, 100%);
     }
@@ -86,7 +96,8 @@
     margin-top: 2vh;
     width: 100%;
 
-    @include mobile-small {
+    // At this break switch to column layout
+    @include mobile-large {
       @include flex(center, column, stretch);
     }
 
@@ -95,8 +106,12 @@
       order: 1;
       width: 40%;
 
-      @include mobile-small {
-        @include hw(40vh, 100%);
+      // At this break, for column layout, change the size for verticality
+      // Now we need to specify a height, this could be a vh or % but
+      // the flexibility isn't necessary here and a Xrem height makes
+      // pictures look a bit better at different sizes.
+      @include mobile-large {
+        @include hw(30rem, 100%);
       }
     }
 
@@ -106,12 +121,13 @@
       order: 2;
       padding: 2vh 0 4vh;
 
-      @include mobile-small {
+      // At this break, for column layout, change the size for verticality
+      @include mobile-large {
         @include hw(auto, 100%);
       }
 
       h1 {
-        font-size: 6vh;
+        font-size: 3.5rem;
         font-weight: 900;
         line-height: .9;
         padding: .1em .25em;
@@ -138,6 +154,10 @@
         @include desktop-small {
           width: 85%;
         }
+
+        @include mobile-small {
+          width: 95%;
+        }
       }
 
       p:last-of-type {
@@ -148,7 +168,8 @@
     &:nth-of-type(odd) {
       flex-direction: row;
 
-      @include mobile-small {
+      // change the layout to column-based
+      @include mobile-large {
         flex-direction: column;
       }
     }
@@ -156,7 +177,8 @@
     &:nth-of-type(even) {
       flex-direction: row-reverse;
 
-      @include mobile-small {
+      // change layout to column-based
+      @include mobile-large {
         flex-direction: column;
       }
     }
@@ -171,6 +193,76 @@
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
+    }
+  }
+}
+
+.series-header {
+  @include flex(center, column, center);
+  box-shadow: $level1;
+  margin-top: 2vh;
+  padding: 2rem;
+  width: 100%;
+
+  @include mobile-small {
+    padding: 1.5rem 1rem;
+  }
+
+  h1,
+  h2 {
+    text-align: center;
+    line-height: 1;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: .5em 0;
+  }
+
+  p,
+  table {
+    width: 75%;
+
+    @include mobile-large {
+      width: 90%;
+    }
+
+    @include mobile-small {
+      width: 100%;
+    }
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+
+  table {
+    margin-bottom: 1.5em;
+  }
+
+  td {
+    border-bottom: 1px solid $grey-mid;
+    padding: .5em;
+  }
+
+  tr {
+    td:nth-of-type(1) {
+      border-right: 1px solid $grey-mid;
+      text-align: right;
+      width: 40%;
+    }
+  }
+
+  tr:last-of-type {
+    td {
+      border-bottom: 0;
     }
   }
 }

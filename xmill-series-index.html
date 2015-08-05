@@ -2,22 +2,20 @@
 <html>
 <head>
 	<title>X-Mill Product Page - De Boer Tool</title>
-	<link rel="stylesheet" type="text/css" href="css/xmill-product-page.css"> <!-- page specific sheet -->
+	<link rel="stylesheet" type="text/css" href="css/material.css">
 	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700,900' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> <!-- roboto for listings -->
 	<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
  	<meta charset="UTF-8">
 </head>
 
 <body>
-
-	<header class="header-fixed">
-		<script>
-		// This jquery is design-phase only, imp-phase in PHP
-		$('body > .header-fixed').load('_component_header.html');
-		</script>		
-	</header>
+  <header class="header-fixed">
+    <script>
+    // This jquery is design-phase only, imp-phase in PHP
+    $('body > .header-fixed').load('_component_header.html');
+    </script>
+  </header>
 
 <div class="page-wrapper">
 	<aside class="table-of-contents">
@@ -39,12 +37,13 @@
 	</aside>
 
 
-	<article class="material-cards">
-		<div class="toc-container"></div>
+	<article class="material-cards page-xmill-series-index">
+		<div class="toc-container"><!--space for table of content--></div>
 	
 		<div class="card-container">
-			<header>
-					<h1>X-Mill: A variable helix rougher for any material</h1>
+			<header class="series-header">
+					<h1>X-Mill Variable Helix</h1>
+					<h2>A roughing cutter for any material</h2>
 					<p>It took 2 years to develop the current X-Mill (with continuous improvements since then). We had to match the material to the geometry to the edge prep to the coating... We even bought our own coating machine to make this tool possible.</p>
 					
 					<table>
@@ -64,23 +63,38 @@
 						</tbody>
 					</table>
 
-					<ul>
-						<li>
-							<a href=""></a>
-							<aside>X-Mill Product Guide (PDF)</aside>
-						</li>
-						<li>
-							<a href=""></a>
-							<aside>X-Mill Speeds and Feeds (PDF)</aside>
-						</li>
-						<li>
-							<a href=""></a>
-							<aside>X-Mill Video (YouTube)</aside>
-						</li>
-						<li>
-							<a href=""></a>
-							<aside>Catalogue Section (PDF)</aside>
-						</li>
+					<ul class="hover-buttons xmill-buttons">
+						<a href="">
+							<li>
+								<aside>
+									X-Mill Product Guide (PDF)
+								</aside>
+							</li>
+						</a>
+
+						<a href="">
+							<li>
+								<aside>
+									X-Mill Speeds and Feeds (PDF)
+								</aside>
+							</li>
+						</a>
+
+						<a href="">
+							<li>
+								<aside>
+									X-Mill Video (YouTube)
+								</aside>
+							</li>
+						</a>
+
+						<a href="">
+							<li>
+								<aside>
+									Catalogue Section (PDF)
+								</aside>
+							</li>
+						</a>
 					</ul>
 			</header>
 
@@ -93,11 +107,11 @@
 						<h1>X-Mill Stub</h1>
 						<h2>Flat Bottom, Radius, Ball Nose (inch sizes)</h2>
 						<p>Great for application where you want to minimize vibrations. Shorter overall length of cut and overall length.</p>
-						<span class="button-rect"><a href="xmill-stub-product-listing.html">View the X-Mill Stub product listing</a></span>
+						<span class="button-rect"><a href="xmill-stub-listing.html">View the X-Mill Stub listing</a></span>
 				</div>
 			</section>
 
-			<section class="material">
+			<section>
 				<div>
 					<!-- div contains background image -->
 				</div>
@@ -106,11 +120,12 @@
 					<h1>X-Mill Regular</h1>
 					<h2>Flat Bottom, Radius, Ball Nose (inch sizes)</h2>
 					<p>Our most popular X-Mill series. Standard lengths of cut and overall lengths. Great for most applications.</p>
-					<span class="button-rect"><a href="#">View the X-Mill Regular product page</a></span>
+					<p>These X-Mills tend to hew quite closely to the overall length of our General Purpose line, however most have custom lengths of cut, designed to achieve optimal speeds and feeds in a variety of applications while minimizing harmonic vibrations.</p>
+					<span class="button-rect"><a href="#">View the X-Mill Regular listing</a></span>
 				</div>
 			</section>
 
-			<section class="material">
+			<section>
 				<div>
 					<!-- div contains background image -->
 				</div>
@@ -118,12 +133,13 @@
 				<div>
 					<h1>X-Mill Long Reach</h1>
 					<h2>Radius, Ball Nose (inch sizes)</h2>
-					<p>For working in a tough-to-reach places. Extended lengths of reach with undersized necks. Feathered lead-out to minimise step-down machining lines.</p>
-					<span class="button-rect"><a href="#">View the X-Mill Long Reach product page</a></span>
+					<p>For working in a tough-to-reach places. Extended lengths of reach with undersized necks. Feathered lead-out to minimise step-down machining marks.</p>
+					<p>Each of Long Reach X-Mill is designed with vibration minimization in mind, limiting the overall lengths and shortening the lengths of cut to create an optimal roughing environment for many materials.</p>
+					<span class="button-rect"><a href="#">View the X-Mill Long Reach listing</a></span>
 				</div>
 			</section>
 
-			<section class="material">
+			<section>
 				<div>
 					<!-- div contains background image -->
 				</div>
@@ -131,8 +147,8 @@
 				<div>
 					<h1>X-Mill Metric</h1>
 					<h2>Radius (metric sizes)</h2>
-					<p>We have a limited selection of Metric X-Mills available in standard sizes and lengths.</p>
-					<span class="button-rect"><a href="#">View the X-Mill Metric product page</a></span>
+					<p>We have a limited selection of Metric X-Mills available in standard sizes and lengths. These metric X-Mills have the same geometry and same proportional dimensions as their inch-sized counterpart. They are currently available only in Standard Length.</p>
+					<span class="button-rect"><a href="#">View the X-Mill Metric listing</a></span>
 				</div>
 			</section>
 		</div>
