@@ -22,6 +22,12 @@
     }
   }
 
+  a:link,
+  a:visited,
+  a:active {
+    color: $light;
+  }
+
   a:hover {
     background: $orange;
   }

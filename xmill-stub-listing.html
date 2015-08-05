@@ -272,21 +272,12 @@
 	</article>
 </div>
 
-<aside class="cart">
-	<a href="">
-		<img src="assets/cart.svg">
-	</a>
-</aside>
-
-<script>
-$(document).ready( function() {
-	$("#click").click(function() {
-		event.preventDefault();
-		$(".popup").fadeIn();
-	});
-});
-
-</script>
+	<footer class="component-footer">
+		<script>
+		// This jquery is design-phase only, imp-phase in PHP
+		$('body .component-footer').load('_component_footer.html');
+		</script>		
+	</footer>
 
 
 
