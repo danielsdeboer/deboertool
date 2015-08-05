@@ -146,14 +146,6 @@ table {
       .material-cards .card-container {
         height: auto;
         width: 100%; } }
-  .material-cards header {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: 2px 2px 5px 2px rgba(66, 66, 66, 0.5);
-    margin-top: 2vh;
-    width: 100%; }
   .material-cards section {
     box-shadow: 2px 2px 5px 2px rgba(66, 66, 66, 0.5);
     display: flex;
@@ -188,7 +180,7 @@ table {
           height: auto;
           width: 100%; } }
       .material-cards section > div:nth-of-type(2) h1 {
-        font-size: 6vh;
+        font-size: 3.5rem;
         font-weight: 900;
         line-height: .9;
         padding: .1em .25em;
@@ -228,6 +220,42 @@ table {
       background-repeat: no-repeat;
       background-size: cover; }
 
+.series-header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 2px 2px 5px 2px rgba(66, 66, 66, 0.5);
+  margin-top: 2vh;
+  padding: 2rem;
+  width: 100%; }
+  .series-header h1,
+  .series-header h2 {
+    text-align: center; }
+  .series-header h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1; }
+  .series-header h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 2; }
+  .series-header p {
+    padding-bottom: 1em;
+    width: 75%; }
+  .series-header table {
+    margin-bottom: 2em;
+    width: 75%; }
+  .series-header td {
+    border-bottom: 1px solid #9e9e9e;
+    padding: .5em; }
+  .series-header tr td:nth-of-type(1) {
+    border-right: 1px solid #9e9e9e;
+    text-align: right;
+    width: 40%; }
+  .series-header tr:last-of-type td {
+    border-bottom: 0; }
+
 .hover-buttons {
   align-content: center;
   display: flex;
@@ -261,7 +289,7 @@ table {
     height: 100%;
     width: 100%; }
   .hover-buttons aside {
-    background-color: #fff;
+    background-color: #f57c00;
     bottom: -2.8em;
     box-shadow: 1px 2px 5px 1px rgba(66, 66, 66, 0.5);
     color: #fff;
@@ -276,7 +304,7 @@ table {
     z-index: 3; }
   .hover-buttons aside:after {
     border: solid transparent;
-    border-bottom-color: #fff;
+    border-bottom-color: #f57c00;
     border-width: 10px;
     bottom: 100%;
     content: ' ';
@@ -846,5 +874,14 @@ body {
   background-image: url("../assets/site-calc-temp.jpg"); }
 .page-this-website section:nth-of-type(3) div:nth-of-type(1) {
   background-image: url("../assets/site-account-temp.jpg"); }
+
+.xmill-buttons a:nth-of-type(1) li {
+  background-image: url("../assets/tooling-guide.svg"); }
+.xmill-buttons a:nth-of-type(2) li {
+  background-image: url("../assets/speeds-and-feeds.svg"); }
+.xmill-buttons a:nth-of-type(3) li {
+  background-image: url("../assets/watch-the-video.svg"); }
+.xmill-buttons a:nth-of-type(4) li {
+  background-image: url("../assets/download-catalogue-section.svg"); }
 
 /*# sourceMappingURL=material.css.map */

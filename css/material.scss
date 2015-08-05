@@ -93,3 +93,33 @@ body {
 
   @include imgseries($list: ('site-carts-temp.gif', 'site-calc-temp.jpg', 'site-account-temp.jpg'));
 }
+
+// #####################
+// # BUTTONS NAMESPACE #
+// #####################
+
+.xmill-buttons {
+  a:nth-of-type(1) {
+    li {
+      background-image: url('../assets/tooling-guide.svg');
+    }
+  }
+
+  a:nth-of-type(2) {
+    li {
+      background-image: url('../assets/speeds-and-feeds.svg');
+    }
+  }
+
+  a:nth-of-type(3) {
+    li {
+      background-image: url('../assets/watch-the-video.svg');
+    }
+  }
+
+  a:nth-of-type(4) {
+    li {
+      background-image: url('../assets/download-catalogue-section.svg');
+    }
+  }
+}
