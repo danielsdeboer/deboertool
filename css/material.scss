@@ -99,6 +99,24 @@ body {
 // #####################
 
 .xmill-buttons {
+  @include mobile-large {
+    @include flex(center, row, space-around);
+    width: 100%;
+
+    a {
+      @include flex(center, row, center);
+    }
+  }
+
+  @include mobile-small {
+    @include flex(center, row, space-between);
+    width: 100%;
+
+    a {
+      @include flex(center, row, center);
+    }
+  }
+
   a:nth-of-type(1) {
     li {
       background-image: url('../assets/tooling-guide.svg');
