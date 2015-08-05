@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
 
 // scss-lint:disable NestingDepth
 
@@ -93,7 +93,7 @@ body {
     }
   }
 
-  @include imgseries($list: ('site-carts-temp.gif', 'site-calc-temp.jpg', 'site-account-temp.jpg'));
+  @include imgseries($list: ('site-carts-temp.gif', 'site-calc-temp.jpg', 'site-account-temp.jpg', 'site-matrix-temp-480p.jpg'));
 }
 
 .page-xmill-stub-listing {

@@ -1,0 +1,79 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+
+// scss-lint:disable NestingDepth
+
+@import 'var'; // Import this one first, it has our variables, they are important
+
+// Component stack
+
+@import 'component-stack';
+
+// Other stuff
+
+@import 'reset';
+@import 'mixins';
+@import 'site-wide';
+
+body {
+  font-family: $base-font;
+}
+
+* {
+  transition: width .2s ease-in-out, height .2s ease-in-out;
+}
+
+.page-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+// #############################
+// # SITE/TECHNOLOGY SINGLETON #
+// #############################
+
+.singleton-technology {
+  @include hw(auto, 50%);
+  @include flex(center, column, center);
+  margin-top: $h-header;
+  min-height: 100vh;
+
+  h1 {
+    font-size: 4em;
+    font-weight: 700;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+
+  h2 {
+    font-size: 3em;
+    font-weight: 100;
+    margin-bottom: .75em; 
+  }
+
+  img {
+    width: 10em;
+    margin-bottom: 2em;
+  }
+
+  p {
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 2.5em;
+    width: 80%;
+  }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background: $grey-mid;
+    background-image: linear-gradient(to right, $grey-light, $grey-mid, $grey-light);
+    margin-bottom: 4.5em;
+    margin-top: 2.5em;
+    width: 100%;
+  }
+}
+
+

@@ -134,19 +134,23 @@
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover; }
+    .material-cards section a:link,
+    .material-cards section a:visited,
+    .material-cards section a:active {
+      color: #f57c00;
+      text-decoration: none;
+      transition: background .2s ease-in-out; }
   .material-cards th,
   .material-cards td {
-    border-bottom: 1px solid #9e9e9e;
     padding: .25em .5em;
     text-align: center; }
+  .material-cards th {
+    font-size: .8em; }
   .material-cards td {
-    font-family: 'Anonymous Pro', monospace; }
-  .material-cards a:link,
-  .material-cards a:visited,
-  .material-cards a:active {
-    color: #f57c00;
-    text-decoration: none;
-    transition: background .2s ease-in-out; }
+    font-family: 'Lato', sans-serif; }
+  .material-cards tr {
+    border-bottom: 1px solid #9e9e9e;
+    white-space: nowrap; }
 
 .series-header {
   align-items: center;

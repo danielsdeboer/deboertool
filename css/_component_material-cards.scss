@@ -143,6 +143,14 @@
         text-align: center;
       }
 
+      span {
+        a:link,
+        a:active,
+        a:visited {
+          color: $light;
+        }
+      }
+
       p {
         line-height: 1.4;
         padding: .5em;
@@ -195,11 +203,18 @@
       background-repeat: no-repeat;
       background-size: cover;
     }
+
+    a:link,
+    a:visited,
+    a:active {
+      color: $orange;
+      text-decoration: none;
+      transition: background .2s ease-in-out;
+    }
   }
 
   th,
   td {
-    border-bottom: 1px solid $grey-mid;
     padding: .25em .5em;
     text-align: center;
   }
@@ -209,21 +224,12 @@
   }
 
   td {
-    font-family: 'Anonymous Pro', monospace;
+    font-family: 'Lato', sans-serif;
   }
 
   tr {
-    td:last-of-type {
-      font-weight: 700;
-    }
-  }
-
-  a:link,
-  a:visited,
-  a:active {
-    color: $orange;
-    text-decoration: none;
-    transition: background .2s ease-in-out;
+    border-bottom: 1px solid $grey-mid;
+    white-space: nowrap;
   }
 }
 
