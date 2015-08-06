@@ -34,28 +34,31 @@ body {
 // # SITE/TECHNOLOGY SINGLETON #
 // #############################
 
-.singleton-technology {
+.singleton {
   @include hw(auto, 50%);
   @include flex(center, column, center);
-  margin-top: $h-header;
   min-height: 100vh;
+
+  &:first-of-type {
+    margin-top: $h-header;
+
+    @include mobile-large {
+      margin-top: $h-header - 2rem;
+    }
+  }
 
   h1 {
     font-size: 4em;
     font-weight: 700;
     margin-bottom: 1em;
     margin-top: 1em;
+    text-align: center;
   }
 
   h2 {
     font-size: 3em;
     font-weight: 100;
     margin-bottom: .75em; 
-  }
-
-  img {
-    width: 10em;
-    margin-bottom: 2em;
   }
 
   p {
@@ -65,14 +68,70 @@ body {
     width: 80%;
   }
 
+
+}
+
+.technology {
   hr {
-    border: 0;
-    height: 1px;
     background: $grey-mid;
     background-image: linear-gradient(to right, $grey-light, $grey-mid, $grey-light);
+    border: 0;
+    height: 1px;
     margin-bottom: 4.5em;
     margin-top: 2.5em;
     width: 100%;
+  }
+
+  img {
+    margin-bottom: 2em;
+    width: 10em;
+  }
+}
+
+.map {
+  @include hw(auto, 100%);
+  @include flex(center, column, flex-start);
+  min-height: initial;
+
+  @include desktop-small {
+    @include hw(auto, 100%);
+  }
+
+  .aspect {
+    position: relative;
+    width: 80%;
+
+    &:before {
+      content: '';
+      display: block;
+      padding-top: 45%;
+
+      @include desktop-small {
+        padding-top: 45%;
+      }
+    }
+
+    &:last-of-type {
+      margin-bottom: 3rem;
+    }
+  }
+  
+
+  iframe {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: .25em;
+    margin-top: .25em;
   }
 }
 

@@ -832,39 +832,83 @@ body {
   height: 100%;
   width: 100%; }
 
-.singleton-technology {
+.singleton {
   height: auto;
   width: 50%;
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 9rem;
   min-height: 100vh; }
-  .singleton-technology h1 {
+  .singleton:first-of-type {
+    margin-top: 9rem; }
+    @media screen and (max-width: 800px) {
+      .singleton:first-of-type {
+        margin-top: 7rem; } }
+  .singleton h1 {
     font-size: 4em;
     font-weight: 700;
     margin-bottom: 1em;
-    margin-top: 1em; }
-  .singleton-technology h2 {
+    margin-top: 1em;
+    text-align: center; }
+  .singleton h2 {
     font-size: 3em;
     font-weight: 100;
     margin-bottom: .75em; }
-  .singleton-technology img {
-    width: 10em;
-    margin-bottom: 2em; }
-  .singleton-technology p {
+  .singleton p {
     text-align: center;
     line-height: 1.5;
     margin-bottom: 2.5em;
     width: 80%; }
-  .singleton-technology hr {
-    border: 0;
-    height: 1px;
-    background: #9e9e9e;
-    background-image: linear-gradient(to right, #F5F5F5, #9e9e9e, #F5F5F5);
-    margin-bottom: 4.5em;
-    margin-top: 2.5em;
+
+.technology hr {
+  background: #9e9e9e;
+  background-image: linear-gradient(to right, #F5F5F5, #9e9e9e, #F5F5F5);
+  border: 0;
+  height: 1px;
+  margin-bottom: 4.5em;
+  margin-top: 2.5em;
+  width: 100%; }
+.technology img {
+  margin-bottom: 2em;
+  width: 10em; }
+
+.map {
+  height: auto;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: initial; }
+  @media screen and (max-width: 1200px) {
+    .map {
+      height: auto;
+      width: 100%; } }
+  .map .aspect {
+    position: relative;
+    width: 80%; }
+    .map .aspect:before {
+      content: '';
+      display: block;
+      padding-top: 45%; }
+      @media screen and (max-width: 1200px) {
+        .map .aspect:before {
+          padding-top: 45%; } }
+    .map .aspect:last-of-type {
+      margin-bottom: 3rem; }
+  .map iframe {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
     width: 100%; }
+  .map h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: .25em;
+    margin-top: .25em; }
 
 /*# sourceMappingURL=singleton.css.map */
