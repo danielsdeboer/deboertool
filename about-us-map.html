@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Map to our facility - Technology - De Boer Tool</title>
+  
+  <link rel="stylesheet" type="text/css" href="css/singleton.css">
+  <link href='https://fonts.googleapis.com/css?family=Raleway:200,300,400,700,900' rel='stylesheet' type='text/css'>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <header class="header-fixed">
+    <script>
+    // This jquery is design-phase only, imp-phase in PHP
+    $('body > .header-fixed').load('_component_header.html');
+    </script>
+  </header>
+
+<div class="page-wrapper">
+  <article class="singleton map">
+    <h1>Here's Where We Are</h1>
+
+    <div class="aspect">
+      <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=De+Boer+Tool,+Watline+Avenue,+Mississauga,+ON,+Canada&key=AIzaSyBqgNathR0hoMW4UbxCegx8B0st4uvxcuk" allowfullscreen></iframe>
+    </div>
+
+  </article>
+
+  <article class="singleton map">
+    <h1>Here's What We Look Like</h1>
+
+    <div class="aspect">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1438869725713!6m8!1m7!1sNnEh0aiUvUgXEW8PFh86DA!2m2!1d43.627526!2d-79.663619!3f113.41511768232652!4f-2.3215124473165503!5f2.3645402595508846" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+
+  </article>
+</div>
+
+  <footer class="component-footer">
+    <script>
+    // This jquery is design-phase only, imp-phase in PHP
+    $('body .component-footer').load('_component_footer.html');
+    </script>   
+  </footer>
+
+
+
+</body>
+</html>
