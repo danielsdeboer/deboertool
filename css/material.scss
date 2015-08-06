@@ -106,7 +106,8 @@ body {
   @include imgseries($list: ('product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg'));
 }
 
-.page-get-a-quote {
+.page-get-a-quote,
+.page-careers-at-de-boer-tool {
   section {
     > div:nth-of-type(1) {
       display: none;
@@ -140,6 +141,11 @@ body {
 
   textarea {
     height: 7em;
+  }
+
+  h4 {
+    align-self: flex-start;
+    margin-bottom: .75em;
   }
 }
 
