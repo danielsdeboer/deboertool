@@ -52,7 +52,7 @@ body {
   }
 
   @include mobile-large {
-    @include flex(flex-start, row, center);
+    @include flex(flex-end, row, center);
   }
 
   @include mobile-small {
