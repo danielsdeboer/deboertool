@@ -121,7 +121,15 @@ body {
   form {
     @include flex(center, column, center);
     padding: 1em;
-    width: 100%;
+    width: 70%;
+
+    @include desktop-small {
+      width: 85%;
+    }
+
+    @include mobile-large {
+      width: 100%;
+    }
   }
 
   input,
