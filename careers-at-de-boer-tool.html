@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get a quote - De Boer Tool</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/material.css">
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,700,900' rel='stylesheet' type='text/css'>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<meta charset="UTF-8">
+</head>
+
+<body>
+  <header class="header-fixed">
+    <script>
+    // This jquery is design-phase only, imp-phase in PHP
+    $('body > .header-fixed').load('_component_header.html');
+    </script>
+  </header>
+
+<div class="page-wrapper">
+
+	<aside class="table-of-contents">
+		<script>
+		// This jquery is design-phase only, imp-phase in PHP
+		// This has to be prepended because load() replaces existing content (the per-page ul)
+		$.ajax({
+			url: '_component_toc.html',
+			success: function(data) { $('.table-of-contents').prepend(data); },
+			dataType: 'html'
+		})
+		</script>
+		<ul>
+		  <li><a href="">Specials quote</a></li>
+		  <li><a href="">Regrind quote</a></li>
+		</ul>
+	</aside>
+
+	<article class="material-cards page-careers-at-de-boer-tool">
+		<div class="toc-container">
+		</div>
+
+		<div class="card-container">
+			<header class="series-header">
+				<h1>Careers At De Boer Tool</h1>
+				<h2>Looking for a long-term position in a stable, family-owned business?</h2>
+				<p>We're always on the lookout for new talent to join our team of exceptional people. The most important thing? You need to be ready to learn and keep on learning</p>
+				<p>De Boer Tool is a high-tech leader in a rapidly evolving marketplace. We are contintually improving our processes and developing new technologies. This means that last year's knowledge might not be good enough anymore. We're dedicated to staying on the cutting edge. If you are too, don't hesistate to send in your resume.</p>
+				<p>Worried that you might not make the cut? Apply anyways! We have an extensive internal training program, and more than certifications, schooling, or experience, we look for minds that can solve problems.</p>
+			</header>
+
+			<section>
+				<div>
+					<!-- div contains background image -->
+				</div>
+				<div>
+					<h1>Specials RFQ</h1>
+					<h2>Fill out the form and we'll get back to you in 24 hours (or faster!)</h2>
+					<form>
+						<input type="text" placeholder="First &amp; Last Name">
+						<input type="text" placeholder="Phone Number">
+						<h4>Attach your resume (PDF preferred):</h4>
+						<input type="file">
+						<button>Submit Specials RFQ</button>
+					</form>
+				</div>
+			</section>
+
+			<section>
+				<div>
+					<!-- div contains background image -->
+				</div>
+				<div>
+					<h1>Regrind RFQ</h1>
+					<h2>Provide as much detail as possible for regrind quotations (e.g. material, kind of tool)</h2>
+					<form>
+						<input type="text" placeholder="Customer Name">
+						<input type="text" placeholder="Contact Name">
+						<input type="text" placeholder="Contact Details (phone number or email address)">
+						<textarea placeholder="Details"></textarea>
+						<input type="file" placeholder="Attache a file (drawing, etc) to your RFQ">
+						<button>Submit Specials RFQ</button>
+					</form>
+				</div>
+			</section>
+
+			<section>
+				<div>
+					<!-- div contains background image -->
+				</div>
+				<div>
+					<h1>Other Inquiries</h1>
+					<form>
+						<input type="text" placeholder="Customer Name">
+						<input type="text" placeholder="Contact Name">
+						<input type="text" placeholder="Contact Details (phone number or email address)">
+						<textarea placeholder="Details"></textarea>
+						<button>Submit Specials RFQ</button>
+					</form>
+				</div>
+			</section>
+		</div>
+	</article>
+</div>
+
+	<footer class="component-footer">
+		<script>
+		// This jquery is design-phase only, imp-phase in PHP
+		$('body .component-footer').load('_component_footer.html');
+		</script>		
+	</footer>
+
+</body>
+</html>
