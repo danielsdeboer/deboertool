@@ -106,6 +106,43 @@ body {
   @include imgseries($list: ('product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg', 'product-vertical-xmill.jpg'));
 }
 
+.page-get-a-quote {
+  section {
+    > div:nth-of-type(1) {
+      display: none;
+    }
+
+    > div:nth-of-type(2) {
+      width: 100%;
+    }
+  }
+
+  form {
+    @include flex(center, column, center);
+    padding: 1em;
+    width: 100%;
+  }
+
+  input,
+  button,
+  textarea {
+    font-family: $base-font;
+    font-size: 1em;
+    padding: .25em .5em;
+    width: 100%;
+  }
+
+  input,
+  textarea {
+    border: 1px solid $grey-mid;
+    margin-bottom: .75em;
+  }
+
+  textarea {
+    height: 7em;
+  }
+}
+
 // #####################
 // # BUTTONS NAMESPACE #
 // #####################
